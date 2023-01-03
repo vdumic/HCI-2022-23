@@ -5,6 +5,33 @@ const Home = () => {
   return (
     <HeaderFooterLayout title="Aesthetica / Home">
       <h1>AESTHETICA</h1>
+      <h1>AESTHETICA</h1>
+      <h1>AESTHETICA</h1>
+      <h1>AESTHETICA</h1>
+      <h1>AESTHETICA</h1>
+      <h1>AESTHETICA</h1>
+      <h1>AESTHETICA</h1>
+      <h1>AESTHETICA</h1>
+      <h1>AESTHETICA</h1>
+      <h1>AESTHETICA</h1>
+      <h1>AESTHETICA</h1>
+      <h1>AESTHETICA</h1>
+      <h1>AESTHETICA</h1>
+      <h1>AESTHETICA</h1>
+      <h1>AESTHETICA</h1>
+      <h1>AESTHETICA</h1>
+      <h1>AESTHETICA</h1>
+      <h1>AESTHETICA</h1>
+      <h1>AESTHETICA</h1>
+      <h1>AESTHETICA</h1>
+      <h1>AESTHETICA</h1>
+      <h1>AESTHETICA</h1>
+      <h1>AESTHETICA</h1>
+      <h1>AESTHETICA</h1>
+      <h1>AESTHETICA</h1>
+      <h1>AESTHETICA</h1>
+      <h1>AESTHETICA</h1>
+      <h1>AESTHETICA</h1>
     </HeaderFooterLayout>
   );
 };
