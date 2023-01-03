@@ -2,7 +2,7 @@ import HeaderFooterLayout from "../layouts/HeaderFooterLayout";
 
 const About = () => {
   return (
-    <HeaderFooterLayout>
+    <HeaderFooterLayout title="Aesthetica / About">
       <div>ABOUT</div>
     </HeaderFooterLayout>
   );
