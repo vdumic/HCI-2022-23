@@ -37,12 +37,12 @@ const Header = () => {
           </Link>
           <NavBar />
           <div className="flex items-center space-x-4 text-sm font-light">
-            <AiOutlineSearch className="sm hidden h-6 w-6 sm:inline cursor-pointer" />
+            <AiOutlineSearch className="hidden h-6 w-6 sm:inline cursor-pointer" />
             <Link href="/profile">
-              <AiOutlineUser className="sm hidden h-6 w-6 sm:inline cursor-pointer" />
+              <AiOutlineUser className="hidden h-6 w-6 sm:inline cursor-pointer" />
             </Link>
             <Link href="/shoppingBag">
-              <BiShoppingBag className="sm hidden h-6 w-6 sm:inline cursor-pointer" />
+              <BiShoppingBag className="hidden h-6 w-6 sm:inline cursor-pointer" />
             </Link>
           </div>
         </div>
