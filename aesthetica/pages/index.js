@@ -1,5 +1,6 @@
 import Image from "next/image";
 import HeaderFooterLayout from "../layouts/HeaderFooterLayout";
+import Highlight from "../components/highlight";
 
 import MainImage from "../assets/main_image.png";
 
@@ -15,6 +16,7 @@ const Home = () => {
           <Image src={MainImage} width="540" height="400" alt="Main image" />
         </div>
       </div>
+      <Highlight />
       <h1>AESTHETICA</h1>
       <h1>AESTHETICA</h1>
       <h1>AESTHETICA</h1>
