@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Test from "../../assets/highlight1.jpg";
 import Spacer from "../Spacer";
-import MainButton from "./MainButton";
+import MainButton from "../MainButton";
 
 const HighlightLeft = () => {
   return (
