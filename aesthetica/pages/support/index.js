@@ -6,7 +6,7 @@ import SupportSearch from "../../components/Support/SupportSearch";
 import ShippingIcon from "../../assets/shipping_icon.png";
 import ReturnIcon from "../../assets/return_icon.png";
 import BuildIcon from "../../assets/build_icon.png";
-import SupportButton from "../../components/Support/SupportButton";
+import SupportButton from "../../components/Support/SupportButton.js";
 
 const Support = () => {
   return (
@@ -20,7 +20,7 @@ const Support = () => {
             className="m-6"
           />
           <p className="font-bold text-4xl m-6">Where is my order?</p>
-          <SupportButton title="Track order" />
+          <SupportButton title="Track order" link="/shipping" />
         </div>
         <div className="w-96 h-full bg-white mx-14">
           <Image
@@ -30,7 +30,7 @@ const Support = () => {
             className="m-6"
           />
           <p className="font-bold text-4xl m-6">How to make a return?</p>
-          <SupportButton title="Start return" />
+          <SupportButton title="Start return" link="/return" />
         </div>
         <div className="w-96 h-full bg-white mx-14">
           <Image
@@ -40,7 +40,7 @@ const Support = () => {
             className="m-6"
           />
           <p className="font-bold text-4xl m-6">How to build the furniture?</p>
-          <SupportButton title="Manuals" />
+          <SupportButton title="Manuals" link="/build" />
         </div>
       </div>
       <SupportSearch />
