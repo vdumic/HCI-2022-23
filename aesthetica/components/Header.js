@@ -4,9 +4,11 @@ import { AiOutlineUser, AiOutlineSearch } from "react-icons/ai";
 import { BiShoppingBag } from "react-icons/bi";
 
 import NavBar from "./NavBar";
+import DropDownMenu from "./Profile/DropDownMenu";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +26,11 @@ const Header = () => {
     };
   });
 
+  const handleButtonClick = (e) => {
+    e.preventDefault();
+    setIsClicked(!isClicked);
+  };
+
   return (
     <header
       className={`sticky top-0 flex items-center bg-bckgrnd-light ${
@@ -38,9 +45,13 @@ const Header = () => {
           <NavBar />
           <div className="flex items-center space-x-4 text-sm font-light">
             <AiOutlineSearch className="hidden h-6 w-6 sm:inline cursor-pointer" />
-            <Link href="/profile">
-              <AiOutlineUser className="hidden h-6 w-6 sm:inline cursor-pointer" />
-            </Link>
+            <button>
+              <AiOutlineUser
+                className="hidden h-6 w-6 sm:inline cursor-pointer"
+                onClick={handleButtonClick}
+              />
+              {isClicked && <DropDownMenu />}
+            </button>
             <Link href="/shoppingBag">
               <BiShoppingBag className="hidden h-6 w-6 sm:inline cursor-pointer" />
             </Link>
