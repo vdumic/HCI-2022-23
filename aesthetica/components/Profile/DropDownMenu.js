@@ -1,7 +1,7 @@
 const DropDownMenu = () => {
   return (
     <div className="relative">
-      <div className="absolute right-0 z-10 w-44 mt-4 origin-top-right bg-white border border-gray-100 rounded-md shadow-lg">
+      <div className="absolute right-0 z-10 w-44 mt-4 origin-top-right bg-bckgrnd-dark border border-gray-100 rounded-md shadow-lg">
         <div className="p-2">
           <a
             href="/login"
