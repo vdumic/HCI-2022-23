@@ -1,5 +1,6 @@
 import Image from "next/image";
 import MainImage from "../../assets/main_image.png";
+import Spacer from "../Spacer";
 
 const MainPageImage = () => {
   return (
@@ -13,6 +14,7 @@ const MainPageImage = () => {
           <Image src={MainImage} width="540" height="400" alt="Main image" />
         </div>
       </div>
+      <Spacer />
     </>
   );
 };
