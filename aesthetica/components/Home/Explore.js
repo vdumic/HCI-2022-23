@@ -1,11 +1,9 @@
-import ExploreButton from "./ExploreButton";
-import { SlArrowRight } from "react-icons/sl";
 import Link from "next/link";
-import Image from "next/image";
+import ExploreButton from "./ExploreButton";
+import ExploreItem from "./ExploreItem";
+import { SlArrowRight } from "react-icons/sl";
 
 import { exploreItems } from "../../constants/NavBar";
-
-import ExploreItem from "./ExploreItem";
 
 const Explore = () => {
   return (
