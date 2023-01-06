@@ -1,6 +1,11 @@
 import ExploreButton from "./ExploreButton";
 import { SlArrowRight } from "react-icons/sl";
 import Link from "next/link";
+import Image from "next/image";
+
+import { exploreItems } from "../../constants/NavBar";
+
+import ExploreItem from "./ExploreItem";
 
 const Explore = () => {
   return (
@@ -10,6 +15,11 @@ const Explore = () => {
         <ExploreButton title="Rooms" isClicked="true" />
         <ExploreButton title="Categories" />
         <ExploreButton title="Offers" />
+      </div>
+      <div className="flex justify-center mt-10">
+        {exploreItems.map(({ label, image }) => (
+          <ExploreItem title={label} image={image} />
+        ))}
       </div>
       <div className="flex justify-center my-10">
         <Link href="/store">
