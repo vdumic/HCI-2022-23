@@ -15,6 +15,10 @@ module.exports = {
           DEFAULT: "#e7e4e4d9",
           dark: "#bfbbbbd9",
         },
+        blog: {
+          DEFAULT: "#d9d9d9",
+          text: "#555454",
+        },
       },
     },
   },
