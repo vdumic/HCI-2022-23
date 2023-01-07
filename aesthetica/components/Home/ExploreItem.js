@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { SlArrowRight } from "react-icons/sl";
 
-const ExploreItem = ({ title, image }) => {
+const ExploreItem = ({ title, image, path }) => {
   return (
     <div>
       <Image
@@ -13,7 +13,7 @@ const ExploreItem = ({ title, image }) => {
         className="shadow-lg mx-5"
       />
       <div className="flex justify-center">
-        <Link href={`/store/${title}`}>
+        <Link href={`/store/${path}`}>
           <button className="flex justify-center text-black text-lg text-normal py-2 px-8 ">
             <p>{title}</p>
             <SlArrowRight className="h-5 w-5 sm:inline cursor-pointer pt-2" />

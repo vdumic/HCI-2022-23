@@ -3,7 +3,7 @@ import ExploreButton from "./ExploreButton";
 import ExploreItem from "./ExploreItem";
 import { SlArrowRight } from "react-icons/sl";
 
-import { exploreItems } from "../../constants/NavBar";
+import { exploreItems } from "../../constants/RoomsExplore";
 
 const Explore = () => {
   return (
