@@ -1,10 +1,13 @@
 import { createContext, useState } from "react";
 import HeaderFooterLayout from "../../layouts/HeaderFooterLayout";
-import Steps from "../../components/SignUp/Steps";
+import StepCounter from "../../components/SignUp/StepCounter";
+import DisplayedStep from "../../components/SignUp/DisplayedStep";
 export const FormContext = createContext();
 
 const SignUp = () => {
-  const [activeStepIndex] = useState(0);
+  const [activeStepIndex, setActiveStepIndex] = useState(0);
+  const [formData, setFormData] = useState({});
+
   return (
     <HeaderFooterLayout title="Aesthetica / SignUp">
       <div className="flex justify-center mt-8">
@@ -12,9 +15,10 @@ const SignUp = () => {
           Sign up for faster checkout and personalized shopping experience.
         </p>
       </div>
-      <FormContext.Provider value={{ activeStepIndex }}>
+      <FormContext.Provider value={{ activeStepIndex, setActiveStepIndex, formData, setFormData }}>
         <div className="w-screen h-screen flex flex-col items-center justify-start">
-          <Steps />
+          <StepCounter />
+          <DisplayedStep />
         </div>
       </FormContext.Provider>
     </HeaderFooterLayout>
@@ -22,3 +26,4 @@ const SignUp = () => {
 };
 
 export default SignUp;
+
