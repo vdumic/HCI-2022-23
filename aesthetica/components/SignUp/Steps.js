@@ -1,4 +1,18 @@
+import { useContext, useEffect } from "react";
+import { FormContext } from "../../pages/signup/index";
+
 const Steps = () => {
+  const { activeStepIndex } = useContext(FormContext);
+  useEffect(() => {
+    const stepperItems = document.querySelectorAll(".stepper-item");
+    stepperItems.forEach((step, i) => {
+      if (i <= activeStepIndex) {
+        step.classList.add("bg-bckgrnd-dark");
+      } else {
+        step.classList.remove("bg-bckgrnd-dark");
+      }
+    });
+  }, [activeStepIndex]);
   return (
     <div className="w-3/5 flex flex-row items-center justify-center px-32 py-14">
       <div className="stepper-item w-12 h-12 text-center pt-2 font-medium border-2 rounded-full">
@@ -14,6 +28,6 @@ const Steps = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Steps;
