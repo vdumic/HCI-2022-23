@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { FormContext } from "../../pages/signup/index";
 import UserCredentials from "./Forms/UserCredentials";
 import UserInfo from "./Forms/UserInfo";
+import Success from "./Forms/Success";
+
 
 const DisplayedStep = () => {
   const { activeStepIndex } = useContext(FormContext);
@@ -12,6 +14,11 @@ const DisplayedStep = () => {
       break;
     case 1:
       stepContent = <UserInfo />;
+      break;
+    case 2:
+      stepContent = <Success />;
+      break;
+    default:
       break;
   }
 

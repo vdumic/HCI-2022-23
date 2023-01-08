@@ -30,14 +30,13 @@ const UserCredentials = () => {
         setActiveStepIndex(activeStepIndex + 1);
       }}
     >
-      <Form className="flex flex-col justify-center items-center">
+      <Form className="flex flex-col w-full justify-center items-center">
         <div className="flex flex-col items-start mb-2">
           <label className="font-medium text-black">Email:</label>
           <Field
             name="email"
             className="border-2 py-2 px-24"
             placeholder="example@mail.com"
-            textAlign="center"
           />
         </div>
         <ErrorMessage name="email" render={renderError} />
