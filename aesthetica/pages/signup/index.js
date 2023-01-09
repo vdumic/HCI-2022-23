@@ -15,8 +15,10 @@ const SignUp = () => {
           Sign up for faster checkout and personalized shopping experience.
         </p>
       </div>
-      <FormContext.Provider value={{ activeStepIndex, setActiveStepIndex, formData, setFormData }}>
-        <div className="w-screen h-screen flex flex-col items-center justify-start">
+      <FormContext.Provider
+        value={{ activeStepIndex, setActiveStepIndex, formData, setFormData }}
+      >
+        <div className="w-full h-screen flex flex-col items-center justify-start">
           <StepCounter />
           <DisplayedStep />
         </div>
@@ -26,4 +28,3 @@ const SignUp = () => {
 };
 
 export default SignUp;
-
