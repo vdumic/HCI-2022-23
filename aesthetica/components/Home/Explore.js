@@ -15,8 +15,8 @@ const Explore = () => {
         <ExploreButton title="Offers" />
       </div>
       <div className="flex justify-center mt-10">
-        {exploreItems.map(({ label, image }) => (
-          <ExploreItem title={label} image={image} />
+        {exploreItems.map(({ label, image, path }) => (
+          <ExploreItem title={label} image={image} path={path} />
         ))}
       </div>
       <div className="flex justify-center my-10">

@@ -24,7 +24,7 @@ const SignUp = () => {
 
   return (
     <HeaderFooterLayout title="Aesthetica / SignUp">
-      <div className="flex justify-center mt-8">
+      <div className="flex justify-center mt-10">
         <p className="font-medium text-2xl">
           Sign up for faster checkout and personalized shopping experience.
         </p>
@@ -32,7 +32,7 @@ const SignUp = () => {
       <FormContext.Provider
         value={{ activeStepIndex, setActiveStepIndex, formData, setFormData }}
       >
-        <div className="w-full h-screen flex flex-col items-center justify-start">
+        <div className="w-full flex flex-col items-center justify-start mb-10">
           <StepCounter />
           <DisplayedStep />
         </div>
