@@ -5,13 +5,13 @@ import Spacer from "../components/Spacer";
 
 const HeaderFooterLayout = ({ title, children, ...rest }) => {
   return (
-    <>
+    <div className="h-full">
       <PageHead title={title} />
       <Header />
       <main {...rest}>{children}</main>
       <Spacer />
       <Footer />
-    </>
+    </div>
   );
 };
 

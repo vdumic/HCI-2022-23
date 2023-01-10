@@ -1,13 +1,8 @@
-import { useContext } from "react";
-import { FormContext } from "../../../pages/signup/index";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { SlArrowRight } from "react-icons/sl";
 import * as yup from "yup";
 
-const UserCredentials = () => {
-  const { activeStepIndex, setActiveStepIndex, formData, setFormData } =
-    useContext(FormContext);
-
+const LoginForm = () => {
   const renderError = (message) => (
     <p className="italic text-red-500">{message}</p>
   );
@@ -56,7 +51,7 @@ const UserCredentials = () => {
           className="flex justify-center bg-[#252526] hover:bg-[#3e3e42] hover:border-[#3e3e42] text-white text-m font-medium mt-10 py-2 pl-5 pr-3.5 border-2 border-[#252526] rounded-full shadow-xl"
           type="submit"
         >
-          Continue
+          Login
           <SlArrowRight className="h-5 w-5 sm:inline cursor-pointer pt-1" />
         </button>
       </Form>
@@ -64,4 +59,4 @@ const UserCredentials = () => {
   );
 };
 
-export default UserCredentials;
+export default LoginForm;

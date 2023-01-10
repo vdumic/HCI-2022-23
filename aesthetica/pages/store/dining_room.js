@@ -12,7 +12,7 @@ const DiningRoom = () => {
         <p className="font-bold text-3xl text-[#777777]">Dining room</p>
         <AiOutlineRight className="h-7 w-7 sm:inline pt-3" />
         <p className="font-bold text-3xl">Chairs</p>
-      </div>{" "}
+      </div>
       <StoreSearch />
       <div className="flex justify-evenly mx-28 my-10">
         <ItemsList />
