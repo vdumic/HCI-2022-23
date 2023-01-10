@@ -13,12 +13,12 @@ const UserInfo = () => {
   );
 
   const ValidationSchema = yup.object().shape({
-    name: yup.string().required(),
-    surname: yup.string().required(),
-    phone: yup.number().required(),
-    street: yup.string().required(),
-    city: yup.string().required(),
-    zipcode: yup.number().required(),
+    name: yup.string().required('Name is required'),
+    surname: yup.string().required('Surname is required'),
+    phone: yup.number().typeError('Only numbers allowed').required('Phone is required'),
+    street: yup.string().required('Street is required'),
+    city: yup.string().required('City is required'),
+    zipcode: yup.string().required('Zipcode is required'),
   });
 
   return (
