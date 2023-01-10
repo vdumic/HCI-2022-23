@@ -11,7 +11,7 @@ const BigPost = ({ title, date, image }) => {
           <p className="text-blog-text text-xl font-semibold my-5">{date}</p>
         </div>
         <div className="m-auto">
-          <BigButton title="Read more" link="/blog" />
+          <BigButton title="Read more" link="/blog/blog_post" />
         </div>
       </div>
     </div>

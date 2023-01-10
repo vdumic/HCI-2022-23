@@ -11,7 +11,7 @@ const SmallPost = ({ title, date, image }) => {
           <p className="text-blog-text text-xl font-semibold my-5">{date}</p>
         </div>
         <div className="m-auto">
-          <SmallButton title="Read more" link="/blog" />
+          <SmallButton title="Read more" link="/blog/blog_post" />
         </div>
       </div>
     </div>
