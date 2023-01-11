@@ -118,25 +118,25 @@ const Footer = () => {
                   href="/"
                   className="text-dark hover:bg-primary hover:border-primary mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
                 >
-                  <FaFacebook className="hidden h-6 w-6 sm:inline cursor-pointer" />
+                  <FaFacebook className="h-6 w-6 sm:inline cursor-pointer" />
                 </Link>
                 <Link
                   href="/"
                   className="text-dark hover:bg-primary hover:border-primary mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
                 >
-                  <FaInstagram className="hidden h-6 w-6 sm:inline cursor-pointer" />
+                  <FaInstagram className="h-6 w-6 sm:inline cursor-pointer" />
                 </Link>
                 <Link
                   href="/"
                   className="text-dark hover:bg-primary hover:border-primary mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
                 >
-                  <FaYoutube className="hidden h-6 w-6 sm:inline cursor-pointer" />
+                  <FaYoutube className="h-6 w-6 sm:inline cursor-pointer" />
                 </Link>
                 <Link
                   href="/"
                   className="text-dark hover:bg-primary hover:border-primary mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
                 >
-                  <FaTwitter className="hidden h-6 w-6 sm:inline cursor-pointer" />
+                  <FaTwitter className="h-6 w-6 sm:inline cursor-pointer" />
                 </Link>
               </div>
               <p className="text-body-color text-base">
