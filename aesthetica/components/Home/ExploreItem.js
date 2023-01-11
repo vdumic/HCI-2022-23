@@ -4,13 +4,13 @@ import { SlArrowRight } from "react-icons/sl";
 
 const ExploreItem = ({ title, image, path }) => {
   return (
-    <div>
+    <div className="sm:w-4/6">
       <Image
         alt={title}
         src={image}
         height="160"
         width="240"
-        className="shadow-lg mx-5"
+        className="shadow-lg mx-5 sm:mx-auto"
       />
       <div className="flex justify-center">
         <Link href={`/store/${path}`}>

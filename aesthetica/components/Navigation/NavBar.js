@@ -1,14 +1,14 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-import { navigationItems } from "../constants/NavBar";
+import { navigationItems } from "../../constants/NavBar";
 
 const NavBar = () => {
   const router = useRouter();
   const currentPage = router.pathname;
 
   return (
-    <nav className="inline-flex list-none font-medium">
+    <nav className="inline-flex list-none font-medium sm:hidden">
       {navigationItems.map(({ label, path }) => (
         <Link href={path} key={label} passHref>
           <li

@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="relative z-10 pt-14">
       <div className="container mx-auto">
-        <div className="-mx-4 flex flex-wrap">
+        <div className="-mx-4 flex flex-wrap ">
           <div className="flex justify-items-center items-center w-full px-4 sm:w-2/3 lg:w-3/12">
             <div className="mb-10 w-full">
               <Link href="/" className="mb-6 max-w-[160px]">

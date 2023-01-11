@@ -5,7 +5,7 @@ import MainButton from "../MainButton";
 
 const HighlightLeft = () => {
   return (
-    <>
+    <div className="sm:hidden">
       <Spacer />
       <div className="flex justify-between max-w-full">
         <div className="flex-col mx-24 my-8 w-1/5">
@@ -17,7 +17,7 @@ const HighlightLeft = () => {
         </div>
         <Image src={Test} height="400" width="540" alt="Main image" />
       </div>
-    </>
+    </div>
   );
 };
 

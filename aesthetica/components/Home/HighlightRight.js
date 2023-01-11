@@ -5,7 +5,7 @@ import MainButton from "../MainButton";
 
 const HighlightRight = () => {
   return (
-    <>
+    <div className="sm:hidden">
       <Spacer />
       <div className="flex justify-between max-w-full">
         <Image src={Test} width="540" height="400" alt="Main image" />
@@ -17,7 +17,7 @@ const HighlightRight = () => {
           <MainButton title="Bathroom" link="/store/bathroom" />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
