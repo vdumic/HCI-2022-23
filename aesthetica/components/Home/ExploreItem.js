@@ -10,7 +10,7 @@ const ExploreItem = ({ title, image, path }) => {
           alt={title}
           src={image}
           height="160"
-          width="240"
+          // width="240"
           className="shadow-lg mx-5 sm:mx-auto"
         />
         <div className="flex justify-center">
