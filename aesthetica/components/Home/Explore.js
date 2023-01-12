@@ -1,18 +1,14 @@
 import { useState } from "react";
 import Link from "next/link";
-import ExploreButton from "./ExploreButton";
-import ExploreItem from "./ExploreItem";
 import { SlArrowRight } from "react-icons/sl";
 
-import { exploreRooms, exploreCategories } from "../../constants/Explore";
 import ExploreSlider from "./ExploreSlider";
+import ExploreButton from "./ExploreButton";
 
 const Explore = () => {
   const [roomsClicked, setRoomsClicked] = useState(true);
   const [categoriesClicked, setCategoriesClicked] = useState(false);
   const [offersClicked, setOffersClicked] = useState(false);
-
-  console.log(exploreRooms);
 
   const handleRoomsClick = (e) => {
     e.preventDefault();

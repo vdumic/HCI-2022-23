@@ -1,11 +1,9 @@
-import { exploreRooms } from "../../constants/Explore";
-import ExploreItem from "../Home/ExploreItem";
 import ExploreSlider from "../Home/ExploreSlider";
 
 const Categories = () => {
   return (
-    <div className="max-w-full mx-28 my-10">
-      <p className="font-bold text-3xl">Choose room:</p>
+    <div className="max-w-full mx-28 my-10 sm:mx-8">
+      <p className="font-bold text-3xl sm:text-2xl">Choose room:</p>
       <div className="flex justify-center mt-10">
         <ExploreSlider roomsClicked={true} />
       </div>
