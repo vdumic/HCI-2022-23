@@ -4,7 +4,15 @@ import DiningRoom from "../public/home/rooms/dining_room.png";
 import Bathroom from "../public/home/rooms/bathroom.png";
 import Hallway from "../public/home/rooms/hallway.png";
 
-export const exploreItems = [
+export const exploreRooms = [
+  { label: "Living room", image: LivingRoom, path: "living_room" },
+  { label: "Bedroom", image: Bedroom, path: "bedroom" },
+  { label: "Dining room", image: DiningRoom, path: "dining_room" },
+  { label: "Bathroom", image: Bathroom, path: "bathroom" },
+  { label: "Hallway", image: Hallway, path: "hallway" },
+];
+
+export const exploreCategories = [
   { label: "Living room", image: LivingRoom, path: "living_room" },
   { label: "Bedroom", image: Bedroom, path: "bedroom" },
   { label: "Dining room", image: DiningRoom, path: "dining_room" },

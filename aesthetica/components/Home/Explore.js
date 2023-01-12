@@ -1,23 +1,62 @@
+import { useState } from "react";
 import Link from "next/link";
 import ExploreButton from "./ExploreButton";
 import ExploreItem from "./ExploreItem";
 import { SlArrowRight } from "react-icons/sl";
 
-import { exploreItems } from "../../constants/RoomsExplore";
+import { exploreRooms } from "../../constants/Explore";
 
 const Explore = () => {
+  const [roomsClicked, setRoomsClicked] = useState(true);
+  const [categoriesClicked, setCategoriesClicked] = useState(false);
+  const [offersClicked, setOffersClicked] = useState(false);
+
+  const handleRoomsClick = (e) => {
+    e.preventDefault();
+    setRoomsClicked(!roomsClicked);
+    setCategoriesClicked(false);
+    setOffersClicked(false);
+  };
+
+  const handleCategoriesClick = (e) => {
+    e.preventDefault();
+    setCategoriesClicked(!categoriesClicked);
+    setRoomsClicked(false);
+    setOffersClicked(false);
+  };
+
+  const handleOfferssClick = (e) => {
+    e.preventDefault();
+    setOffersClicked(!offersClicked);
+    setCategoriesClicked(false);
+    setRoomsClicked(false);
+  };
+
   return (
     <div className="max-w-full mx-28 mt-10 sm:mx-8">
       <p className="font-bold text-3xl">Explore:</p>
       <div className="flex justify-start sm:hidden">
-        <ExploreButton title="Rooms" isClicked="true" />
-        <ExploreButton title="Categories" />
-        <ExploreButton title="Offers" />
+        <ExploreButton
+          title="Rooms"
+          isClicked={roomsClicked}
+          handleClick={handleRoomsClick}
+        />
+        <ExploreButton
+          title="Categories"
+          isClicked={categoriesClicked}
+          handleClick={handleCategoriesClick}
+        />
+        <ExploreButton
+          title="Offers"
+          isClicked={offersClicked}
+          handleClick={handleOfferssClick}
+        />
       </div>
       <div className="flex justify-center mt-10 sm:grid sm:grid-cols-1">
-        {exploreItems.map(({ label, image, path }) => (
-          <ExploreItem title={label} image={image} path={path} key={label} />
-        ))}
+        {roomsClicked &&
+          exploreRooms.map(({ label, image, path }) => (
+            <ExploreItem title={label} image={image} path={path} key={label} />
+          ))}
       </div>
       <div className="flex justify-center my-10">
         <Link href="/store">
