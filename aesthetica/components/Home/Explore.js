@@ -16,7 +16,7 @@ const Explore = () => {
       </div>
       <div className="flex justify-center mt-10 sm:grid sm:grid-cols-1">
         {exploreItems.map(({ label, image, path }) => (
-          <ExploreItem title={label} image={image} path={path} />
+          <ExploreItem title={label} image={image} path={path} key={label} />
         ))}
       </div>
       <div className="flex justify-center my-10">

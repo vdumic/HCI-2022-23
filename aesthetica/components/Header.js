@@ -44,7 +44,7 @@ const Header = () => {
           </Link>
           <NavBar />
           <div className="flex items-center space-x-4 text-sm font-light">
-            <AiOutlineSearch className="h-6 w-6 sm:hidden cursor-pointer" />
+            {/* <AiOutlineSearch className="h-6 w-6 sm:hidden cursor-pointer" /> */}
             <button>
               <AiOutlineUser
                 className="h-6 w-6 sm:hidden cursor-pointer"

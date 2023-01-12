@@ -7,7 +7,7 @@ const Categories = () => {
       <p className="font-bold text-3xl">Choose room:</p>
       <div className="flex justify-center mt-10">
         {exploreItems.map(({ label, image, path }) => (
-          <ExploreItem title={label} image={image} path={path} />
+          <ExploreItem title={label} image={image} path={path} key={label} />
         ))}
       </div>
     </div>

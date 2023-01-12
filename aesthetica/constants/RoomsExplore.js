@@ -1,8 +1,8 @@
-import LivingRoom from "../assets/living_room.png";
-import Bedroom from "../assets/bedroom.png";
-import DiningRoom from "../assets/dining_room.png";
-import Bathroom from "../assets/bathroom.png";
-import Hallway from "../assets/hallway.png";
+import LivingRoom from "../public/home/rooms/living_room.png";
+import Bedroom from "../public/home/rooms/bedroom.png";
+import DiningRoom from "../public/home/rooms/dining_room.png";
+import Bathroom from "../public/home/rooms/bathroom.png";
+import Hallway from "../public/home/rooms/hallway.png";
 
 export const exploreItems = [
   { label: "Living room", image: LivingRoom, path: "living_room" },

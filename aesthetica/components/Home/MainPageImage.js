@@ -1,6 +1,6 @@
 import Image from "next/image";
-import MainImage from "../../assets/main_image.png";
 import Spacer from "../Spacer";
+import MainImage from "../../public/home/main_image.png";
 
 const MainPageImage = () => {
   return (

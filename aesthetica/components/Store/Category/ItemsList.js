@@ -5,7 +5,13 @@ const ItemsList = () => {
   return (
     <div className="grid grid-cols-3">
       {chairs.map(({ label, price, image, path }) => (
-        <Item name={label} price={price} image={image} path={path} />
+        <Item
+          name={label}
+          price={price}
+          image={image}
+          path={path}
+          key={label}
+        />
       ))}
     </div>
   );
