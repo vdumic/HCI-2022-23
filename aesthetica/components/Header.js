@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { AiOutlineUser, AiOutlineSearch } from "react-icons/ai";
+import { AiOutlineUser } from "react-icons/ai";
 import { BiShoppingBag } from "react-icons/bi";
 
 import NavBar from "./Navigation/NavBar";
 import DropDownMenu from "./Profile/DropDownMenu";
+import HamburgerBar from "./Navigation/HamburgerBar";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -43,7 +44,8 @@ const Header = () => {
             <h1 className="font-bold text-3xl">Aesthetica</h1>
           </Link>
           <NavBar />
-          <div className="flex items-center space-x-4 text-sm font-light">
+          <HamburgerBar />
+          <div className="flex items-center space-x-4 text-sm font-light sm:hidden">
             <button>
               <AiOutlineUser
                 className="h-6 w-6 sm:hidden cursor-pointer"
