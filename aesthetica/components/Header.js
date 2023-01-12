@@ -33,7 +33,7 @@ const Header = () => {
 
   return (
     <header
-      className={`sticky top-0 flex items-center bg-bckgrnd-light ${
+      className={`sticky z-50 top-0 flex items-center bg-bckgrnd-light ${
         isScrolled && "bg-bckgrnd"
       }`}
     >
@@ -44,7 +44,6 @@ const Header = () => {
           </Link>
           <NavBar />
           <div className="flex items-center space-x-4 text-sm font-light">
-            {/* <AiOutlineSearch className="h-6 w-6 sm:hidden cursor-pointer" /> */}
             <button>
               <AiOutlineUser
                 className="h-6 w-6 sm:hidden cursor-pointer"

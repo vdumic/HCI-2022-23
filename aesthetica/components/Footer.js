@@ -7,14 +7,14 @@ const Footer = () => {
     <footer className="relative z-10 pt-14">
       <div className="container mx-auto">
         <div className="-mx-4 flex flex-wrap ">
-          <div className="flex justify-items-center items-center w-full px-4 sm:w-2/3 lg:w-3/12">
+          <div className="flex justify-items-center items-center w-full px-4 sm:w-2/3 md:w-3/12">
             <div className="mb-10 w-full">
               <Link href="/" className="mb-6 max-w-[160px]">
-                <h1 className="font-bold text-5xl">Aesthetica</h1>
+                <h1 className="font-bold text-5xl sm:text-3xl">Aesthetica</h1>
               </Link>
             </div>
           </div>
-          <div className="w-full px-4 sm:w-1/2 lg:w-2/12">
+          <div className="w-full px-4 sm:w-1/2 md:w-2/12">
             <div className="mb-10 w-full">
               <h4 className="text-xl mb-10 font-bold">Help & Information</h4>
               <ul>
@@ -53,7 +53,7 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className="w-full px-4 sm:w-1/2 lg:w-2/12">
+          <div className="w-full px-4 sm:w-1/2 md:w-2/12">
             <div className="mb-10 w-full">
               <h4 className="text-xl mb-10 font-bold">About Us</h4>
               <ul>
@@ -92,19 +92,19 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className="w-full px-4 sm:w-1/2 lg:w-2/12">
+          <div className="w-full px-4 sm:w-1/2 md:w-2/12 sm:hidden">
             <div className="mb-10 w-full">
               <h4 className="text-xl mb-10 font-bold">Newsletter</h4>
-              <form class="w-9/12 max-w-sm">
-                <div class="flex items-center border-b border-black py-2">
+              <form className="w-9/12 max-w-sm">
+                <div className="flex items-stretch border-b border-black py-2">
                   <input
-                    class="appearance-none bg-transparent border-none w-9/12 text-{#949494} text-sm mr-3 py-1 px-2 leading-4 focus:outline-none"
+                    className="appearance-none bg-transparent border-none w-9/12 text-{#949494} text-sm mr-3 py-1 px-2 leading-4 focus:outline-none"
                     type="text"
                     placeholder="Your email..."
                     aria-label="Email"
                   />
                   <Link href="/">
-                    <BsArrowRight className="hidden h-6 w-6 sm:inline cursor-pointer" />
+                    <BsArrowRight className="h-6 w-6 sm:inline cursor-pointer" />
                   </Link>
                 </div>
               </form>

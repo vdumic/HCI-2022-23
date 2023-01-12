@@ -11,11 +11,11 @@ import Lighting from "../public/home/categories/lighting.jpg";
 import Sofas from "../public/home/categories/sofas.jpg";
 
 export const exploreRooms = [
-  { label: "Living room", image: LivingRoom, path: "living_room" },
-  { label: "Bedroom", image: Bedroom, path: "bedroom" },
-  { label: "Dining room", image: DiningRoom, path: "dining_room" },
-  { label: "Bathroom", image: Bathroom, path: "bathroom" },
-  { label: "Hallway", image: Hallway, path: "hallway" },
+  { label: "Living room", image: LivingRoom, path: "living_room", index: "0" },
+  { label: "Bedroom", image: Bedroom, path: "bedroom", index: "1" },
+  { label: "Dining room", image: DiningRoom, path: "dining_room", index: "2" },
+  { label: "Bathroom", image: Bathroom, path: "bathroom", index: "3" },
+  { label: "Hallway", image: Hallway, path: "hallway", index: "4" },
 ];
 
 export const exploreCategories = [
