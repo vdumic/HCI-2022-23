@@ -14,7 +14,7 @@ const PostLeft = () => {
             <p className="text-4xl font-semibold leading-tight mt-5">
               Configure your perfect smart home setup.
             </p>
-            <MainButton title="Learn more" link="/blog/post" />
+            <MainButton title="Learn more" link="under_construction" />
           </div>
           <Image src={Test} height="400" width="700" alt="Main image" />
         </div>
@@ -29,7 +29,7 @@ const PostLeft = () => {
             </p>
             <Image src={Test} width="540" height="400" alt="Main image" />
             <div className="flex justify-center">
-              <MainButton title="Linens" link="/store/linens" />
+              <MainButton title="Learn more" link="under_construction" />
             </div>
           </div>
         </div>

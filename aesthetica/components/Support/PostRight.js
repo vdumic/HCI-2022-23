@@ -16,7 +16,7 @@ const PostRight = () => {
               Our specialists are ready to help you with advice, online or
               in-store.
             </p>
-            <MainButton title="Learn more" link="/blog/post" />
+            <MainButton title="Learn more" link="under_construction" />
           </div>
         </div>
       </div>
@@ -31,7 +31,7 @@ const PostRight = () => {
             </p>
             <Image src={Test} width="540" height="400" alt="Main image" />
             <div className="flex justify-center">
-              <MainButton title="Linens" link="/store/linens" />
+              <MainButton title="Learn more" link="under_construction" />
             </div>
           </div>
         </div>
