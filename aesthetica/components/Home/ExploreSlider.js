@@ -8,6 +8,7 @@ import {
 import "pure-react-carousel/dist/react-carousel.es.css";
 import Image from "next/image";
 import Link from "next/link";
+import { SlArrowRight, SlArrowLeft } from "react-icons/sl";
 
 import { exploreRooms, exploreCategories } from "../../constants/Explore";
 import ExploreItem from "./ExploreItem";
@@ -30,24 +31,10 @@ const ExploreSlider = ({ roomsClicked, categoriesClicked }) => {
             <ButtonBack
               role="button"
               aria-label="slide backward"
-              className="absolute z-30 left-0 ml-8 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer"
+              className="absolute z-30 left-0 ml-8"
               id="prev"
             >
-              <svg
-                width={8}
-                height={16}
-                viewBox="0 0 8 14"
-                fill="none"
-                src="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M7 1L1 7L7 13"
-                  stroke="black"
-                  strokeWidth={3}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <SlArrowLeft className="h-7 w-7 cursor-pointer" />
             </ButtonBack>
             <div className="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden">
               <Slider>
@@ -81,31 +68,17 @@ const ExploreSlider = ({ roomsClicked, categoriesClicked }) => {
             <ButtonNext
               role="button"
               aria-label="slide forward"
-              className="absolute z-30 right-0 mr-8 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
+              className="absolute z-30 right-0 mr-8"
               id="next"
             >
-              <svg
-                width={8}
-                height={16}
-                viewBox="0 0 8 14"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1 1L7 7L1 13"
-                  stroke="black"
-                  strokeWidth={3}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <SlArrowRight className="h-7 w-7 cursor-pointer" />
             </ButtonNext>
           </div>
         </CarouselProvider>
 
         {/* Carousel for mobile and Small size Devices */}
         <CarouselProvider
-          className="block md:hidden "
+          className="md:hidden"
           naturalSlideWidth={100}
           isIntrinsicHeight={true}
           totalSlides={5}
@@ -117,69 +90,67 @@ const ExploreSlider = ({ roomsClicked, categoriesClicked }) => {
             <ButtonBack
               role="button"
               aria-label="slide backward"
-              className="absolute z-30 left-0 ml-8 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer"
+              className="absolute z-30 left-0 ml-4"
               id="prev"
             >
-              <svg
-                width={8}
-                height={14}
-                viewBox="0 0 8 14"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M7 1L1 7L7 13"
-                  stroke="white"
-                  strokeWidth={2}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <SlArrowLeft className="h-7 w-7 cursor-pointer" />
             </ButtonBack>
             <div className="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden">
               <Slider>
                 <div
                   id="slider"
-                  className="h-full w-full flex lg:gap-8 md:gap-6 items-center justify-start transition ease-out duration-700"
+                  className="h-full w-full flex items-center justify-center transition ease-out duration-700"
                 >
-                  {exploreRooms.map(({ label, image, path, index }) => (
-                    <Slide index={index} key={label}>
-                      <div className="flex flex-shrink-0 relative w-full sm:w-auto">
-                        <Link href={`/store/${path}`}>
-                          <Image
-                            src={image}
-                            alt={label}
-                            width="240"
-                            className="object-cover object-center w-full"
-                          />
-                        </Link>
-                      </div>
-                    </Slide>
-                  ))}
+                  {roomsClicked &&
+                    exploreRooms.map(({ label, image, path, index }) => (
+                      <Slide index={index} key={label}>
+                        <div className="flex flex-col flex-shrink-0 relative">
+                          <Link href={`/store/${path}`}>
+                            <Image
+                              src={image}
+                              alt={label}
+                              width="240"
+                              className="object-cover object-center w-full"
+                            />{" "}
+                          </Link>
+                          <Link href={`/store/${path}`}>
+                            <button className="text-black text-xl text-normal">
+                              <p>{label}</p>
+                            </button>
+                          </Link>
+                        </div>
+                      </Slide>
+                    ))}
+                  {categoriesClicked &&
+                    exploreCategories.map(({ label, image, path, index }) => (
+                      <Slide index={index} key={label}>
+                        <div className="flex flex-col flex-shrink-0 relative">
+                          <Link href={`/store/${path}`}>
+                            <Image
+                              src={image}
+                              alt={label}
+                              width="240"
+                              className="object-cover object-center w-full"
+                            />
+                          </Link>
+                          <Link href={`/store/${path}`}>
+                            <button className="text-black text-xl text-normal">
+                              <p>{label}</p>
+                            </button>
+                          </Link>
+                        </div>
+                      </Slide>
+                    ))}
                 </div>
               </Slider>
             </div>
             <ButtonNext
               role="button"
               aria-label="slide forward"
-              className="absolute z-30 right-0 mr-8 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
+              className="absolute z-30 right-0 mr-4"
               id="next"
             >
-              <svg
-                width={8}
-                height={14}
-                viewBox="0 0 8 14"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1 1L7 7L1 13"
-                  stroke="white"
-                  strokeWidth={2}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <SlArrowRight className="h-7 w-7 cursor-pointer" />
             </ButtonNext>
           </div>
         </CarouselProvider>

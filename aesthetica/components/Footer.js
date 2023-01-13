@@ -96,9 +96,9 @@ const Footer = () => {
             <div className="mb-10 w-full">
               <h4 className="text-xl mb-10 font-bold">Newsletter</h4>
               <form className="w-9/12 max-w-sm">
-                <div className="flex items-stretch border-b border-black py-2">
+                <div className="flex justify-between border-b border-black py-2">
                   <input
-                    className="appearance-none bg-transparent border-none w-9/12 text-{#949494} text-sm mr-3 py-1 px-2 leading-4 focus:outline-none"
+                    className="appearance-none bg-transparent border-none w-9/12 text-{#949494} text-sm mr-3 py-1 leading-4 focus:outline-none"
                     type="text"
                     placeholder="Your email..."
                     aria-label="Email"
