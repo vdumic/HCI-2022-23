@@ -9,13 +9,15 @@ const About = () => {
       <div className="grid md:mx-24 md:grid-cols-2 sm:mx-8 sm:mt-5 mt-14 mb-14">
         <div className="md:mb-5 text-2xl">
           <h2 className="md:text-5xl sm:hidden font-semibold">
-            Furniture and inspiration for a better everyday life<br />at home.
+            Furniture and inspiration for a better everyday life
+            <br />
+            at home.
           </h2>
           <h2 className="text-4xl md:hidden font-semibold">
             Furniture and inspiration for a better everyday life at home.
           </h2>
           <h2 className="text-xl font-medium mt-8 md:text-justify">
-            Welcome to Aesthetica, home of the furniture. Explore modern and 
+            Welcome to Aesthetica, home of the furniture. Explore modern and
             sustainably made furniture, stylish home décor and innovative home
             solutions, as well as design inspiration and unique home ideas.
           </h2>
@@ -27,7 +29,7 @@ const About = () => {
             get deliveries straight to your doorstep.
           </h2>
         </div>
-         <Statistics />
+        <Statistics />
       </div>
       <div className="flex md:mx-24 md:text-3xl md:mb-5 sm:mx-8 sm:mb-3 text-2xl font-semibold">
         Quick info:

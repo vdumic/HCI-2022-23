@@ -6,7 +6,7 @@ const LogIn = () => {
     <HeaderFooterLayout title="Aesthetica / SignUp">
       <div className="flex justify-center mt-10">
         <p className="font-medium text-2xl">
-          Login into your Aesthetica account
+          Log back into your account.
         </p>
       </div>
       <div className="w-full flex flex-col items-center justify-start my-10">
