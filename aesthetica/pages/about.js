@@ -32,7 +32,7 @@ const About = () => {
       <div className="flex md:mx-24 md:text-3xl md:mb-5 sm:mx-8 sm:mb-3 text-2xl font-semibold">
         Quick info:
       </div>
-      <div className="grid md:mx-20 mb-24 md:grid-cols-4 justify-items-center gap-y-4">
+      <div className="grid md:mx-20 mb-16 md:grid-cols-4 justify-items-center gap-y-4">
         {AboutInfo.map(({ Icon, title, details }) => (
           <InfoCard Icon={Icon} title={title} details={details} key={title} />
         ))}
