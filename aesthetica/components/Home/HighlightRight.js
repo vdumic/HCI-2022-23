@@ -8,7 +8,7 @@ const HighlightRight = () => {
     <>
       <div className="sm:hidden">
         <Spacer />
-        <div className="flex justify-between max-w-full mx-8">
+        <div className="flex justify-between max-w-full">
           <Image src={Test} width="540" height="400" alt="Main image" />
           <div className="flex-col mx-24 my-8 w-1/5">
             <p className="text-2xl font-thin">Aesthetica Store</p>

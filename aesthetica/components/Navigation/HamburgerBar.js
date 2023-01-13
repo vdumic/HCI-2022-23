@@ -15,9 +15,9 @@ const HamburgerBar = () => {
       <nav>
         <section className="flex">
           <div className="space-y-2" onClick={() => setIsNavOpen(!isNavOpen)}>
-            <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-            <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-            <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+            <span className="block h-0.5 w-8 bg-black"></span>
+            <span className="block h-0.5 w-8 bg-black"></span>
+            <span className="block h-0.5 w-8 bg-black"></span>
           </div>
 
           <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}>
@@ -26,7 +26,7 @@ const HamburgerBar = () => {
               onClick={() => setIsNavOpen(false)}
             >
               <svg
-                className="h-8 w-8 text-gray-600"
+                className="h-8 w-8 text-black"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"

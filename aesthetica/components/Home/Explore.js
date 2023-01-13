@@ -54,6 +54,7 @@ const Explore = () => {
       <ExploreSlider
         roomsClicked={roomsClicked}
         categoriesClicked={categoriesClicked}
+        offersClicked={offersClicked}
       />
       <div className="flex justify-center mb-10">
         <Link href="/store">

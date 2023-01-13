@@ -12,8 +12,9 @@ import { SlArrowRight, SlArrowLeft } from "react-icons/sl";
 
 import { exploreRooms, exploreCategories } from "../../constants/Explore";
 import ExploreItem from "./ExploreItem";
+import ExploreItemMobile from "./ExploreItemMobile";
 
-const ExploreSlider = ({ roomsClicked, categoriesClicked }) => {
+const ExploreSlider = ({ roomsClicked, categoriesClicked, offersClicked }) => {
   return (
     <div className="container mx-auto">
       <div className="flex items-center justify-center w-full h-full py-12 sm:py-8 px-4">
@@ -53,6 +54,16 @@ const ExploreSlider = ({ roomsClicked, categoriesClicked }) => {
                       />
                     ))}
                   {categoriesClicked &&
+                    exploreCategories.map(({ label, image, path, index }) => (
+                      <ExploreItem
+                        label={label}
+                        image={image}
+                        path={path}
+                        index={index}
+                        key={label}
+                      />
+                    ))}
+                  {offersClicked &&
                     exploreCategories.map(({ label, image, path, index }) => (
                       <ExploreItem
                         label={label}
@@ -103,43 +114,33 @@ const ExploreSlider = ({ roomsClicked, categoriesClicked }) => {
                 >
                   {roomsClicked &&
                     exploreRooms.map(({ label, image, path, index }) => (
-                      <Slide index={index} key={label}>
-                        <div className="flex flex-col flex-shrink-0 relative">
-                          <Link href={`/store/${path}`}>
-                            <Image
-                              src={image}
-                              alt={label}
-                              width="240"
-                              className="object-cover object-center w-full"
-                            />{" "}
-                          </Link>
-                          <Link href={`/store/${path}`}>
-                            <button className="text-black text-xl text-normal">
-                              <p>{label}</p>
-                            </button>
-                          </Link>
-                        </div>
-                      </Slide>
+                      <ExploreItemMobile
+                        label={label}
+                        image={image}
+                        path={path}
+                        index={index}
+                        key={label}
+                      />
                     ))}
                   {categoriesClicked &&
                     exploreCategories.map(({ label, image, path, index }) => (
-                      <Slide index={index} key={label}>
-                        <div className="flex flex-col flex-shrink-0 relative">
-                          <Link href={`/store/${path}`}>
-                            <Image
-                              src={image}
-                              alt={label}
-                              width="240"
-                              className="object-cover object-center w-full"
-                            />
-                          </Link>
-                          <Link href={`/store/${path}`}>
-                            <button className="text-black text-xl text-normal">
-                              <p>{label}</p>
-                            </button>
-                          </Link>
-                        </div>
-                      </Slide>
+                      <ExploreItemMobile
+                        label={label}
+                        image={image}
+                        path={path}
+                        index={index}
+                        key={label}
+                      />
+                    ))}
+                  {offersClicked &&
+                    exploreCategories.map(({ label, image, path, index }) => (
+                      <ExploreItemMobile
+                        label={label}
+                        image={image}
+                        path={path}
+                        index={index}
+                        key={label}
+                      />
                     ))}
                 </div>
               </Slider>
