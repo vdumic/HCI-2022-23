@@ -43,7 +43,7 @@ const HamburgerBar = () => {
                 <Link href={path} key={label} passHref>
                   <li
                     key={label}
-                    className={`font-bold text-lg px-5 py-2 rounded-md whitespace-nowrap hover:bg-bckgrnd-dark hover:bg-opacity-50 hover:text-black cursor-pointer ${
+                    className={`font-bold text-lg px-5 py-2 my-1 rounded-md whitespace-nowrap hover:bg-bckgrnd-dark hover:bg-opacity-50 hover:text-black cursor-pointer ${
                       currentPage === path
                         ? " bg-bckgrnd-dark bg-opacity-60"
                         : ""
@@ -53,6 +53,30 @@ const HamburgerBar = () => {
                   </li>
                 </Link>
               ))}
+              <Link href="/login" key="Login" passHref>
+                <li
+                  key="Login"
+                  className={`font-bold text-lg px-5 py-2 my-1 rounded-md whitespace-nowrap hover:bg-bckgrnd-dark hover:bg-opacity-50 hover:text-black cursor-pointer ${
+                    currentPage === "/login"
+                      ? " bg-bckgrnd-dark bg-opacity-60"
+                      : ""
+                  }`}
+                >
+                  Login
+                </li>
+              </Link>
+              <Link href="/shopping_cart" key="Shopping cart" passHref>
+                <li
+                  key="Cart"
+                  className={`font-bold text-lg px-5 py-2 my-1 rounded-md whitespace-nowrap hover:bg-bckgrnd-dark hover:bg-opacity-50 hover:text-black cursor-pointer ${
+                    currentPage === "/shopping_cart"
+                      ? " bg-bckgrnd-dark bg-opacity-60"
+                      : ""
+                  }`}
+                >
+                  Shopping cart
+                </li>
+              </Link>
             </ul>
           </div>
         </section>
