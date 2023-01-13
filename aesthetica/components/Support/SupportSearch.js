@@ -2,7 +2,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 
 const SupportSearch = () => {
   return (
-    <div className="flex items-center max-w-xl mx-auto bg-white my-16">
+    <div className="flex items-center md:max-w-xl mx-auto bg-white md:my-16 sm:my-8 sm:w-4/6">
       <input
         type="search"
         id="support-search"
