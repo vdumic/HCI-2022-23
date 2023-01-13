@@ -7,6 +7,10 @@ const Categories = () => {
       <div className="flex justify-center mt-10">
         <ExploreSlider roomsClicked={true} />
       </div>
+      <p className="font-bold text-3xl sm:text-2xl">Choose category:</p>
+      <div className="flex justify-center mt-10">
+        <ExploreSlider categoriesClicked={true} />
+      </div>
     </div>
   );
 };
