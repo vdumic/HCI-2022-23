@@ -8,9 +8,9 @@ const HighlightLeft = () => {
     <>
       <div className="sm:hidden">
         <Spacer />
-        <div className="flex justify-between max-w-full mx-28">
+        <div className="flex justify-between max-w-full">
           <div className="flex-col mx-24 my-8 w-1/5">
-            <p className="text-2xl ml-1 font-thin">Aesthetica Store</p>
+            <p className="text-2xl font-thin">Aesthetica Store</p>
             <p className="text-4xl font-semibold leading-tight mt-5">
               Add lightweight warmth to any bed with our premium linens.
             </p>
@@ -23,7 +23,7 @@ const HighlightLeft = () => {
         <Spacer />
         <div className="flex max-w-full">
           <div className="flex-col mx-8 my-8 w-full">
-            <p className="text-2xl ml-1 font-thin">Aesthetica Store</p>
+            <p className="text-2xl font-thin">Aesthetica Store</p>
             <p className="text-2xl font-semibold leading-tight my-5">
               Add lightweight warmth to any bed with our premium linens.
             </p>

@@ -15,9 +15,9 @@ const HamburgerBar = () => {
       <nav>
         <section className="flex">
           <div className="space-y-2" onClick={() => setIsNavOpen(!isNavOpen)}>
-            <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-            <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-            <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+            <span className="block h-0.5 w-8 bg-black"></span>
+            <span className="block h-0.5 w-8 bg-black"></span>
+            <span className="block h-0.5 w-8 bg-black"></span>
           </div>
 
           <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}>
@@ -26,7 +26,7 @@ const HamburgerBar = () => {
               onClick={() => setIsNavOpen(false)}
             >
               <svg
-                className="h-8 w-8 text-gray-600"
+                className="h-8 w-8 text-black"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -43,7 +43,7 @@ const HamburgerBar = () => {
                 <Link href={path} key={label} passHref>
                   <li
                     key={label}
-                    className={`font-bold text-lg px-5 py-2 rounded-md whitespace-nowrap hover:bg-bckgrnd-dark hover:bg-opacity-50 hover:text-black cursor-pointer ${
+                    className={`font-bold text-lg px-5 py-2 my-1 rounded-md whitespace-nowrap hover:bg-bckgrnd-dark hover:bg-opacity-50 hover:text-black cursor-pointer ${
                       currentPage === path
                         ? " bg-bckgrnd-dark bg-opacity-60"
                         : ""
@@ -53,6 +53,30 @@ const HamburgerBar = () => {
                   </li>
                 </Link>
               ))}
+              <Link href="/login" key="Login" passHref>
+                <li
+                  key="Login"
+                  className={`font-bold text-lg px-5 py-2 my-1 rounded-md whitespace-nowrap hover:bg-bckgrnd-dark hover:bg-opacity-50 hover:text-black cursor-pointer ${
+                    currentPage === "/login"
+                      ? " bg-bckgrnd-dark bg-opacity-60"
+                      : ""
+                  }`}
+                >
+                  Login
+                </li>
+              </Link>
+              <Link href="/shopping_cart" key="Shopping cart" passHref>
+                <li
+                  key="Cart"
+                  className={`font-bold text-lg px-5 py-2 my-1 rounded-md whitespace-nowrap hover:bg-bckgrnd-dark hover:bg-opacity-50 hover:text-black cursor-pointer ${
+                    currentPage === "/shopping_cart"
+                      ? " bg-bckgrnd-dark bg-opacity-60"
+                      : ""
+                  }`}
+                >
+                  Shopping cart
+                </li>
+              </Link>
             </ul>
           </div>
         </section>

@@ -5,7 +5,7 @@ import { SlArrowRight } from "react-icons/sl";
 
 const ExploreItem = ({ label, image, path, index }) => {
   return (
-    <Slide index={index}>
+    <Slide index={index} key={label} className="sm:hidden">
       <div className="flex flex-shrink-0 relative w-full sm:w-auto">
         <Link href={`/store/${path}`}>
           <Image
