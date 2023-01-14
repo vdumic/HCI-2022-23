@@ -14,7 +14,7 @@ const Steps = () => {
     });
   }, [activeStepIndex]);
   return (
-    <div className="w-3/5 flex flex-row items-center justify-center px-32 pt-14 pb-12">
+    <div className="w-3/5 sm:w-3/4 flex flex-row items-center justify-center md:px-32 pt-14 pb-12">
       <div className="stepper-item w-12 h-12 text-center pt-2 font-medium border-2 rounded-full">
         1
       </div>

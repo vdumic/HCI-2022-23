@@ -39,7 +39,7 @@ const UserInfo = () => {
       }}
     >
       <Form className="flex flex-col w-full justify-center items-center">
-        <div className="flex w-1/4 justify-between">
+        <div className="flex md:w-1/4 justify-between sm:w-full sm:px-8">
           <div className="flex flex-col items-start mb-6">
             <label className="font-medium text-black">Name:</label>
             <Field name="name" className="border-2 py-2" />
@@ -53,20 +53,20 @@ const UserInfo = () => {
           </div>
         </div>
 
-        <div className="flex flex-col w-1/4 items-start mb-2">
+        <div className="flex flex-col md:w-1/4 items-start mb-2 sm:w-full sm:px-8">
           <label className="font-medium text-black">Phone number:</label>
           <Field name="phone" className="border-2 py-2 w-full" />
         </div>
         <ErrorMessage name="phone" render={renderError} />
 
-        <div className="flex flex-col w-1/4 items-start mb-6">
-          <p className="text-2xl my-4">Shipping information:</p>
+        <div className="flex flex-col md:w-1/4 sm:w-full sm:px-8 items-start mb-6">
+          <p className="text-2xl mt-8 mb-4">Shipping information:</p>
           <label className="font-medium text-black">Street:</label>
           <Field name="street" className="border-2 py-2 w-full" />
         </div>
         <ErrorMessage name="street" render={renderError} />
 
-        <div className="flex w-1/4 justify-between">
+        <div className="flex md:w-1/4 justify-between sm:w-full sm:px-8">
           <div className="flex flex-col items-start mb-2">
             <label className="font-medium text-black">City:</label>
             <Field name="city" className="border-2 py-2" />
