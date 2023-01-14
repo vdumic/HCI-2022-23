@@ -6,8 +6,6 @@ import {
   ButtonNext,
 } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
-import Image from "next/image";
-import Link from "next/link";
 import { SlArrowRight, SlArrowLeft } from "react-icons/sl";
 
 import { exploreRooms, exploreCategories } from "../../constants/Explore";

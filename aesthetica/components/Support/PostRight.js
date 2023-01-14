@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Test from "../../assets/support2.png";
+import Test from "../../public/assets/support2.png";
 import Spacer from "../Spacer";
 import MainButton from "../MainButton";
 
