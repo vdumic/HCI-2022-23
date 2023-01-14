@@ -4,9 +4,9 @@ import SupportCard from "../../components/Support/SupportCard";
 import PostRight from "../../components/Support/PostRight";
 import PostLeft from "../../components/Support/PostLeft";
 
-import ShippingIcon from "../../assets/shipping_icon.png";
-import ReturnIcon from "../../assets/return_icon.png";
-import BuildIcon from "../../assets/build_icon.png";
+import ShippingIcon from "../../public/assets/support/support1.png";
+import ReturnIcon from "../../public/assets/support/support2.png";
+import BuildIcon from "../../public/assets/support/support3.png";
 
 const Support = () => {
   return (
