@@ -1,7 +1,7 @@
 import Post from "../../components/Blog/Post/Post";
 import HeaderFooterLayout from "../../layouts/HeaderFooterLayout";
 
-import Image from "../../assets/blog1.png";
+import Image from "../../public/assets/blog1.png";
 
 const BlogPost = () => {
   return (

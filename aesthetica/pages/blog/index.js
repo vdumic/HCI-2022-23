@@ -6,10 +6,10 @@ import MediumPost from "../../components/Blog/MediumPost";
 import SmallPost from "../../components/Blog/SmallPost";
 import PostMobile from "../../components/Blog/PostMobile";
 
-import Image1 from "../../assets/blog1.png";
-import Image2 from "../../assets/blog2.png";
-import Image3 from "../../assets/blog3.png";
-import Image4 from "../../assets/blog4.png";
+import Image1 from "../../public/assets/blog1.png";
+import Image2 from "../../public/assets/blog2.png";
+import Image3 from "../../public/assets/blog3.png";
+import Image4 from "../../public/assets/blog4.png";
 
 const Blog = () => {
   return (

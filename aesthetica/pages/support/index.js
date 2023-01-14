@@ -8,7 +8,7 @@ import ShippingIcon from "../../public/assets/support/support1.png";
 import ReturnIcon from "../../public/assets/support/support2.png";
 import BuildIcon from "../../public/assets/support/support3.png";
 
-const Support = ({ images }) => {
+const Support = () => {
   return (
     <HeaderFooterLayout title="Aesthetica / Support">
       <div className="container flex sm:flex-col justify-center mx-auto mt-8">

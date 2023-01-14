@@ -3,6 +3,7 @@ import HeaderFooterLayout from "../../layouts/HeaderFooterLayout";
 import StepCounter from "../../components/SignUp/StepCounter";
 import DisplayedStep from "../../components/SignUp/DisplayedStep";
 import Success from "../../components/SignUp/Forms/Success";
+
 export const FormContext = createContext();
 
 const SignUp = () => {
