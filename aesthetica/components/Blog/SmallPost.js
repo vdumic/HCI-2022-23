@@ -4,16 +4,12 @@ import SmallButton from "./SmallButton";
 const SmallPost = ({ title, date, image }) => {
   return (
     <div className="bg-blog mt-10">
-      <Image alt="post" src={image} height="400" className="h-3/4 w-full" />
-      <div className="flex justify-between">
-        <div className="m-5  w-3/5">
-          <p className="text-4xl font-semibold">{title}</p>
-          <p className="text-blog-text text-xl font-semibold my-5">{date}</p>
+      <Image alt="post" src={image} height="400" className="h-[220px]" />
+        <div className="mt-5 mx-5">
+          <p className="text-blog-text text-lg font-semibold">{date}</p>
+          <p className="text-2xl mt-2 mb-5 font-semibold">{title}</p>
         </div>
-        <div className="m-auto">
-          <SmallButton title="Read more" link="/blog/blog_post" />
-        </div>
-      </div>
+          
     </div>
   );
 };
