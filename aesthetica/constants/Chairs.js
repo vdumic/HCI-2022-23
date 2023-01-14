@@ -1,9 +1,9 @@
-import Chair1 from "../assets/chair1.png";
-import Chair2 from "../assets/chair2.png";
-import Chair3 from "../assets/chair3.png";
-import Chair4 from "../assets/chair4.png";
-import Chair5 from "../assets/chair5.png";
-import Chair6 from "../assets/chair6.png";
+import Chair1 from "../public/assets/chair1.png";
+import Chair2 from "../public/assets/chair2.png";
+import Chair3 from "../public/assets/chair3.png";
+import Chair4 from "../public/assets/chair4.png";
+import Chair5 from "../public/assets/chair5.png";
+import Chair6 from "../public/assets/chair6.png";
 
 export const chairs = [
   {

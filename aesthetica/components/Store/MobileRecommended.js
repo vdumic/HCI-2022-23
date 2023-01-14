@@ -1,9 +1,9 @@
 import Image from "next/image";
 
-import Recommended1 from "../../assets/recommended1.jpg";
-import Recommended2 from "../../assets/recommended2.jpg";
-import Recommended3 from "../../assets/recommended3.jpg";
-import Recommended4 from "../../assets/recommended4.jpg";
+import Recommended1 from "../../public/assets/recommended1.jpg";
+import Recommended2 from "../../public/assets/recommended2.jpg";
+import Recommended3 from "../../public/assets/recommended3.jpg";
+import Recommended4 from "../../public/assets/recommended4.jpg";
 
 const MobileRecommended = () => {
   return (
