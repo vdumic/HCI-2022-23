@@ -5,12 +5,15 @@ import MainImage from "../../public/home/main_image.png";
 const MainPageImage = () => {
   return (
     <div>
-      <div className="flex items-center max-w-full mx-28 mt-6 mb-10 sm:justify-between sm:mx-8">
-        <div className="flex-col w-6/12">
-          <h1 className="text-8xl font-semibold sm:text-4xl">home of the</h1>
-          <h1 className="text-8xl font-semibold sm:text-4xl">furniture.</h1>
+      <div className="grid md:grid-cols-2 items-center ml-24 mr-16 mt-6 mb-10 sm:mx-8">
+        <div className="grid sm:order-2">
+          <h1 className="text-8xl sm:hidden font-semibold">home of the</h1>
+          <h1 className="text-8xl sm:hidden font-semibold">furniture.</h1>
+          <h1 className="md:hidden font-semibold text-6xl text-center leading-none pt-5">
+            home of the furniture.
+          </h1>
         </div>
-        <div className="w-6/12 h-full">
+        <div className="grid sm:order-1">
           <Image src={MainImage} width="540" height="400" alt="Main image" />
         </div>
       </div>
