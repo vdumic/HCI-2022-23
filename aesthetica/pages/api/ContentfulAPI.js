@@ -17,7 +17,6 @@ export const getAllRooms = async () => {
                     url
                   }
                   path
-                  index
                 }
               }
         }`,
@@ -36,4 +35,37 @@ export const getAllRooms = async () => {
 
   const data = response.data.data;
   return data.roomCollection.items;
+};
+
+export const getAllCategories = async () => {
+  const response = await instance
+    .post(
+      "",
+      {
+        query: `{
+            categoryCollection {
+                items {
+                  label
+                  image {
+                    url
+                  }
+                  path
+                }
+              }
+        }`,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + process.env.CONTENTFUL_ACCESS_TOKEN,
+        },
+      }
+    )
+    .catch(() => null);
+
+  // U slucaju greske, vraca se prazan objekt
+  if (!response) return {};
+
+  const data = response.data.data;
+  return data.categoryCollection.items;
 };

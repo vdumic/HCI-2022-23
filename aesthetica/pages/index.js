@@ -4,13 +4,16 @@ import HighlightLeft from "../components/Home/HighlightLeft";
 import HighlightRight from "../components/Home/HighlightRight";
 import Explore from "../components/Home/Explore";
 
-import { getAllRooms } from "./api/ContentfulAPI";
+import { getAllCategories, getAllRooms } from "./api/ContentfulAPI";
 
-const Home = ({ exploreRooms }) => {
+const Home = ({ exploreRooms, exploreCategories }) => {
   return (
     <HeaderFooterLayout title="Aesthetica / Home">
       <MainPageImage />
-      <Explore exploreRooms={exploreRooms} />
+      <Explore
+        exploreRooms={exploreRooms}
+        exploreCategories={exploreCategories}
+      />
       <HighlightLeft />
       <HighlightRight />
     </HeaderFooterLayout>
@@ -21,8 +24,9 @@ export default Home;
 
 export async function getStaticProps() {
   const exploreRooms = await getAllRooms();
+  const exploreCategories = await getAllCategories();
 
   return {
-    props: { exploreRooms: exploreRooms },
+    props: { exploreRooms: exploreRooms, exploreCategories: exploreCategories },
   };
 }

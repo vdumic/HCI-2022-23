@@ -7,7 +7,6 @@ import {
 import "pure-react-carousel/dist/react-carousel.es.css";
 import { SlArrowRight, SlArrowLeft } from "react-icons/sl";
 
-import { exploreCategories } from "../../constants/Explore";
 import ExploreItem from "./ExploreItem";
 import ExploreItemMobile from "./ExploreItemMobile";
 
@@ -16,6 +15,7 @@ const ExploreSlider = ({
   categoriesClicked,
   offersClicked,
   exploreRooms,
+  exploreCategories,
 }) => {
   return (
     <div className="container mx-auto">
@@ -51,28 +51,25 @@ const ExploreSlider = ({
                         label={room.label}
                         image={room.image}
                         path={room.path}
-                        index={room.index}
                         key={room.label}
                       />
                     ))}
                   {categoriesClicked &&
-                    exploreCategories.map(({ label, image, path, index }) => (
+                    exploreCategories.map((category) => (
                       <ExploreItem
-                        label={label}
-                        image={image}
-                        path={path}
-                        index={index}
-                        key={label}
+                        label={category.label}
+                        image={category.image}
+                        path={category.path}
+                        key={category.label}
                       />
                     ))}
                   {offersClicked &&
-                    exploreCategories.map(({ label, image, path, index }) => (
+                    exploreCategories.map((offer) => (
                       <ExploreItem
-                        label={label}
-                        image={image}
-                        path={path}
-                        index={index}
-                        key={label}
+                        label={offer.label}
+                        image={offer.image}
+                        path={offer.path}
+                        key={offer.label}
                       />
                     ))}
                 </div>

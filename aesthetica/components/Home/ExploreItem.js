@@ -3,9 +3,9 @@ import Image from "next/image";
 import { Slide } from "pure-react-carousel";
 import { SlArrowRight } from "react-icons/sl";
 
-const ExploreItem = ({ label, image, path, index }) => {
+const ExploreItem = ({ label, image, path }) => {
   return (
-    <Slide index={index} key={label} className="sm:hidden">
+    <Slide key={label} className="sm:hidden">
       <div className="flex flex-shrink-0 relative w-full sm:w-auto">
         <Link href={`/store/${path}`}>
           <Image
