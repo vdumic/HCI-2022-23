@@ -102,3 +102,102 @@ export const getSupportCards = async () => {
   const data = response.data.data;
   return data.supportCardCollection.items;
 };
+
+export const getAllPostSlugs = async () => {
+  const response = await instance
+    .post(
+      "",
+      {
+        query: `{
+          blogPostCollection {
+            items {
+              slug
+            }
+          }
+        }`,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + process.env.CONTENTFUL_ACCESS_TOKEN,
+        },
+      }
+    )
+    .catch(() => null);
+
+  // U slucaju greske, vraca se prazna lista
+  if (!response) return [];
+
+  const data = response.data.data;
+  return data.blogPostCollection.items;
+};
+
+export const getAllPosts = async () => {
+  const response = await instance
+    .post(
+      "",
+      {
+        query: `{
+          blogPostCollection {
+            total
+            items {
+              title
+              slug
+              content {
+                json
+              }
+              date
+              image{
+                  url
+              }
+            }
+          }
+        }`,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + process.env.CONTENTFUL_ACCESS_TOKEN,
+        },
+      }
+    )
+    .catch(() => null);
+
+  if (!response) return {};
+
+  const data = response.data.data;
+  return data.blogPostCollection.items;
+};
+
+export const getPostBySlug = async (slug) => {
+  const response = await instance.post(
+    "",
+    {
+      query: `query{
+        blogPostCollection(where: {
+        slug: "${slug}"
+      }){
+        items{
+          title
+          content {
+            json
+          }
+          date
+          image{
+            url
+          }
+        }
+      }
+    }`,
+    },
+    {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    }
+  );
+  // Add error handling
+  const data = response.data.data;
+  return data.blogPostCollection.items[0];
+};

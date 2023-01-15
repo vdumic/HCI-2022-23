@@ -16,7 +16,7 @@ const SupportCard = ({ image, title, label }) => {
         <p className="font-bold text-4xl m-6">{label}</p>
         <SupportButton title={title} link="/under_construction" />
       </div>
-      <div className="h-60 bg-white mb-4 md:hidden">
+      <div className="h-56 bg-white mb-4 md:hidden">
         <Image
           src={image.url}
           height="100"
@@ -25,7 +25,7 @@ const SupportCard = ({ image, title, label }) => {
           className="m-6"
         />
         <Link href="/under_construction">
-          <p className="font-bold text-4xl m-6">{label}</p>
+          <p className="font-bold text-3xl mx-6">{label}</p>
         </Link>
       </div>
     </>
