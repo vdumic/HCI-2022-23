@@ -1,18 +1,22 @@
 import {
   CarouselProvider,
   Slider,
-  Slide,
   ButtonBack,
   ButtonNext,
 } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import { SlArrowRight, SlArrowLeft } from "react-icons/sl";
 
-import { exploreRooms, exploreCategories } from "../../constants/Explore";
+import { exploreCategories } from "../../constants/Explore";
 import ExploreItem from "./ExploreItem";
 import ExploreItemMobile from "./ExploreItemMobile";
 
-const ExploreSlider = ({ roomsClicked, categoriesClicked, offersClicked }) => {
+const ExploreSlider = ({
+  roomsClicked,
+  categoriesClicked,
+  offersClicked,
+  exploreRooms,
+}) => {
   return (
     <div className="container mx-auto">
       <div className="flex items-center justify-center w-full h-full py-12 sm:py-8 px-4">
@@ -21,7 +25,7 @@ const ExploreSlider = ({ roomsClicked, categoriesClicked, offersClicked }) => {
           className="sm:hidden"
           naturalSlideWidth={100}
           isIntrinsicHeight={true}
-          totalSlides={5}
+          totalSlides={exploreRooms.length}
           visibleSlides={3}
           step={1}
           infinite={true}
@@ -42,13 +46,13 @@ const ExploreSlider = ({ roomsClicked, categoriesClicked, offersClicked }) => {
                   className="h-full flex md:gap-8 gap-14 items-center justify-start transition ease-out duration-700"
                 >
                   {roomsClicked &&
-                    exploreRooms.map(({ label, image, path, index }) => (
+                    exploreRooms.map((room) => (
                       <ExploreItem
-                        label={label}
-                        image={image}
-                        path={path}
-                        index={index}
-                        key={label}
+                        label={room.label}
+                        image={room.image}
+                        path={room.path}
+                        index={room.index}
+                        key={room.label}
                       />
                     ))}
                   {categoriesClicked &&

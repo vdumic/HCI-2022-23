@@ -9,9 +9,10 @@ const ExploreItem = ({ label, image, path, index }) => {
       <div className="flex flex-shrink-0 relative w-full sm:w-auto">
         <Link href={`/store/${path}`}>
           <Image
-            src={image}
+            src={image.url}
             alt={label}
-            height="240"
+            height="300"
+            width="600"
             className="object-cover object-center"
           />
           <button className="flex justify-center text-black text-xl text-normal py-4">

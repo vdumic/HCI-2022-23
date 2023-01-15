@@ -5,7 +5,7 @@ import { SlArrowRight } from "react-icons/sl";
 import ExploreSlider from "./ExploreSlider";
 import ExploreButton from "./ExploreButton";
 
-const Explore = () => {
+const Explore = ({ exploreRooms }) => {
   const [roomsClicked, setRoomsClicked] = useState(true);
   const [categoriesClicked, setCategoriesClicked] = useState(false);
   const [offersClicked, setOffersClicked] = useState(false);
@@ -55,6 +55,7 @@ const Explore = () => {
         roomsClicked={roomsClicked}
         categoriesClicked={categoriesClicked}
         offersClicked={offersClicked}
+        exploreRooms={exploreRooms}
       />
       <div className="flex justify-center mb-10">
         <Link href="/store">
