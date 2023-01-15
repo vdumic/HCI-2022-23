@@ -2,14 +2,15 @@ import Link from "next/link";
 import Image from "next/image";
 import { Slide } from "pure-react-carousel";
 
-const ExploreItemMobile = ({ label, image, path, index }) => {
+const ExploreItemMobile = ({ label, image, path }) => {
   return (
-    <Slide index={index} key={label}>
+    <Slide key={label}>
       <div className="flex flex-col flex-shrink-0 relative">
         <Link href={`/store/${path}`}>
           <Image
-            src={image}
+            src={image.url}
             alt={label}
+            height="100"
             width="240"
             className="object-cover object-center w-full"
           />

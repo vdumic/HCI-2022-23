@@ -20,7 +20,7 @@ const Footer = () => {
               <ul>
                 <li>
                   <Link
-                    href="/"
+                    href="/support"
                     className="cursor-pointer text-lg mb-2 inline-block leading-8"
                   >
                     Returns & Refunds
@@ -28,7 +28,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="/"
+                    href="/under_construction"
                     className="cursor-pointer text-lg mb-2 inline-block leading-8"
                   >
                     Payment Options
@@ -36,7 +36,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="/"
+                    href="/support"
                     className="cursor-pointer text-lg mb-2 inline-block leading-8"
                   >
                     Order Status
@@ -44,7 +44,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="/"
+                    href="/about"
                     className="cursor-pointer text-lg mb-2 inline-block leading-8"
                   >
                     Store Locations
@@ -59,7 +59,7 @@ const Footer = () => {
               <ul>
                 <li>
                   <Link
-                    href="/"
+                    href="/about"
                     className="cursor-pointer text-lg mb-2 inline-block leading-8"
                   >
                     Contact Us
@@ -67,7 +67,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="/"
+                    href="/under_construction"
                     className="cursor-pointer text-lg mb-2 inline-block leading-8"
                   >
                     Careers
@@ -75,7 +75,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="/"
+                    href="/under_construction"
                     className="cursor-pointer text-lg mb-2 inline-block leading-8"
                   >
                     Environment
@@ -83,7 +83,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="/"
+                    href="/under_construction"
                     className="cursor-pointer text-lg mb-2 inline-block leading-8"
                   >
                     Terms & Conditions

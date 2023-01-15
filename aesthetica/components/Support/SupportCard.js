@@ -7,7 +7,7 @@ const SupportCard = ({ image, title, label }) => {
     <>
       <div className="h-96 w-96  bg-white mx-14 sm:hidden">
         <Image
-          src={image}
+          src={image.url}
           height="100"
           width="100"
           alt={title}
