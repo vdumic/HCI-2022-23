@@ -5,7 +5,8 @@ import SupportButton from "./SupportButton.js";
 const SupportCard = ({ image, title, label }) => {
   return (
     <>
-      <div className="h-96 w-96  bg-white mx-14 sm:hidden">
+      <div className="w-1/4 bg-white mx-8 sm:hidden">
+        <div className="h-28">
         <Image
           src={image.url}
           height="100"
@@ -13,10 +14,11 @@ const SupportCard = ({ image, title, label }) => {
           alt={title}
           className="m-6"
         />
+        </div>
         <p className="font-bold text-4xl m-6">{label}</p>
         <SupportButton title={title} link="/under_construction" />
       </div>
-      <div className="h-56 bg-white mb-4 md:hidden">
+      <div className="h-full bg-white mb-4 md:hidden">
         <Image
           src={image.url}
           height="100"
@@ -27,6 +29,7 @@ const SupportCard = ({ image, title, label }) => {
         <Link href="/under_construction">
           <p className="font-bold text-3xl mx-6">{label}</p>
         </Link>
+        <SupportButton title={title} link="/under_construction" />
       </div>
     </>
   );
