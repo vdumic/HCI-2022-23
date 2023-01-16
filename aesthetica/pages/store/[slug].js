@@ -10,17 +10,17 @@ import { getAllProductsByRoom, getAllRoomSlugs } from "../api/ContentfulAPI";
 const StorePage = ({ products }) => {
   return (
     <HeaderFooterLayout title="Aesthetica / Store">
-      <div className="flex justify-start max-w-full mx-28 my-10">
+      <div className="flex justify-start max-w-full mx-24 sm:mx-8 md:my-10 sm:my-6">
         <Link href={`/store/${products[0].room}`}>
-          <p className="font-bold text-3xl text-[#777777]">
+          <p className="font-bold sm:text-2xl text-3xl text-[#777777]">
             {products[0].room}
           </p>
         </Link>
-        <AiOutlineRight className="h-7 w-7 sm:inline pt-3" />
-        <p className="font-bold text-3xl">{products[0].category}</p>
+        <AiOutlineRight className="h-7 w-7 sm:inline sm:w-5 sm:h-5 md:mt-1 sm:mt-2" />
+        <p className="font-bold sm:text-2xl text-3xl">{products[0].category}</p>
       </div>
       <StoreSearch />
-      <div className="flex justify-evenly mx-28 my-10">
+      <div className="flex justify-evenly sm:mx-8 mx-24 my-10">
         <ItemsList products={products} />
       </div>
       <div className="flex justify-center my-10">

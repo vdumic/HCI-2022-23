@@ -2,7 +2,7 @@ import Item from "./Item";
 
 const ItemsList = ({ products }) => {
   return (
-    <div className="grid grid-cols-3">
+    <div className="grid grid-cols-3 sm:grid-cols-1">
       {products.map((product) => (
         <Item
           name={product.title}
