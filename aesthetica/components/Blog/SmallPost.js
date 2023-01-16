@@ -13,7 +13,7 @@ const SmallPost = ({ title, date, image, path }) => {
       />
       <div className="mt-5 mx-5">
         <p className="text-blog-text text-lg font-semibold">{date}</p>
-        <p className="text-2xl mt-2 mb-5 font-semibold">
+        <p className="text-2xl mt-2 mb-5 font-semibold hover:text-gray-800">
           <Link href={`/blog/${path}`}>{title}</Link>
         </p>
       </div>
