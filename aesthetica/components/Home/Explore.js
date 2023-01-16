@@ -32,7 +32,7 @@ const Explore = ({ exploreRooms, exploreCategories }) => {
   };
 
   return (
-    <div className="max-w-full mx-28 mt-10 sm:mx-8">
+    <div className="max-w-full mx-24 mt-10 sm:mx-8">
       <p className="font-bold text-3xl sm:text-2xl">Explore:</p>
       <div className="flex justify-start">
         <ExploreButton
