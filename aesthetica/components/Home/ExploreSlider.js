@@ -50,7 +50,7 @@ const ExploreSlider = ({
                       <ExploreItem
                         label={room.label}
                         image={room.image}
-                        path={room.path}
+                        path={room.slug}
                         key={room.label}
                       />
                     ))}

@@ -16,7 +16,7 @@ export const getAllRooms = async () => {
                   image {
                     url
                   }
-                  path
+                  slug
                 }
               }
         }`,
@@ -32,6 +32,35 @@ export const getAllRooms = async () => {
 
   // U slucaju greske, vraca se prazan objekt
   if (!response) return {};
+
+  const data = response.data.data;
+  return data.roomCollection.items;
+};
+
+export const getAllRoomSlugs = async () => {
+  const response = await instance
+    .post(
+      "",
+      {
+        query: `{
+          roomCollection {
+            items {
+              slug
+            }
+          }
+        }`,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + process.env.CONTENTFUL_ACCESS_TOKEN,
+        },
+      }
+    )
+    .catch(() => null);
+
+  // U slucaju greske, vraca se prazna lista
+  if (!response) return [];
 
   const data = response.data.data;
   return data.roomCollection.items;
@@ -200,4 +229,52 @@ export const getPostBySlug = async (slug) => {
   // Add error handling
   const data = response.data.data;
   return data.blogPostCollection.items[0];
+};
+
+export const getAllProductsByRoom = async (room) => {
+  const response = await instance
+    .post(
+      "",
+      {
+        query: `{
+          productCollection(where: {
+            room: "${room}"
+          }) {
+            items {
+              title
+              imagesCollection {
+                items {
+                  url
+                }
+              }
+              slug
+              description {
+                json
+              }
+              dimensions {
+                json
+              }
+              model{
+                  url
+              }
+              category
+              room
+              price
+            }
+          }
+        }`,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + process.env.CONTENTFUL_ACCESS_TOKEN,
+        },
+      }
+    )
+    .catch(() => null);
+
+  if (!response) return {};
+
+  const data = response.data.data;
+  return data.productCollection.items;
 };

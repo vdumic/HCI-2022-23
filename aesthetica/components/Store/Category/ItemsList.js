@@ -1,16 +1,16 @@
 import Item from "./Item";
-import { chairs } from "../../../constants/Chairs";
 
-const ItemsList = () => {
+const ItemsList = ({ products }) => {
   return (
     <div className="grid grid-cols-3">
-      {chairs.map(({ label, price, image, path }) => (
+      {products.map((product) => (
         <Item
-          name={label}
-          price={price}
-          image={image}
-          path={path}
-          key={label}
+          name={product.title}
+          price={product.price}
+          image={product.imagesCollection.items[0].url}
+          room={product.room}
+          path={product.slug}
+          key={product.slug}
         />
       ))}
     </div>
