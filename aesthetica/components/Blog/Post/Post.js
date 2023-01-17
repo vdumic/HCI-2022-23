@@ -19,7 +19,7 @@ const Post = ({ post }) => {
 
       {/* desktop blog post */}
 
-      <div className="sm:hidden col-span-4">
+      <div className="sm:hidden col-span-5">
         <p className="text-blog-text text-xl font-semibold mb-5">
           {post.date}
         </p>
