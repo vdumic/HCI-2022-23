@@ -24,7 +24,7 @@ const Blog = ({ blogPosts }) => {
       </div>
 
       <div className="desktop-blog sm:hidden">
-        <div className="grid grid-cols-12 mx-28 gap-x-10">
+        <div className="grid grid-cols-12 mx-24 gap-x-10">
           <div className="grid col-span-7">
             <BigPost
               title={blogPosts[0].title}
