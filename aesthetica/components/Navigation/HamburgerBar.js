@@ -88,7 +88,7 @@ const HamburgerBar = () => {
       .showMenuNav {
         display: block;
         position: absolute;
-        width: 60%;
+        width: 50%;
         height: 100vh;
         top: 0;
         right: 0;
@@ -98,6 +98,7 @@ const HamburgerBar = () => {
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
+        box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
       }
     `}</style>
     </div>
