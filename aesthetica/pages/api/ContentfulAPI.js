@@ -99,6 +99,39 @@ export const getAllCategories = async () => {
   return data.categoryCollection.items;
 };
 
+export const getFiveCategories = async () => {
+  const response = await instance
+    .post(
+      "",
+      {
+        query: `{
+            categoryCollection(limit: 5) {
+                items {
+                  label
+                  image {
+                    url
+                  }
+                  slug
+                }
+              }
+        }`,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + process.env.CONTENTFUL_ACCESS_TOKEN,
+        },
+      }
+    )
+    .catch(() => null);
+
+  // U slucaju greske, vraca se prazan objekt
+  if (!response) return {};
+
+  const data = response.data.data;
+  return data.categoryCollection.items;
+};
+
 export const getSupportCards = async () => {
   const response = await instance
     .post(
@@ -172,9 +205,7 @@ export const getAllPosts = async () => {
             items {
               title
               slug
-              content {
-                json
-              }
+              body
               date
               image{
                   url
