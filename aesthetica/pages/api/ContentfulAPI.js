@@ -78,7 +78,7 @@ export const getAllCategories = async () => {
                   image {
                     url
                   }
-                  path
+                  slug
                 }
               }
         }`,

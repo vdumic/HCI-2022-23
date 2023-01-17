@@ -59,7 +59,7 @@ const ExploreSlider = ({
                       <ExploreItem
                         label={category.label}
                         image={category.image}
-                        path={category.path}
+                        path={category.slug}
                         key={category.label}
                       />
                     ))}
@@ -68,7 +68,7 @@ const ExploreSlider = ({
                       <ExploreItem
                         label={offer.label}
                         image={offer.image}
-                        path={offer.path}
+                        path={offer.slug}
                         key={offer.label}
                       />
                     ))}

@@ -7,7 +7,12 @@ const BlogPost = ({ post }) => {
   return (
     <HeaderFooterLayout title="Aesthetica / Blog">
       <div className="flex justify-center my-10">
-        <Post title={post.title} date={post.date} image={post.image.url} />
+        <Post
+          title={post.title}
+          date={post.date}
+          image={post.image.url}
+          content={post.content}
+        />
       </div>
     </HeaderFooterLayout>
   );
