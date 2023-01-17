@@ -112,33 +112,30 @@ const ExploreSlider = ({
                   className="h-full w-full flex items-center justify-center transition ease-out duration-700"
                 >
                   {roomsClicked &&
-                    exploreRooms.map(({ label, image, path, index }) => (
+                    exploreRooms.map((room) => (
                       <ExploreItemMobile
-                        label={label}
-                        image={image}
-                        path={path}
-                        index={index}
-                        key={label}
+                        label={room.label}
+                        image={room.image}
+                        path={room.slug}
+                        key={room.label}
                       />
                     ))}
                   {categoriesClicked &&
-                    exploreCategories.map(({ label, image, path, index }) => (
+                    exploreCategories.map((category) => (
                       <ExploreItemMobile
-                        label={label}
-                        image={image}
-                        path={path}
-                        index={index}
-                        key={label}
+                        label={category.label}
+                        image={category.image}
+                        path={category.slug}
+                        key={category.label}
                       />
                     ))}
                   {offersClicked &&
-                    exploreCategories.map(({ label, image, path, index }) => (
+                    exploreCategories.map((offer) => (
                       <ExploreItemMobile
-                        label={label}
-                        image={image}
-                        path={path}
-                        index={index}
-                        key={label}
+                        label={offer.label}
+                        image={offer.image}
+                        path={offer.slug}
+                        key={offer.label}
                       />
                     ))}
                 </div>

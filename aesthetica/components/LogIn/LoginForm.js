@@ -8,8 +8,11 @@ const LoginForm = () => {
   );
 
   const ValidationSchema = yup.object().shape({
-    email: yup.string().email('Email not valid').required('mail is required'),
-    password: yup.string().min(8, 'Password is at least 8 characters').required('Password is required'),
+    email: yup.string().email("Email not valid").required("mail is required"),
+    password: yup
+      .string()
+      .min(8, "Password is at least 8 characters")
+      .required("Password is required"),
   });
 
   return (

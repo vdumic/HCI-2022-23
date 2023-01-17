@@ -12,7 +12,7 @@ const ExploreItemMobile = ({ label, image, path }) => {
             alt={label}
             height="100"
             width="240"
-            className="object-cover object-center w-full"
+            className="object-cover object-center w-full shadow-lg"
           />
         </Link>
         <Link href={`/store/${path}`}>

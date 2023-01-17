@@ -13,7 +13,7 @@ const ExploreItem = ({ label, image, path }) => {
             alt={label}
             height="300"
             width="600"
-            className="object-cover object-center"
+            className="object-cover object-center shadow-lg"
           />
           <button className="flex justify-center text-black text-xl text-normal py-4">
             <p>{label}</p>
