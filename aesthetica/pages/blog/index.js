@@ -1,5 +1,4 @@
-import { use, useState } from "react";
-import Link from "next/link";
+import { useState } from "react";
 import { SlArrowRight } from "react-icons/sl";
 import HeaderFooterLayout from "../../layouts/HeaderFooterLayout";
 import BigPost from "../../components/Blog/BigPost";

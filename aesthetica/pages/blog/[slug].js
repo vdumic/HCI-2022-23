@@ -37,6 +37,11 @@ export async function getStaticProps(context) {
   const { slug } = context.params;
   const post = await getPostBySlug(slug);
 
+  // post.mdxSource = await serialize(post.body);
+  // delete post.body;
+
+  // console.log(post.body);
+
   return {
     props: { post: post },
   };

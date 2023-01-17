@@ -205,7 +205,6 @@ export const getAllPosts = async () => {
             items {
               title
               slug
-              body
               date
               image{
                   url
@@ -239,9 +238,7 @@ export const getPostBySlug = async (slug) => {
       }){
         items{
           title
-          content {
-            json
-          }
+          body
           date
           image{
             url
