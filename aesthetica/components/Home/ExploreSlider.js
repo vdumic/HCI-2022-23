@@ -26,19 +26,27 @@ const ExploreSlider = ({
           naturalSlideWidth={100}
           isIntrinsicHeight={true}
           totalSlides={exploreRooms.length}
-          visibleSlides={3}
+          visibleSlides={5}
           step={1}
           infinite={true}
         >
+          <ButtonBack
+            role="button"
+            aria-label="slide backward"
+            className="absolute z-30 left-0 ml-14 mt-14"
+            id="prev"
+          >
+            <SlArrowLeft className="h-7 w-7 cursor-pointer" />
+          </ButtonBack>
+          <ButtonNext
+            role="button"
+            aria-label="slide forward"
+            className="absolute right-0 mt-14 mr-14"
+            id="next"
+          >
+            <SlArrowRight className="h-7 w-7 cursor-pointer" />
+          </ButtonNext>
           <div className="w-full relative flex items-center justify-center">
-            <ButtonBack
-              role="button"
-              aria-label="slide backward"
-              className="absolute z-30 left-0 ml-8"
-              id="prev"
-            >
-              <SlArrowLeft className="h-7 w-7 cursor-pointer" />
-            </ButtonBack>
             <div className="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden">
               <Slider>
                 <div
@@ -75,14 +83,6 @@ const ExploreSlider = ({
                 </div>
               </Slider>
             </div>
-            <ButtonNext
-              role="button"
-              aria-label="slide forward"
-              className="absolute z-30 right-0 mr-8"
-              id="next"
-            >
-              <SlArrowRight className="h-7 w-7 cursor-pointer" />
-            </ButtonNext>
           </div>
         </CarouselProvider>
 
