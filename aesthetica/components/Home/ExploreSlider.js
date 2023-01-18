@@ -88,7 +88,7 @@ const ExploreSlider = ({
 
         {/* Carousel for mobile and Small size Devices */}
         <CarouselProvider
-          className="md:hidden"
+          className="md:hidden lg:hidden"
           naturalSlideWidth={100}
           isIntrinsicHeight={true}
           totalSlides={exploreRooms.length}

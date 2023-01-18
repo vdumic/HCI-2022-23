@@ -11,7 +11,7 @@ const HamburgerBar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
-    <div className="flex items-center justify-between md:hidden">
+    <div className="flex items-center justify-between md:hidden lg:hidden">
       <nav>
         <section className="flex">
           <div className="space-y-2" onClick={() => setIsNavOpen(!isNavOpen)}>

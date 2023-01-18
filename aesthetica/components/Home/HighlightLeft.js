@@ -6,7 +6,7 @@ import MainButton from "../MainButton";
 const HighlightLeft = () => {
   return (
     <>
-      <div className="sm:hidden">
+      <div className="sm:hidden md:hidden">
         <Spacer />
         <div className="flex justify-between max-w-full">
           <div className="flex-col mx-24 mt-10 w-4/12">
@@ -16,10 +16,16 @@ const HighlightLeft = () => {
             </p>
             <MainButton title="Linens" link="/store/linens" />
           </div>
-          <Image src={Test} height="400" width="540" alt="Main image" className="h-[380px] w-[578px]" />
+          <Image
+            src={Test}
+            height="400"
+            width="540"
+            alt="Main image"
+            className="h-[380px] w-[578px]"
+          />
         </div>
       </div>
-      <div className="md:hidden">
+      <div className="lg:hidden">
         <Spacer />
         <div className="flex max-w-full">
           <div className="flex-col mx-8 my-8 w-full">

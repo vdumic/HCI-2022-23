@@ -2,7 +2,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 
 const SupportSearch = () => {
   return (
-    <div className="flex items-center md:max-w-xl mx-auto bg-white md:my-16 sm:my-8 sm:mx-8">
+    <div className="flex items-center lg:max-w-xl md:mx-24 mx-auto bg-white lg:my-16 md:my-10 sm:my-8 sm:mx-8">
       <input
         type="search"
         id="support-search"
@@ -12,7 +12,7 @@ const SupportSearch = () => {
       />
       <button
         type="submit"
-        className="bg-white right-2.5 bottom-2.5 text-black  px-4 py-2"
+        className="bg-white right-2.5 bottom-2.5 text-black px-4 py-2"
       >
         <AiOutlineSearch className="h-7 w-7 sm:inline cursor-pointer" />
       </button>

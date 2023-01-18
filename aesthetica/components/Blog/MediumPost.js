@@ -1,5 +1,5 @@
 import Image from "next/image";
-import SmallButton from "./SmallButton";
+import BigButton from "./BigButton";
 import Link from "next/link";
 
 const MediumPost = ({ title, date, image, path }) => {
@@ -13,14 +13,14 @@ const MediumPost = ({ title, date, image, path }) => {
         className="h-[300px] w-full"
       />
       <div className="flex justify-between">
-        <div className="m-5">
+        <div className="m-5 w-8/12">
           <p className="text-3xl font-semibold hover:text-gray-800">
             <Link href="/blog/blog_post">{title}</Link>
           </p>
           <p className="text-blog-text text-xl font-semibold my-5">{date}</p>
         </div>
         <div className="m-auto mr-10">
-          <SmallButton title="Read more" link={`/blog/${path}`} />
+          <BigButton title="Read more" link={`/blog/${path}`} />
         </div>
       </div>
     </div>

@@ -6,15 +6,15 @@ const Footer = () => {
   return (
     <footer className="relative z-10 pt-14">
       <div className="container mx-auto">
-        <div className="-mx-4 flex flex-wrap ">
-          <div className="flex justify-items-center items-center w-full px-4 sm:w-2/3 md:w-3/12">
+        <div className="mx-4 flex flex-wrap ">
+          <div className="flex justify-items-center items-center w-full px-4 sm:w-2/3 lg:w-3/12">
             <div className="mb-10 w-full">
               <Link href="/" className="mb-6 max-w-[160px]">
                 <h1 className="font-bold text-5xl sm:text-3xl">Aesthetica</h1>
               </Link>
             </div>
           </div>
-          <div className="w-full px-4 sm:w-1/2 md:w-2/12">
+          <div className="w-full px-4 sm:w-1/2 lg:w-2/12">
             <div className="mb-10 w-full">
               <h4 className="text-xl mb-10 font-bold">Help & Information</h4>
               <ul>
@@ -53,7 +53,7 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className="w-full md:pl-10 px-4 sm:w-1/2 md:w-2/12">
+          <div className="w-full lg:pl-10 px-4 sm:w-1/2 lg:w-2/12">
             <div className="mb-10 w-full">
               <h4 className="text-xl mb-10 font-bold">About Us</h4>
               <ul>
@@ -92,7 +92,7 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className="w-full px-4 sm:w-1/2 md:w-2/12 sm:hidden">
+          <div className="w-full px-4 sm:w-1/2 lg:w-2/12 sm:hidden">
             <div className="mb-10 w-full">
               <h4 className="text-xl mb-10 font-bold">Newsletter</h4>
               <form className="w-9/12 max-w-sm">
