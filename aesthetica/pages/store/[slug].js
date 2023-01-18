@@ -44,8 +44,6 @@ export async function getStaticPaths() {
     params: { slug: room.slug },
   }));
 
-  console.log(paths);
-
   return {
     paths,
     fallback: false,

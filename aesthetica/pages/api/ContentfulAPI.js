@@ -66,6 +66,35 @@ export const getAllRoomSlugs = async () => {
   return data.roomCollection.items;
 };
 
+export const getAllCategorySlugs = async () => {
+  const response = await instance
+    .post(
+      "",
+      {
+        query: `{
+          categoryCollection {
+            items {
+              slug
+            }
+          }
+        }`,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + process.env.CONTENTFUL_ACCESS_TOKEN,
+        },
+      }
+    )
+    .catch(() => null);
+
+  // U slucaju greske, vraca se prazna lista
+  if (!response) return [];
+
+  const data = response.data.data;
+  return data.categoryCollection.items;
+};
+
 export const getAllCategories = async () => {
   const response = await instance
     .post(

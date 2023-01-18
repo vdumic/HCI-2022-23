@@ -60,6 +60,7 @@ const ExploreSlider = ({
                         image={room.image}
                         path={room.slug}
                         key={room.label}
+                        room="true"
                       />
                     ))}
                   {categoriesClicked &&
@@ -69,6 +70,7 @@ const ExploreSlider = ({
                         image={category.image}
                         path={category.slug}
                         key={category.label}
+                        category="true"
                       />
                     ))}
                   {offersClicked &&
@@ -78,6 +80,7 @@ const ExploreSlider = ({
                         image={offer.image}
                         path={offer.slug}
                         key={offer.label}
+                        category="true"
                       />
                     ))}
                 </div>
@@ -118,6 +121,7 @@ const ExploreSlider = ({
                         image={room.image}
                         path={room.slug}
                         key={room.label}
+                        room="true"
                       />
                     ))}
                   {categoriesClicked &&
@@ -127,6 +131,7 @@ const ExploreSlider = ({
                         image={category.image}
                         path={category.slug}
                         key={category.label}
+                        category="true"
                       />
                     ))}
                   {offersClicked &&
@@ -136,6 +141,7 @@ const ExploreSlider = ({
                         image={offer.image}
                         path={offer.slug}
                         key={offer.label}
+                        category="true"
                       />
                     ))}
                 </div>
