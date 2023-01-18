@@ -8,7 +8,6 @@ const ItemsList = ({ products }) => {
           name={product.title}
           price={product.price}
           image={product.imagesCollection.items[0].url}
-          room={product.room}
           path={product.slug}
           key={product.slug}
         />

@@ -305,12 +305,8 @@ export const getAllProductsByRoom = async (room) => {
                 }
               }
               slug
-              description {
-                json
-              }
-              dimensions {
-                json
-              }
+              description
+              dimensions
               model{
                   url
               }
@@ -391,15 +387,6 @@ export const getAllProductsByCategory = async (category) => {
                 }
               }
               slug
-              description {
-                json
-              }
-              dimensions {
-                json
-              }
-              model{
-                  url
-              }
               category
               room
               price
@@ -419,6 +406,77 @@ export const getAllProductsByCategory = async (category) => {
     .catch(() => null);
 
   if (!response) return {};
+
+  const data = response.data.data;
+  return data.productCollection.items;
+};
+
+export const getProductBySlug = async (slug) => {
+  const response = await instance.post(
+    "",
+    {
+      query: `query{
+        productCollection(where: {
+        slug: "${slug}"
+      }){
+        items {
+          title
+          imagesCollection {
+            items {
+              url
+            }
+          }
+          slug
+          description
+          dimensions
+          model{
+              url
+          }
+          category
+          room
+          price
+          categorySlug
+          roomSlug
+        }
+      }
+    }`,
+    },
+    {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    }
+  );
+  // Add error handling
+  const data = response.data.data;
+  return data.productCollection.items[0];
+};
+
+export const getAllProductSlugs = async () => {
+  const response = await instance
+    .post(
+      "",
+      {
+        query: `{
+          productCollection {
+            items {
+              slug
+            }
+          }
+        }`,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + process.env.CONTENTFUL_ACCESS_TOKEN,
+        },
+      }
+    )
+    .catch(() => null);
+
+  // U slucaju greske, vraca se prazna lista
+  if (!response) return [];
 
   const data = response.data.data;
   return data.productCollection.items;
