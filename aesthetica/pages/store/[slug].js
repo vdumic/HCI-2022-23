@@ -15,11 +15,7 @@ const RoomPage = ({ products, categories }) => {
   return (
     <HeaderFooterLayout title="Aesthetica / Store">
       <div className="flex justify-start max-w-full mx-24 sm:mx-8 lg:my-10 sm:my-6">
-        <Link href={`/store/${categories[0].roomSlug}`}>
-          <p className="font-bold sm:text-2xl text-3xl text-[#777777]">
-            {categories[0].room}
-          </p>
-        </Link>
+        <p className="font-bold sm:text-2xl text-3xl">{categories[0].room}</p>
       </div>
       <CategoriesSlider categories={categories} />
       <StoreSearch />

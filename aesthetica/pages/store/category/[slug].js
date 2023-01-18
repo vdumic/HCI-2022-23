@@ -17,11 +17,7 @@ const CategoryPage = ({ products }) => {
           </p>
         </Link>
         <AiOutlineRight className="h-7 w-7 sm:inline sm:w-5 sm:h-5 lg:mt-1 sm:mt-2" />
-        <Link href={`/store/category/${products[0].categorySlug}`}>
-          <p className="font-bold sm:text-2xl text-3xl">
-            {products[0].category}
-          </p>
-        </Link>
+        <p className="font-bold sm:text-2xl text-3xl">{products[0].category}</p>
       </div>
     </HeaderFooterLayout>
   );
