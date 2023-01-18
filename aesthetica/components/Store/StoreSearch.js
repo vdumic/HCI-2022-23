@@ -2,7 +2,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 
 const StoreSearch = () => {
   return (
-    <div className="flex items-center max-w-xl mx-auto bg-white sm:my-5 my-16 sm:mx-8">
+    <div className="flex items-center max-w-xl lg:my-4 mx-auto bg-white sm:my-5 my-16 sm:mx-8">
       <input
         type="search"
         id="support-search"

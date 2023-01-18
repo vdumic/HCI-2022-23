@@ -15,7 +15,7 @@ const Store = ({ exploreRooms, exploreCategories }) => {
       <div className="sm:hidden">
         <RecommendedProducts />
       </div>
-      <div className="md:hidden">
+      <div className="lg:hidden md:hidden">
         <MobileRecommended />
       </div>
     </HeaderFooterLayout>

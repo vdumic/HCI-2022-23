@@ -66,6 +66,35 @@ export const getAllRoomSlugs = async () => {
   return data.roomCollection.items;
 };
 
+export const getAllCategorySlugs = async () => {
+  const response = await instance
+    .post(
+      "",
+      {
+        query: `{
+          categoryCollection {
+            items {
+              slug
+            }
+          }
+        }`,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + process.env.CONTENTFUL_ACCESS_TOKEN,
+        },
+      }
+    )
+    .catch(() => null);
+
+  // U slucaju greske, vraca se prazna lista
+  if (!response) return [];
+
+  const data = response.data.data;
+  return data.categoryCollection.items;
+};
+
 export const getAllCategories = async () => {
   const response = await instance
     .post(
@@ -266,7 +295,7 @@ export const getAllProductsByRoom = async (room) => {
       {
         query: `{
           productCollection(where: {
-            room: "${room}"
+            roomSlug: "${room}"
           }) {
             items {
               title
@@ -276,18 +305,16 @@ export const getAllProductsByRoom = async (room) => {
                 }
               }
               slug
-              description {
-                json
-              }
-              dimensions {
-                json
-              }
+              description
+              dimensions
               model{
                   url
               }
               category
               room
               price
+              categorySlug
+              roomSlug
             }
           }
         }`,
@@ -302,6 +329,154 @@ export const getAllProductsByRoom = async (room) => {
     .catch(() => null);
 
   if (!response) return {};
+
+  const data = response.data.data;
+  return data.productCollection.items;
+};
+
+export const getAllCategoriesByRoom = async (room) => {
+  const response = await instance
+    .post(
+      "",
+      {
+        query: `{
+          categoryCollection(where: {
+            roomSlug: "${room}"
+          }) {
+            items {
+              label
+              image {
+                  url
+              }
+              slug
+              room
+              roomSlug
+            }
+          }
+        }`,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + process.env.CONTENTFUL_ACCESS_TOKEN,
+        },
+      }
+    )
+    .catch(() => null);
+
+  if (!response) return {};
+
+  const data = response.data.data;
+  return data.categoryCollection.items;
+};
+
+export const getAllProductsByCategory = async (category) => {
+  const response = await instance
+    .post(
+      "",
+      {
+        query: `{
+          productCollection(where: {
+            categorySlug: "${category}"
+          }) {
+            items {
+              title
+              imagesCollection {
+                items {
+                  url
+                }
+              }
+              slug
+              category
+              room
+              price
+              categorySlug
+              roomSlug
+            }
+          }
+        }`,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + process.env.CONTENTFUL_ACCESS_TOKEN,
+        },
+      }
+    )
+    .catch(() => null);
+
+  if (!response) return {};
+
+  const data = response.data.data;
+  return data.productCollection.items;
+};
+
+export const getProductBySlug = async (slug) => {
+  const response = await instance.post(
+    "",
+    {
+      query: `query{
+        productCollection(where: {
+        slug: "${slug}"
+      }){
+        items {
+          title
+          imagesCollection {
+            items {
+              url
+            }
+          }
+          slug
+          description
+          dimensions
+          model{
+              url
+          }
+          category
+          room
+          price
+          categorySlug
+          roomSlug
+        }
+      }
+    }`,
+    },
+    {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    }
+  );
+  // Add error handling
+  const data = response.data.data;
+  return data.productCollection.items[0];
+};
+
+export const getAllProductSlugs = async () => {
+  const response = await instance
+    .post(
+      "",
+      {
+        query: `{
+          productCollection {
+            items {
+              slug
+            }
+          }
+        }`,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + process.env.CONTENTFUL_ACCESS_TOKEN,
+        },
+      }
+    )
+    .catch(() => null);
+
+  // U slucaju greske, vraca se prazna lista
+  if (!response) return [];
 
   const data = response.data.data;
   return data.productCollection.items;

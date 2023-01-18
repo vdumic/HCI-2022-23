@@ -62,7 +62,7 @@ const ExploreSlider = ({
               <Slider>
                 <div
                   id="slider"
-                  className="h-full flex md:gap-8 gap-14 items-center justify-start transition ease-out duration-700"
+                  className="h-full flex md:gap-8 gap-8 items-center justify-start transition ease-out duration-700"
                 >
                   {roomsClicked &&
                     exploreRooms.map((room) => (
@@ -71,6 +71,7 @@ const ExploreSlider = ({
                         image={room.image}
                         path={room.slug}
                         key={room.label}
+                        room="true"
                       />
                     ))}
                   {categoriesClicked &&
@@ -80,6 +81,7 @@ const ExploreSlider = ({
                         image={category.image}
                         path={category.slug}
                         key={category.label}
+                        category="true"
                       />
                     ))}
                   {offersClicked &&
@@ -89,6 +91,7 @@ const ExploreSlider = ({
                         image={offer.image}
                         path={offer.slug}
                         key={offer.label}
+                        category="true"
                       />
                     ))}
                 </div>
@@ -99,7 +102,7 @@ const ExploreSlider = ({
 
         {/* Carousel for mobile and Small size Devices */}
         <CarouselProvider
-          className="md:hidden"
+          className="md:hidden lg:hidden"
           naturalSlideWidth={100}
           isIntrinsicHeight={true}
           totalSlides={totalSlides}
@@ -129,6 +132,7 @@ const ExploreSlider = ({
                         image={room.image}
                         path={room.slug}
                         key={room.label}
+                        room="true"
                       />
                     ))}
                   {categoriesClicked &&
@@ -138,6 +142,7 @@ const ExploreSlider = ({
                         image={category.image}
                         path={category.slug}
                         key={category.label}
+                        category="true"
                       />
                     ))}
                   {offersClicked &&
@@ -147,6 +152,7 @@ const ExploreSlider = ({
                         image={offer.image}
                         path={offer.slug}
                         key={offer.label}
+                        category="true"
                       />
                     ))}
                 </div>

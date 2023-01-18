@@ -23,7 +23,7 @@ const Blog = ({ blogPosts }) => {
         <p className="font-semibold text-5xl sm:text-4xl">BLOG</p>
       </div>
 
-      <div className="desktop-blog sm:hidden">
+      <div className="desktop-blog sm:hidden md:hidden">
         <div className="grid grid-cols-12 mx-24 gap-x-10">
           <div className="grid col-span-7">
             <BigPost
@@ -132,7 +132,7 @@ const Blog = ({ blogPosts }) => {
         </div>
       </div>
 
-      <div className="flex flex-col justify-center my-4 md:hidden">
+      <div className="flex flex-col justify-center my-4 lg:hidden">
         {blogPosts.slice(0, 5).map((post) => (
           <PostMobile
             title={post.title}

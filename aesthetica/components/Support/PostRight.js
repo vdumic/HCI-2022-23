@@ -6,7 +6,7 @@ import MainButton from "../MainButton";
 const PostRight = () => {
   return (
     <>
-      <div className="sm:hidden">
+      <div className="sm:hidden md:hidden">
         <Spacer />
         <div className="flex justify-between max-w-full">
           <Image src={Test} width="700" height="400" alt="Main image" />
@@ -20,7 +20,7 @@ const PostRight = () => {
           </div>
         </div>
       </div>
-      <div className="md:hidden">
+      <div className="lg:hidden">
         <Spacer />
         <div className="flex max-w-full">
           <div className="flex-col mx-8 my-8 w-full">

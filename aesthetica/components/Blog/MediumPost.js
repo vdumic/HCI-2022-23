@@ -21,7 +21,7 @@ const MediumPost = ({ title, date, image, path }) => {
           <p className="text-blog-text text-xl font-semibold my-5">{date}</p>
         </div>
         <div className="m-auto mr-10">
-          <SmallButton title="Read more" link={`/blog/${path}`} />
+          <SmallButton link={`/blog/${path}`} />
         </div>
       </div>
     </div>
