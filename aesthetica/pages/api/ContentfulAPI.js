@@ -295,7 +295,7 @@ export const getAllProductsByRoom = async (room) => {
       {
         query: `{
           productCollection(where: {
-            room: "${room}"
+            roomSlug: "${room}"
           }) {
             items {
               title
@@ -317,6 +317,94 @@ export const getAllProductsByRoom = async (room) => {
               category
               room
               price
+              categorySlug
+              roomSlug
+            }
+          }
+        }`,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + process.env.CONTENTFUL_ACCESS_TOKEN,
+        },
+      }
+    )
+    .catch(() => null);
+
+  if (!response) return {};
+
+  const data = response.data.data;
+  return data.productCollection.items;
+};
+
+export const getAllCategoriesByRoom = async (room) => {
+  const response = await instance
+    .post(
+      "",
+      {
+        query: `{
+          categoryCollection(where: {
+            roomSlug: "${room}"
+          }) {
+            items {
+              label
+              image {
+                  url
+              }
+              slug
+              room
+              roomSlug
+            }
+          }
+        }`,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + process.env.CONTENTFUL_ACCESS_TOKEN,
+        },
+      }
+    )
+    .catch(() => null);
+
+  if (!response) return {};
+
+  const data = response.data.data;
+  return data.categoryCollection.items;
+};
+
+export const getAllProductsByCategory = async (category) => {
+  const response = await instance
+    .post(
+      "",
+      {
+        query: `{
+          productCollection(where: {
+            categorySlug: "${category}"
+          }) {
+            items {
+              title
+              imagesCollection {
+                items {
+                  url
+                }
+              }
+              slug
+              description {
+                json
+              }
+              dimensions {
+                json
+              }
+              model{
+                  url
+              }
+              category
+              room
+              price
+              categorySlug
+              roomSlug
             }
           }
         }`,
