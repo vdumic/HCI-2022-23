@@ -11,9 +11,10 @@ const ExploreItem = ({ label, image, path }) => {
           <Image
             src={image.url}
             alt={label}
+            style={{ objectFit: 'cover' }}
             height="300"
             width="600"
-            className="object-cover object-center shadow-lg"
+            className="h-[145px] object-center shadow-lg"
           />
           <button className="flex justify-center text-black text-xl text-normal py-4">
             <p>{label}</p>

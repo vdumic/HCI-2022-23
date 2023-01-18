@@ -5,18 +5,19 @@ import { Slide } from "pure-react-carousel";
 const ExploreItemMobile = ({ label, image, path }) => {
   return (
     <Slide key={label}>
-      <div className="flex flex-col flex-shrink-0 relative">
+      <div className="flex flex-col flex-shrink-0 items-center justify-center">
         <Link href={`/store/${path}`}>
           <Image
             src={image.url}
             alt={label}
+            style={{ objectFit: 'cover' }}
             height="100"
             width="240"
-            className="object-cover object-center w-full shadow-lg"
+            className="h-[200px] w-[370px] object-center shadow-lg"
           />
         </Link>
         <Link href={`/store/${path}`}>
-          <button className="text-black text-xl text-normal">
+          <button className="text-black text-xl text-normal pt-2">
             <p>{label}</p>
           </button>
         </Link>

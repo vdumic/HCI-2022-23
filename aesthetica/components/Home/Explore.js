@@ -62,8 +62,8 @@ const Explore = ({ exploreRooms, exploreCategories }) => {
         <Link href="/store">
           <button className="flex justify-center text-black text-2xl font-normal py-2 px-8 sm:text-xl">
             {roomsClicked && <p>More rooms</p>}
-            {categoriesClicked && <p>Search store</p>}
-            {offersClicked && <p>Search store</p>}
+            {categoriesClicked && <p>Visit store</p>}
+            {offersClicked && <p>Visit store</p>}
             <SlArrowRight className="h-6 w-6 sm:inline cursor-pointer pt-2" />
           </button>
         </Link>

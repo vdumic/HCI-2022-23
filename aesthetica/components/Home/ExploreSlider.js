@@ -17,6 +17,17 @@ const ExploreSlider = ({
   exploreRooms,
   exploreCategories,
 }) => {
+  let totalSlides = 0;
+  if (categoriesClicked) {
+    totalSlides = exploreCategories.length;
+  }
+  if (roomsClicked) {
+    totalSlides = exploreRooms.length;
+  }
+  //   if (offersClicked) {
+  //  totalSlides = ...length
+  //   }
+
   return (
     <div className="container mx-auto">
       <div className="flex items-center justify-center w-full h-full py-12 sm:py-8 px-4">
@@ -25,7 +36,7 @@ const ExploreSlider = ({
           className="sm:hidden"
           naturalSlideWidth={100}
           isIntrinsicHeight={true}
-          totalSlides={exploreRooms.length}
+          totalSlides={totalSlides}
           visibleSlides={5}
           step={1}
           infinite={true}
@@ -91,7 +102,7 @@ const ExploreSlider = ({
           className="md:hidden"
           naturalSlideWidth={100}
           isIntrinsicHeight={true}
-          totalSlides={exploreRooms.length}
+          totalSlides={totalSlides}
           visibleSlides={1}
           step={1}
           infinite={true}
@@ -105,7 +116,7 @@ const ExploreSlider = ({
             >
               <SlArrowLeft className="h-7 w-7 cursor-pointer" />
             </ButtonBack>
-            <div className="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden">
+            <div className="w-full h-full items-center justify-center overflow-x-hidden overflow-y-hidden">
               <Slider>
                 <div
                   id="slider"
