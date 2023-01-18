@@ -7,6 +7,7 @@ const SmallPost = ({ title, date, image, path }) => {
       <Image
         alt="post"
         src={image}
+        style={{ objectFit: 'cover' }}
         height="400"
         width="400"
         className="h-[220px] w-full"

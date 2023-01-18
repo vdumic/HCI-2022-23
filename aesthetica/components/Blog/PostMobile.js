@@ -7,9 +7,10 @@ const PostMobile = ({ title, date, image, path }) => {
       <Image
         alt="post"
         src={image}
+        style={{ objectFit: 'cover' }}
         height="550"
         width="500"
-        className="w-full"
+        className="h-[180px]"
       />
       <div className="m-5">
         <p className="text-2xl font-semibold">{title}</p>

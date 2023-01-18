@@ -1,5 +1,5 @@
 import Image from "next/image";
-import BigButton from "./BigButton";
+import SmallButton from "./SmallButton";
 import Link from "next/link";
 
 const BigPost = ({ title, date, image, path }) => {
@@ -19,8 +19,8 @@ const BigPost = ({ title, date, image, path }) => {
           </p>
           <p className="text-blog-text text-xl font-semibold my-5">{date}</p>
         </div>
-        <div className="m-auto">
-          <BigButton title="Read more" link={`/blog/${path}`} />
+       <div className="m-auto mr-14">
+          <SmallButton title="Read more" link={`/blog/${path}`} />
         </div>
       </div>
     </div>

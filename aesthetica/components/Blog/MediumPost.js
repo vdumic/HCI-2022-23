@@ -8,6 +8,7 @@ const MediumPost = ({ title, date, image, path }) => {
       <Image
         alt="post"
         src={image}
+        style={{ objectFit: 'cover' }}
         height="550"
         width="500"
         className="h-[300px] w-full"
