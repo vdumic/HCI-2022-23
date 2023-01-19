@@ -8,9 +8,10 @@ const Item = ({ image, name, price, path }) => {
         <Image
           alt={name}
           src={image}
+          style={{ objectFit: "cover" }}
           width="320"
-          height="337"
-          className="shadow-xl hover:scale-105"
+          height="340"
+          className="h-[340px] shadow-xl hover:scale-105"
         />
         <p className="text-xl font-normal py-2">{name}</p>
       </Link>

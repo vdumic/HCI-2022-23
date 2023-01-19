@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote";
-import { H3, P, Ul, Li } from "../Post/components";
+import { H3, P, Ul, Li } from "../Post/Components";
 
 const components = {
   h3: H3,

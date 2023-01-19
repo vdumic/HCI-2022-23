@@ -9,7 +9,7 @@ const MainPageImage = () => {
         <div className="grid sm:order-2">
           <h1 className="text-8xl sm:hidden font-semibold">home of the</h1>
           <h1 className="text-8xl sm:hidden font-semibold">furniture.</h1>
-          <h1 className="md:hidden lg:hidden font-semibold text-[59px] text-center leading-none pt-5">
+          <h1 className="md:hidden lg:hidden font-semibold text-[56px] text-center leading-none pt-5">
             home of the furniture.
           </h1>
         </div>
