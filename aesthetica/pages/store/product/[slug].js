@@ -1,14 +1,15 @@
 import Link from "next/link";
-import Image from "next/image";
 import { serialize } from "next-mdx-remote/serialize";
 import { AiOutlineRight } from "react-icons/ai";
 
 import HeaderFooterLayout from "../../../layouts/HeaderFooterLayout";
 import { getAllProductSlugs, getProductBySlug } from "../../api/ContentfulAPI";
+import ProductImages from "../../../components/Store/Product/ProductImages";
+import ProductInformation from "../../../components/Store/Product/ProductInformation";
 
 const ProductPage = ({ product }) => {
   return (
-    <HeaderFooterLayout>
+    <HeaderFooterLayout title="Aesthetica / Store">
       <div className="flex justify-start max-w-full mx-24 sm:mx-8 lg:my-10 sm:my-6">
         <Link href={`/store/${product.roomSlug}`}>
           <p className="font-bold sm:text-2xl text-3xl text-[#777777]">
@@ -24,13 +25,10 @@ const ProductPage = ({ product }) => {
         <AiOutlineRight className="h-7 w-7 sm:inline sm:w-5 sm:h-5 lg:mt-1 sm:mt-2" />
         <p className="font-bold sm:text-2xl text-3xl">{product.title}</p>
       </div>
-      <p>{product.title}</p>
-      <p>{product.price}</p>
-      <Image
-        src={product.imagesCollection.items[0].url}
-        width="500"
-        height="500"
-      />
+      <div className="flex justify-evenly my-4">
+        <ProductImages images={product.imagesCollection.items} />
+        <ProductInformation title={product.title} price={product.price} />
+      </div>
     </HeaderFooterLayout>
   );
 };
