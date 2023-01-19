@@ -2,6 +2,8 @@ import Link from "next/link";
 import { AiOutlineRight } from "react-icons/ai";
 
 import HeaderFooterLayout from "../../../layouts/HeaderFooterLayout";
+import StoreSearch from "../../../components/Store/StoreSearch";
+import ItemsList from "../../../components/Store/Category/ItemsList";
 import {
   getAllCategorySlugs,
   getAllProductsByCategory,
@@ -18,6 +20,10 @@ const CategoryPage = ({ products }) => {
         </Link>
         <AiOutlineRight className="h-7 w-7 sm:inline sm:w-5 sm:h-5 lg:mt-1 sm:mt-2" />
         <p className="font-bold sm:text-2xl text-3xl">{products[0].category}</p>
+      </div>
+      <StoreSearch />
+      <div className="flex justify-evenly sm:mx-8 mx-24 my-10">
+        <ItemsList products={products} />
       </div>
     </HeaderFooterLayout>
   );
