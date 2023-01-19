@@ -24,9 +24,9 @@ const ExploreSlider = ({
   if (roomsClicked) {
     totalSlides = exploreRooms.length;
   }
-  //   if (offersClicked) {
-  //  totalSlides = ...length
-  //   }
+  if (offersClicked) {
+    totalSlides = exploreCategories.length;
+  }
 
   return (
     <div className="container mx-auto">
