@@ -18,7 +18,7 @@ const SupportCard = ({ image, title, label }) => {
         <p className="font-bold text-4xl m-6">{label}</p>
         <SupportButton title={title} link="/under_construction" />
       </div>
-      <div className="h-full bg-white mb-4 lg:hidden md:hidden">
+      <div className="h-full bg-white mb-4 mx-8 lg:hidden md:hidden">
         <Image
           src={image.url}
           height="100"

@@ -15,7 +15,7 @@ const BigPost = ({ title, date, image, path }) => {
       <div className="flex justify-between">
         <div className="m-5  w-3/5">
           <p className="text-3xl font-semibold hover:text-gray-800">
-            <Link href="/blog/blog_post">{title}</Link>
+            <Link href={`/blog/${path}`}>{title}</Link>
           </p>
           <p className="text-blog-text text-xl font-semibold my-5">{date}</p>
         </div>

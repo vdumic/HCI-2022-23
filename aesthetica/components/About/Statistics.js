@@ -1,6 +1,6 @@
 const Statistics = () => {
   return (
-    <div className="grid grid-cols-2 p-4 md:ml-20 text-gray-900 sm:grid-cols-2 sm:mt-10 gap-x-12 gap-y-10">
+    <div className="grid grid-cols-2 p-4 lg:ml-20 text-gray-900 sm:grid-cols-2 sm:mt-10 gap-x-12 gap-y-10">
       <div className="flex flex-col items-center justify-center">
         <dt className="mb-2 sm:text-6xl text-7xl font-extrabold drop-shadow-sm text-[#c9bdb1]">
           2M+
