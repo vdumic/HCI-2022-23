@@ -16,25 +16,25 @@ const ProductPage = ({ product }) => {
     <HeaderFooterLayout title="Aesthetica / Store">
       <div className="flex justify-start max-w-full mx-24 sm:mx-8 lg:my-10 sm:my-6">
         <Link href={`/store/${product.roomSlug}`}>
-          <p className="font-bold sm:text-xl text-2xl text-[#777777]">
+          <p className="font-bold sm:text-base text-2xl text-[#777777]">
             {product.room}
           </p>
         </Link>
-        <AiOutlineRight className="h-6 w-7 pt-1 sm:inline sm:w-5 sm:h-5 lg:mt-1 sm:mt-1 text-[#777777]" />
+        <AiOutlineRight className="h-6 w-7 pt-1 sm:inline sm:w-4 sm:h-4 lg:mt-1 sm:mt-1 text-[#777777]" />
         <Link href={`/store/category/${product.categorySlug}`}>
-          <p className="font-bold sm:text-xl text-2xl text-[#777777]">
+          <p className="font-bold sm:text-base text-2xl text-[#777777]">
             {product.category}
           </p>
         </Link>
-        <AiOutlineRight className="h-6 w-7 pt-1 sm:inline sm:w-5 sm:h-5 lg:mt-1 sm:mt-1" />
-        <p className="font-bold sm:text-xl text-2xl">{product.title}</p>
+        <AiOutlineRight className="h-6 w-7 pt-1 sm:inline sm:w-4 sm:h-4 lg:mt-1 sm:mt-1" />
+        <p className="font-bold sm:text-base text-2xl">{product.title}</p>
       </div>
-      <div className="flex justify-evenly my-4 mx-24">
+      <div className="grid grid-cols-2 justify-start sm:col-span-1 sm:grid-cols-1 sm:mx-8 my-4 lg:mx-24">
         <ProductImages images={product.imagesCollection.items} />
         <ProductInformation title={product.title} price={product.price} />
       </div>
       <div className="flex flex-row justify-between">
-        <div className="flex flex-col mx-24">
+        <div className="flex flex-col lg:mx-24 sm:mx-8 mb-8">
           <ProductDescription product={product} />
           <ProductDimensions product={product} />
         </div>
@@ -42,7 +42,7 @@ const ProductPage = ({ product }) => {
           src={product.model.url}
           width="500"
           height="500"
-          className="m-5 mr-28"
+          className="m-5 mr-28 sm:hidden"
         />
       </div>
     </HeaderFooterLayout>

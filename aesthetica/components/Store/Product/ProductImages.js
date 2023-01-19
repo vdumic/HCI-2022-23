@@ -2,13 +2,13 @@ import Image from "next/image";
 
 const ProductImages = ({ images }) => {
   return (
-    <div className="flex justify-center">
+    <div className="flex">
       <Image
         src={images[0].url}
         width="650"
         height="650"
         style={{ objectFit: "cover" }}
-        className="h-[650px] w-[650px]"
+        className="lg:h-[560px] lg:w-[590px]"
       />
     </div>
   );
