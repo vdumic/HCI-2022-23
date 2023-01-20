@@ -40,6 +40,7 @@ const ProductPage = ({ product }) => {
         </div>
         <Image
           src={product.model.url}
+          alt={product.title}
           width="500"
           height="500"
           className="m-5 mr-28 sm:hidden"

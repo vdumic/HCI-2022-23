@@ -5,6 +5,7 @@ const ProductImages = ({ images }) => {
     <div className="flex">
       <Image
         src={images[0].url}
+        alt="product image"
         width="650"
         height="650"
         style={{ objectFit: "cover" }}

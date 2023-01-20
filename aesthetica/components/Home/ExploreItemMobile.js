@@ -6,7 +6,7 @@ const ExploreItemMobile = ({ label, image, path, room, category }) => {
   return (
     <Slide key={label}>
       {room && (
-        <div className="flex flex-col flex-shrink-0 w-full relative">
+        <div className="flex flex-col flex-shrink-0 w-full relative mx-4">
           <Link href={`/store/${path}`}>
             <Image
               src={image.url}
@@ -27,14 +27,14 @@ const ExploreItemMobile = ({ label, image, path, room, category }) => {
       {category && (
         <div className="flex flex-col flex-shrink-0 w-full relative">
           <Link href={`/store/category/${path}`}>
-          <Image
-            src={image.url}
-            alt={label}
-            style={{ objectFit: "cover" }}
-            height="100"
-            width="240"
-            className="h-[230px] object-cover object-center w-[345px] shadow-lg"
-          />
+            <Image
+              src={image.url}
+              alt={label}
+              style={{ objectFit: "cover" }}
+              height="100"
+              width="240"
+              className="h-[230px] object-cover object-center w-[345px] shadow-lg"
+            />
           </Link>
           <Link href={`/store/${path}`}>
             <button className="text-black text-xl text-normal">

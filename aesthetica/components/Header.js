@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Link from "next/link";
 import { AiOutlineUser } from "react-icons/ai";
-import { BiShoppingBag } from "react-icons/bi";
+import { BiShoppingBag, BiHeart } from "react-icons/bi";
 
+import AppContext from "../store/app-context";
 import NavBar from "./Navigation/NavBar";
 import DropDownMenu from "./Profile/DropDownMenu";
 import HamburgerBar from "./Navigation/HamburgerBar";
@@ -10,6 +11,9 @@ import HamburgerBar from "./Navigation/HamburgerBar";
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
+  const appCtx = useContext(AppContext);
+
+  const isLoggedIn = appCtx.userData.isLoggedIn;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,7 +57,12 @@ const Header = () => {
               />
               {isClicked && <DropDownMenu />}
             </button>
-            <Link href="/shoppingBag">
+            {isLoggedIn && (
+              <Link href="/wishlist">
+                <BiHeart className="h-6 w-6 sm:hidden cursor-pointer" />
+              </Link>
+            )}
+            <Link href="/shoppingCart">
               <BiShoppingBag className="h-6 w-6 sm:hidden cursor-pointer" />
             </Link>
           </div>
