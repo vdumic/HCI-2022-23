@@ -35,6 +35,7 @@ const ProductPage = ({ product }) => {
           title={product.title}
           price={product.price}
           slug={product.slug}
+          image={product.imagesCollection.items[0].url}
         />
       </div>
       <div className="flex flex-row justify-between">

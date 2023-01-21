@@ -5,7 +5,7 @@ const AppContext = React.createContext({
   handleLogout: () => {},
   handleAddToCart: (value) => {},
   appState: {
-    itemsNumber: 0,
+    totalPrice: 0,
     cartItems: {},
     isLoggedIn: false,
   },

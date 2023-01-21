@@ -3,7 +3,7 @@ import AppContext from "./app-context";
 
 const defaultAppState = {
   userState: {
-    itemsNumber: 0,
+    totalPrice: 0,
     cartItems: [],
     isLoggedIn: false,
   },
@@ -31,21 +31,38 @@ const appReducer = (state, action) => {
   }
 
   if (action.type === "ADD TO CART") {
+    const price = action.value.price * action.value.quantity;
+    const totalPrice = state.userState.totalPrice + price;
+
     if (state.userState.cartItems.length === 0) {
       return {
         userState: {
-          itemsNumber: state.userState.itemsNumber + action.value.quantity,
-          cartItems: [[action.value.slug, action.value.quantity]],
+          totalPrice: totalPrice,
+          cartItems: [
+            [
+              action.value.slug,
+              action.value.title,
+              action.value.price,
+              action.value.quantity,
+              action.value.image,
+            ],
+          ],
           isLoggedIn: state.userState.isLoggedIn,
         },
       };
     } else
       return {
         userState: {
-          itemsNumber: state.userState.itemsNumber + action.value.quantity,
+          totalPrice: totalPrice,
           cartItems: [
             ...state.userState.cartItems,
-            [action.value.slug, action.value.quantity],
+            [
+              action.value.slug,
+              action.value.title,
+              action.value.price,
+              action.value.quantity,
+              action.value.image,
+            ],
           ],
           isLoggedIn: state.userState.isLoggedIn,
         },
@@ -64,8 +81,11 @@ const AppContextProvider = (props) => {
     dispatchAction({ type: "LOGOUT" });
   };
 
-  const addToCartHandler = (slug, quantity) => {
-    dispatchAction({ type: "ADD TO CART", value: { slug, quantity } });
+  const addToCartHandler = (slug, title, price, quantity, image) => {
+    dispatchAction({
+      type: "ADD TO CART",
+      value: { slug, title, price, quantity, image },
+    });
   };
 
   const appContext = {

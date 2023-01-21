@@ -3,7 +3,7 @@ import { useState, useContext } from "react";
 import AppContext from "../../../store/app-context";
 import ColorPicker from "./ColorPicker";
 
-const ProductInformation = ({ title, price, slug }) => {
+const ProductInformation = ({ title, price, slug, image }) => {
   const appCtx = useContext(AppContext);
 
   const [number, setNumber] = useState(1);
@@ -13,8 +13,7 @@ const ProductInformation = ({ title, price, slug }) => {
   };
 
   const handleAddToCart = () => {
-    appCtx.handleAddToCart(slug, number);
-    console.log(appCtx.userData.cartItems);
+    appCtx.handleAddToCart(slug, title, price, number, image);
   };
 
   return (
