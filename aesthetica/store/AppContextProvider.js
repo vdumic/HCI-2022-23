@@ -14,10 +14,18 @@ const appReducer = (state, action) => {
     return {
       userState: {
         itemsNumber: state.userState.itemsNumber,
-        cartItems: {
-          item: state.userState.cartItems.item,
-        },
+        cartItems: state.userState.cartItems,
         isLoggedIn: true,
+      },
+    };
+  }
+
+  if (action.type === "LOGOUT") {
+    return {
+      userState: {
+        itemsNumber: state.userState.itemsNumber,
+        cartItems: state.userState.cartItems,
+        isLoggedIn: false,
       },
     };
   }
@@ -52,12 +60,17 @@ const AppContextProvider = (props) => {
     dispatchAction({ type: "LOGIN" });
   };
 
+  const logoutHandler = () => {
+    dispatchAction({ type: "LOGOUT" });
+  };
+
   const addToCartHandler = (slug, quantity) => {
     dispatchAction({ type: "ADD TO CART", value: { slug, quantity } });
   };
 
   const appContext = {
     handleLogin: loginHandler,
+    handleLogout: logoutHandler,
     handleAddToCart: addToCartHandler,
     userData: appState.userState,
   };

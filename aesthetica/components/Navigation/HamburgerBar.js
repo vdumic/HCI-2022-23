@@ -14,6 +14,11 @@ const HamburgerBar = () => {
   const appCtx = useContext(AppContext);
   const isLoggedIn = appCtx.userData.isLoggedIn;
 
+  const handleLogout = (e) => {
+    e.preventDefault();
+    appCtx.handleLogout();
+  };
+
   return (
     <div className="flex items-center justify-between md:hidden lg:hidden">
       <nav>
@@ -119,6 +124,7 @@ const HamburgerBar = () => {
                       ? " bg-bckgrnd-dark bg-opacity-60"
                       : ""
                   }`}
+                  onClick={handleLogout}
                 >
                   Logout
                 </li>
