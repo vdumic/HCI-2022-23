@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { FormContext } from "../../../pages/signup/index";
+import { FormContext } from "../../../pages/signup";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { SlArrowRight } from "react-icons/sl";
 import * as yup from "yup";
@@ -13,8 +13,11 @@ const UserCredentials = () => {
   );
 
   const ValidationSchema = yup.object().shape({
-    email: yup.string().email('Email not valid').required('Email is required'),
-    password: yup.string().min(8, 'Password must be at least 8 characters').required('Password is required'),
+    email: yup.string().email("Email not valid").required("Email is required"),
+    password: yup
+      .string()
+      .min(8, "Password must be at least 8 characters")
+      .required("Password is required"),
   });
 
   return (

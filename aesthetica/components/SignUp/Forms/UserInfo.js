@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { FormContext } from "../../../pages/signup/index";
+import { FormContext } from "../../../pages/signup";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { SlArrowRight } from "react-icons/sl";
 import * as yup from "yup";

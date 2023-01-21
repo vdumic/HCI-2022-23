@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { FormContext } from "../../pages/signup/index";
+import { FormContext } from "../../pages/signup";
 import UserCredentials from "./Forms/UserCredentials";
 import UserInfo from "./Forms/UserInfo";
 
@@ -13,10 +13,10 @@ const DisplayedStep = () => {
     case 1:
       stepContent = <UserInfo />;
       break;
-      default:
+    default:
       break;
   }
   return stepContent;
-}
+};
 
 export default DisplayedStep;
