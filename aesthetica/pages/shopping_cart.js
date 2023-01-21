@@ -1,10 +1,10 @@
 import { useContext } from "react";
 
-import AppContext from "../../store/app-context";
+import AppContext from "../store/app-context";
 
-import HeaderFooterLayout from "../../layouts/HeaderFooterLayout";
-import ItemCard from "../../components/ShoppingCart/ItemCard";
-import TotalCard from "../../components/ShoppingCart/TotalCard";
+import HeaderFooterLayout from "../layouts/HeaderFooterLayout";
+import ItemCard from "../components/ShoppingCart/ItemCard";
+import TotalCard from "../components/ShoppingCart/TotalCard";
 
 const ShoppingCart = () => {
   const appCtx = useContext(AppContext);
@@ -13,8 +13,8 @@ const ShoppingCart = () => {
 
   return (
     <HeaderFooterLayout title="Aesthetica / Shopping cart">
-      <div className="flex justify-center my-10">
-        <p className="font-semibold text-4xl sm:text-3xl">Shopping cart</p>
+      <div className="flex justify-center mt-10 mb-6 sm:my-4">
+        <p className="font-semibold text-5xl sm:text-4xl">SHOPPING CART</p>
       </div>
       {cartIsEmpty && (
         <div className="w-full h-[450px] flex justify-center">

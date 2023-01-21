@@ -5,7 +5,8 @@ const defaultAppState = {
   userState: {
     totalPrice: 0,
     cartItems: [],
-    isLoggedIn: false,
+    wishlistItems: [],
+    isLoggedIn: true,
   },
 };
 
@@ -15,6 +16,7 @@ const appReducer = (state, action) => {
       userState: {
         itemsNumber: state.userState.itemsNumber,
         cartItems: state.userState.cartItems,
+        wishlistItems: state.userState.wishlistItems,
         isLoggedIn: true,
       },
     };
@@ -25,6 +27,7 @@ const appReducer = (state, action) => {
       userState: {
         itemsNumber: state.userState.itemsNumber,
         cartItems: state.userState.cartItems,
+        wishlistItems: state.userState.wishlistItems,
         isLoggedIn: false,
       },
     };
@@ -47,6 +50,7 @@ const appReducer = (state, action) => {
               action.value.image,
             ],
           ],
+          wishlistItems: state.userState.wishlistItems,
           isLoggedIn: state.userState.isLoggedIn,
         },
       };
@@ -64,6 +68,7 @@ const appReducer = (state, action) => {
               action.value.image,
             ],
           ],
+          wishlistItems: state.userState.wishlistItems,
           isLoggedIn: state.userState.isLoggedIn,
         },
       };
@@ -77,6 +82,58 @@ const appReducer = (state, action) => {
       userState: {
         totalPrice: totalPrice,
         cartItems: state.userState.cartItems.filter(
+          (product) => product[0] !== action.value.slug
+        ),
+        wishlistItems: state.userState.wishlistItems,
+        isLoggedIn: state.userState.isLoggedIn,
+      },
+    };
+  }
+
+  if (action.type === "ADD TO WISHLIST") {
+    if (state.userState.wishlistItems.length === 0) {
+      return {
+        userState: {
+          totalPrice: state.userState.totalPrice,
+          cartItems: state.userState.cartItems,
+          wishlistItems: [
+            [
+              action.value.slug,
+              action.value.title,
+              action.value.price,
+              action.value.quantity,
+              action.value.image,
+            ],
+          ],
+          isLoggedIn: state.userState.isLoggedIn,
+        },
+      };
+    } else
+      return {
+        userState: {
+          totalPrice: state.userState.totalPrice,
+          cartItems: state.userState.cartItems,
+          wishlistItems: [
+            ...state.userState.wishlistItems,
+            [
+              action.value.slug,
+              action.value.title,
+              action.value.price,
+              action.value.quantity,
+              action.value.image,
+            ],
+          ],
+          isLoggedIn: state.userState.isLoggedIn,
+        },
+      };
+  }
+
+  if (action.type === "REMOVE FROM WISHLIST") {
+    return {
+      userState: {
+        totalPrice: state.userState.totalPrice,
+        cartItems: state.userState.cartItems,
+        wishlistItems: state.userState.wishlistItems.filter(
           (product) => product[0] !== action.value.slug
         ),
         isLoggedIn: state.userState.isLoggedIn,
@@ -110,11 +167,27 @@ const AppContextProvider = (props) => {
     });
   };
 
+  const addToWishlistHandler = (slug, title, price, quantity, image) => {
+    dispatchAction({
+      type: "ADD TO WISHLIST",
+      value: { slug, title, price, quantity, image },
+    });
+  };
+
+  const removeFromWishlistHandler = (slug, price, quantity) => {
+    dispatchAction({
+      type: "REMOVE FROM WISHLIST",
+      value: { slug, price, quantity },
+    });
+  };
+
   const appContext = {
     handleLogin: loginHandler,
     handleLogout: logoutHandler,
     handleAddToCart: addToCartHandler,
     handleRemoveFromCart: removeFromCartHandler,
+    handleAddToWishlist: addToWishlistHandler,
+    handleRemoveFromWishlist: removeFromWishlistHandler,
     userData: appState.userState,
   };
 

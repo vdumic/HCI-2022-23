@@ -2,9 +2,10 @@ import { useContext } from "react";
 import Link from "next/link";
 import { SlArrowRight } from "react-icons/sl";
 
-import AppContext from "../../store/app-context";
-import LoginForm from "../../components/LogIn/LoginForm";
-import HeaderFooterLayout from "../../layouts/HeaderFooterLayout";
+import AppContext from "../store/app-context";
+
+import HeaderFooterLayout from "../layouts/HeaderFooterLayout";
+import LoginForm from "../components/LogIn/LoginForm";
 
 const LogIn = () => {
   const appCtx = useContext(AppContext);

@@ -1,10 +1,10 @@
-import HeaderFooterLayout from "../../layouts/HeaderFooterLayout";
-import SupportSearch from "../../components/Support/SupportSearch";
-import SupportCard from "../../components/Support/SupportCard";
-import PostRight from "../../components/Support/PostRight";
-import PostLeft from "../../components/Support/PostLeft";
+import HeaderFooterLayout from "../layouts/HeaderFooterLayout";
+import SupportSearch from "../components/Support/SupportSearch";
+import SupportCard from "../components/Support/SupportCard";
+import PostRight from "../components/Support/PostRight";
+import PostLeft from "../components/Support/PostLeft";
 
-import { getSupportCards } from "../api/ContentfulAPI";
+import { getSupportCards } from "./api/ContentfulAPI";
 
 const Support = ({ supportCards }) => {
   return (

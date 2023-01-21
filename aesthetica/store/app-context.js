@@ -5,9 +5,12 @@ const AppContext = React.createContext({
   handleLogout: () => {},
   handleAddToCart: (slug, title, price, quantity, image) => {},
   handleRemoveFromCart: (slug, price, quantity) => {},
-  appState: {
+  handleAddToWishlist: (slug, title, price, quantity, image) => {},
+  handleRemoveFromWishlist: (slug, price, quantity) => {},
+  userState: {
     totalPrice: 0,
-    cartItems: {},
+    cartItems: [],
+    wishlistItems: [],
     isLoggedIn: false,
   },
 });
