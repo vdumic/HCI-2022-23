@@ -1,4 +1,5 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
+import Link from "next/link";
 import { SlArrowRight } from "react-icons/sl";
 import * as yup from "yup";
 
@@ -54,15 +55,16 @@ const LoginForm = (props) => {
           />
         </div>
         <ErrorMessage name="password" render={renderError} />
-
-        <button
-          className="flex justify-center bg-[#252526] hover:bg-[#3e3e42] hover:border-[#3e3e42] text-white text-m font-medium mt-10 py-2 pl-5 pr-3.5 border-2 border-[#252526] rounded-full shadow-xl"
-          type="submit"
-          onClick={handleLoginClick}
-        >
-          Login
-          <SlArrowRight className="h-5 w-5 sm:inline cursor-pointer pt-1" />
-        </button>
+        <Link href="/">
+          <button
+            className="flex justify-center bg-[#252526] hover:bg-[#3e3e42] hover:border-[#3e3e42] text-white text-m font-medium mt-10 py-2 pl-5 pr-3.5 border-2 border-[#252526] rounded-full shadow-xl"
+            type="submit"
+            onClick={handleLoginClick}
+          >
+            Login
+            <SlArrowRight className="h-5 w-5 sm:inline cursor-pointer pt-1" />
+          </button>
+        </Link>
       </Form>
     </Formik>
   );

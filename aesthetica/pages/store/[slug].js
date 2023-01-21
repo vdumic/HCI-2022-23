@@ -10,6 +10,7 @@ import {
   getAllRoomSlugs,
   getAllProductsByRoom,
 } from "../api/ContentfulAPI";
+import Filter from "../../components/Filters/Filter";
 
 const RoomPage = ({ products, categories }) => {
   return (
@@ -19,8 +20,11 @@ const RoomPage = ({ products, categories }) => {
       </div>
       <CategoriesSlider categories={categories} />
       <StoreSearch />
-      <div className="flex justify-evenly sm:mx-8 mx-24 my-10">
-        <ItemsList products={products} />
+      <div className="flex flex-row">
+        <Filter />
+        <div className="flex justify-evenly sm:mx-8 mx-24 my-10">
+          <ItemsList products={products} />
+        </div>
       </div>
       <div className="flex justify-center my-10">
         <Link href={`/store/${products[0].roomSlug}`}>

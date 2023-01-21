@@ -1,13 +1,15 @@
 import Link from "next/link";
 import { AiOutlineRight } from "react-icons/ai";
 
-import HeaderFooterLayout from "../../../layouts/HeaderFooterLayout";
-import StoreSearch from "../../../components/Store/StoreSearch";
-import ItemsList from "../../../components/Store/Category/ItemsList";
 import {
   getAllCategorySlugs,
   getAllProductsByCategory,
 } from "../../api/ContentfulAPI";
+
+import HeaderFooterLayout from "../../../layouts/HeaderFooterLayout";
+import StoreSearch from "../../../components/Store/StoreSearch";
+import ItemsList from "../../../components/Store/Category/ItemsList";
+import Filter from "../../../components/Filters/Filter";
 
 const CategoryPage = ({ products }) => {
   return (
@@ -22,8 +24,11 @@ const CategoryPage = ({ products }) => {
         <p className="font-bold sm:text-2xl text-3xl">{products[0].category}</p>
       </div>
       <StoreSearch />
-      <div className="flex justify-evenly sm:mx-8 mx-24 my-10">
-        <ItemsList products={products} />
+      <div className="flex flex-row">
+        <Filter />
+        <div className="flex justify-evenly sm:mx-8 mx-24 my-10">
+          <ItemsList products={products} />
+        </div>
       </div>
     </HeaderFooterLayout>
   );

@@ -5,7 +5,7 @@ import { BiShoppingBag, BiHeart } from "react-icons/bi";
 
 import AppContext from "../store/app-context";
 import NavBar from "./Navigation/NavBar";
-import DropDownMenu from "./Profile/DropDownMenu";
+import DropDownMenu from "./Navigation/DropDownMenu";
 import HamburgerBar from "./Navigation/HamburgerBar";
 
 const Header = () => {

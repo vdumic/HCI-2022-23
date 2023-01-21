@@ -6,7 +6,7 @@ const defaultAppState = {
     totalPrice: 0,
     cartItems: [],
     wishlistItems: [],
-    isLoggedIn: true,
+    isLoggedIn: false,
   },
 };
 
