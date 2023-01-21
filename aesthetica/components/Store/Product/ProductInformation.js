@@ -1,4 +1,5 @@
 import { useState, useContext } from "react";
+import { BiShoppingBag, BiHeart } from "react-icons/bi";
 
 import AppContext from "../../../store/app-context";
 import ColorPicker from "./ColorPicker";
@@ -18,10 +19,10 @@ const ProductInformation = ({ title, price, slug, image }) => {
 
   return (
     <div className="flex flex-col lg:w-3/4 lg:ml-36 items-start">
-      <div className="text-5xl sm:text-3xl mb-4 sm:mt-5 sm:mb-2 font-semibold">
+      <div className="text-4xl sm:text-3xl mb-4 sm:mt-5 sm:mb-2 font-semibold">
         <p>{title}</p>
       </div>
-      <div className="text-4xl sm:text-3xl text-gray-500 font-semibold lg:mb-20 sm:mb-8">
+      <div className="text-3xl sm:text-3xl text-gray-500 font-semibold lg:mb-20 sm:mb-8">
         €{price}
       </div>
       <div className="text-2xl font-medium mb-4">Color:</div>
@@ -47,10 +48,18 @@ const ProductInformation = ({ title, price, slug, image }) => {
         </div>
       </div>
       <button
-        className="flex justify-center bg-[#252526] hover:bg-[#3e3e42] hover:border-[#3e3e42] text-gray-100 font-medium mt-8 py-2 px-14 border-2 border-[#252526] rounded-full shadow-xl"
+        className="flex justify-center bg-[#252526] hover:bg-[#3e3e42] hover:border-[#3e3e42] text-gray-100 font-medium mt-8 py-2 px-12 border-2 border-[#252526] rounded-full shadow-xl"
         onClick={handleAddToCart}
       >
-        Add to cart
+        <p>Add to cart</p>
+        <BiShoppingBag className="ml-2 h-5 w-5" />
+      </button>
+      <button
+        className="flex justify-center bg-bckgrnd hover:bg-bckgrnd-dark hover:border-[#3e3e42] text-[#252526] font-medium mt-8 py-2 px-10 border-2 border-[#252526] rounded-full shadow-xl"
+        onClick={handleAddToCart}
+      >
+        <p>Add to wishlist</p>
+        <BiHeart className="ml-2 h-5 w-5" />
       </button>
     </div>
   );

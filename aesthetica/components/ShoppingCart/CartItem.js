@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const CartItem = ({ product }) => {
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-row sm:flex-col sm:justify-center">
       <Image
         src={product[4]}
         alt={product[1]}

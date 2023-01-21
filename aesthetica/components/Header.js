@@ -62,7 +62,7 @@ const Header = () => {
                 <BiHeart className="h-6 w-6 sm:hidden cursor-pointer" />
               </Link>
             )}
-            <Link href="/shoppingCart">
+            <Link href="/shopping_cart">
               <BiShoppingBag className="h-6 w-6 sm:hidden cursor-pointer" />
             </Link>
           </div>

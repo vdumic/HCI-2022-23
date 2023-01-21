@@ -104,7 +104,7 @@ const HamburgerBar = () => {
                   </li>
                 </Link>
               )}
-              <Link href="/shoppingCart" key="Shopping cart" passHref>
+              <Link href="/shopping_cart" key="Shopping cart" passHref>
                 <li
                   key="Cart"
                   className={`font-bold text-lg px-5 py-2 my-1 rounded-md whitespace-nowrap hover:bg-bckgrnd-dark hover:bg-opacity-50 hover:text-black cursor-pointer ${
