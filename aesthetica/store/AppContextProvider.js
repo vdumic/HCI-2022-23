@@ -68,6 +68,21 @@ const appReducer = (state, action) => {
         },
       };
   }
+
+  if (action.type === "REMOVE FROM CART") {
+    const price = action.value.price * action.value.quantity;
+    const totalPrice = state.userState.totalPrice - price;
+
+    return {
+      userState: {
+        totalPrice: totalPrice,
+        cartItems: state.userState.cartItems.filter(
+          (product) => product[0] !== action.value.slug
+        ),
+        isLoggedIn: state.userState.isLoggedIn,
+      },
+    };
+  }
 };
 
 const AppContextProvider = (props) => {
@@ -88,10 +103,18 @@ const AppContextProvider = (props) => {
     });
   };
 
+  const removeFromCartHandler = (slug, price, quantity) => {
+    dispatchAction({
+      type: "REMOVE FROM CART",
+      value: { slug, price, quantity },
+    });
+  };
+
   const appContext = {
     handleLogin: loginHandler,
     handleLogout: logoutHandler,
     handleAddToCart: addToCartHandler,
+    handleRemoveFromCart: removeFromCartHandler,
     userData: appState.userState,
   };
 

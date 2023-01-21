@@ -12,7 +12,6 @@ module.exports = {
       colors: {
         bckgrnd: {
           light: "#efefefd9",
-          // DEFAULT: "#e7e4e4d9",
           DEFAULT: "#e7e7e4",
           dark: "#bfbbbbd9",
         },
