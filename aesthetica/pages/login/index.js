@@ -22,7 +22,7 @@ const LogIn = () => {
         <LoginForm handleLogin={handleLogin} />
         <Link href="/signup">
           <button className="flex justify-center bg-bckgrnd-dark hover:bg-bckgrnd hover:border-bckgrnd text-[#252526] text-m font-medium mt-12 py-2 pl-5 pr-3.5 border-2 border-bckgrnd-dark rounded-full shadow-xl">
-            Don't have an accout? Signup
+            {`Don't have an accout? Signup`}
             <SlArrowRight className="h-5 w-5 sm:inline cursor-pointer pt-1" />
           </button>
         </Link>
