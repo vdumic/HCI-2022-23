@@ -1,15 +1,11 @@
 import React from "react";
 
 const AppContext = React.createContext({
-  handleLogin: (value) => {},
+  handleLogin: () => {},
+  handleAddToCart: (value) => {},
   appState: {
     itemsNumber: 0,
-    cartItems: {
-      item: {
-        id: 0,
-        number: 0,
-      },
-    },
+    cartItems: {},
     isLoggedIn: false,
   },
 });

@@ -1,14 +1,18 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useRouter } from "next/router";
 
 import { navigationItems } from "../../constants/NavBar";
+import AppContext from "../../store/app-context";
 
 const HamburgerBar = () => {
   const router = useRouter();
   const currentPage = router.pathname;
 
   const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const appCtx = useContext(AppContext);
+  const isLoggedIn = appCtx.userData.isLoggedIn;
 
   return (
     <div className="flex items-center justify-between md:hidden lg:hidden">
@@ -53,31 +57,49 @@ const HamburgerBar = () => {
                   </li>
                 </Link>
               ))}
-              <Link href="/login" key="Login" passHref>
-                <li
-                  key="Login"
-                  className={`font-bold text-lg px-5 py-2 my-1 rounded-md whitespace-nowrap hover:bg-bckgrnd-dark hover:bg-opacity-50 hover:text-black cursor-pointer ${
-                    currentPage === "/login"
-                      ? " bg-bckgrnd-dark bg-opacity-60"
-                      : ""
-                  }`}
-                >
-                  Login
-                </li>
-              </Link>
-              <Link href="/signup" key="Signup" passHref>
-                <li
-                  key="Signup"
-                  className={`font-bold text-lg px-5 py-2 my-1 rounded-md whitespace-nowrap hover:bg-bckgrnd-dark hover:bg-opacity-50 hover:text-black cursor-pointer ${
-                    currentPage === "/signup"
-                      ? " bg-bckgrnd-dark bg-opacity-60"
-                      : ""
-                  }`}
-                >
-                  Signup
-                </li>
-              </Link>
-              <Link href="/shopping_cart" key="Shopping cart" passHref>
+              {!isLoggedIn && (
+                <>
+                  <Link href="/login" key="Login" passHref>
+                    <li
+                      key="Login"
+                      className={`font-bold text-lg px-5 py-2 my-1 rounded-md whitespace-nowrap hover:bg-bckgrnd-dark hover:bg-opacity-50 hover:text-black cursor-pointer ${
+                        currentPage === "/login"
+                          ? " bg-bckgrnd-dark bg-opacity-60"
+                          : ""
+                      }`}
+                    >
+                      Login
+                    </li>
+                  </Link>
+                  <Link href="/signup" key="Signup" passHref>
+                    <li
+                      key="Signup"
+                      className={`font-bold text-lg px-5 py-2 my-1 rounded-md whitespace-nowrap hover:bg-bckgrnd-dark hover:bg-opacity-50 hover:text-black cursor-pointer ${
+                        currentPage === "/signup"
+                          ? " bg-bckgrnd-dark bg-opacity-60"
+                          : ""
+                      }`}
+                    >
+                      Signup
+                    </li>
+                  </Link>
+                </>
+              )}
+              {isLoggedIn && (
+                <Link href="/wishlist" key="Wishlist" passHref>
+                  <li
+                    key="Wishlist"
+                    className={`font-bold text-lg px-5 py-2 my-1 rounded-md whitespace-nowrap hover:bg-bckgrnd-dark hover:bg-opacity-50 hover:text-black cursor-pointer ${
+                      currentPage === "/shopping_cart"
+                        ? " bg-bckgrnd-dark bg-opacity-60"
+                        : ""
+                    }`}
+                  >
+                    Wishlist
+                  </li>
+                </Link>
+              )}
+              <Link href="/shoppingCart" key="Shopping cart" passHref>
                 <li
                   key="Cart"
                   className={`font-bold text-lg px-5 py-2 my-1 rounded-md whitespace-nowrap hover:bg-bckgrnd-dark hover:bg-opacity-50 hover:text-black cursor-pointer ${
@@ -89,6 +111,18 @@ const HamburgerBar = () => {
                   Shopping cart
                 </li>
               </Link>
+              {isLoggedIn && (
+                <li
+                  key="Cart"
+                  className={`font-bold text-lg px-5 py-2 my-10 rounded-md whitespace-nowrap hover:bg-bckgrnd-dark hover:bg-opacity-50 hover:text-black cursor-pointer ${
+                    currentPage === "/shopping_cart"
+                      ? " bg-bckgrnd-dark bg-opacity-60"
+                      : ""
+                  }`}
+                >
+                  Logout
+                </li>
+              )}
             </ul>
           </div>
         </section>

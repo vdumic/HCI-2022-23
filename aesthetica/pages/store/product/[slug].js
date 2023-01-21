@@ -4,8 +4,8 @@ import Image from "next/image";
 import { serialize } from "next-mdx-remote/serialize";
 import { AiOutlineRight } from "react-icons/ai";
 
-import HeaderFooterLayout from "../../../layouts/HeaderFooterLayout";
 import { getAllProductSlugs, getProductBySlug } from "../../api/ContentfulAPI";
+import HeaderFooterLayout from "../../../layouts/HeaderFooterLayout";
 import ProductImages from "../../../components/Store/Product/ProductImages";
 import ProductInformation from "../../../components/Store/Product/ProductInformation";
 import ProductDescription from "../../../components/Store/Product/ProductDescription";
@@ -31,7 +31,11 @@ const ProductPage = ({ product }) => {
       </div>
       <div className="grid grid-cols-2 justify-start sm:col-span-1 sm:grid-cols-1 sm:mx-8 my-4 lg:mx-24">
         <ProductImages images={product.imagesCollection.items} />
-        <ProductInformation title={product.title} price={product.price} />
+        <ProductInformation
+          title={product.title}
+          price={product.price}
+          slug={product.slug}
+        />
       </div>
       <div className="flex flex-row justify-between">
         <div className="flex flex-col lg:mx-24 sm:mx-8 mb-8">

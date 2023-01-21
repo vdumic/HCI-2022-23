@@ -4,12 +4,7 @@ import AppContext from "./app-context";
 const defaultAppState = {
   userState: {
     itemsNumber: 0,
-    cartItems: {
-      item: {
-        id: 0,
-        number: 0,
-      },
-    },
+    cartItems: [],
     isLoggedIn: false,
   },
 };
@@ -26,6 +21,28 @@ const appReducer = (state, action) => {
       },
     };
   }
+
+  if (action.type === "ADD TO CART") {
+    if (state.userState.cartItems.length === 0) {
+      return {
+        userState: {
+          itemsNumber: state.userState.itemsNumber + action.value.quantity,
+          cartItems: [[action.value.slug, action.value.quantity]],
+          isLoggedIn: state.userState.isLoggedIn,
+        },
+      };
+    } else
+      return {
+        userState: {
+          itemsNumber: state.userState.itemsNumber + action.value.quantity,
+          cartItems: [
+            ...state.userState.cartItems,
+            [action.value.slug, action.value.quantity],
+          ],
+          isLoggedIn: state.userState.isLoggedIn,
+        },
+      };
+  }
 };
 
 const AppContextProvider = (props) => {
@@ -35,8 +52,13 @@ const AppContextProvider = (props) => {
     dispatchAction({ type: "LOGIN" });
   };
 
+  const addToCartHandler = (slug, quantity) => {
+    dispatchAction({ type: "ADD TO CART", value: { slug, quantity } });
+  };
+
   const appContext = {
     handleLogin: loginHandler,
+    handleAddToCart: addToCartHandler,
     userData: appState.userState,
   };
 
