@@ -91,6 +91,20 @@ const appReducer = (state, action) => {
   }
 
   if (action.type === "ADD TO WISHLIST") {
+    if (
+      state.userState.wishlistItems.find(
+        (product) => product[0] === action.value.slug
+      )
+    ) {
+      return {
+        userState: {
+          itemsNumber: state.userState.itemsNumber,
+          cartItems: state.userState.cartItems,
+          wishlistItems: state.userState.wishlistItems,
+          isLoggedIn: state.userState.wishlistItems,
+        },
+      };
+    }
     if (state.userState.wishlistItems.length === 0) {
       return {
         userState: {
@@ -140,6 +154,33 @@ const appReducer = (state, action) => {
       },
     };
   }
+
+  if (action.type === "CHANGE QUANTITY") {
+    const products = state.userState.cartItems.filter(
+      (product) => product[0] !== action.value.slug
+    );
+
+    const price = products.map((product) => product[2] * product[3]);
+    const totalPrice = price + action.value.price;
+
+    return {
+      userState: {
+        totalPrice: totalPrice,
+        cartItems: [
+          [
+            action.value.slug,
+            action.value.title,
+            action.value.price,
+            action.value.quantity,
+            action.value.image,
+          ],
+          ...products,
+        ],
+        wishlistItems: state.userState.wishlistItems,
+        isLoggedIn: state.userState.isLoggedIn,
+      },
+    };
+  }
 };
 
 const AppContextProvider = (props) => {
@@ -181,6 +222,13 @@ const AppContextProvider = (props) => {
     });
   };
 
+  const quantityChangeHandler = (slug, title, price, quantity, image) => {
+    dispatchAction({
+      type: "CHANGE QUANTITY",
+      value: { slug, title, price, quantity, image },
+    });
+  };
+
   const appContext = {
     handleLogin: loginHandler,
     handleLogout: logoutHandler,
@@ -188,6 +236,7 @@ const AppContextProvider = (props) => {
     handleRemoveFromCart: removeFromCartHandler,
     handleAddToWishlist: addToWishlistHandler,
     handleRemoveFromWishlist: removeFromWishlistHandler,
+    handleQuantityChange: quantityChangeHandler,
     userData: appState.userState,
   };
 

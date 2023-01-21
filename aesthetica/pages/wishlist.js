@@ -11,7 +11,7 @@ const ShoppingCart = () => {
   const wishlistIsEmpty = appCtx.userData.wishlistItems.length === 0;
 
   return (
-    <HeaderFooterLayout title="Aesthetica / WISHLIST">
+    <HeaderFooterLayout title="Aesthetica / Wishlist">
       <div className="flex justify-center mt-10 mb-6 sm:my-4">
         <p className="font-semibold text-5xl sm:text-4xl">WISHLIST</p>
       </div>

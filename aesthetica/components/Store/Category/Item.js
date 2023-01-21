@@ -15,7 +15,7 @@ const Item = ({ image, name, price, path }) => {
         />
         <p className="text-xl font-normal py-2">{name}</p>
       </Link>
-      <p className="text-2xl font-semibold">{price}€</p>
+      <p className="text-2xl font-semibold">€{price}</p>
     </div>
   );
 };

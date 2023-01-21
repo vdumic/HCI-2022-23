@@ -61,15 +61,15 @@ const WishlistItem = ({ product }) => {
             </button>
           </div>
         </div>
-        <div className="flex justify-start flex-row">
+        <div className="flex justify-start lg:flex-row flex-col">
           <button
-            className="flex justify-center bg-bckgrnd hover:bg-bckgrnd-dark hover:border-[#3e3e42] text-[#252526] font-medium mt-8 py-2 px-10 border-2 border-[#252526] rounded-full shadow-xl mr-4"
+            className="flex justify-center bg-bckgrnd hover:bg-bckgrnd-dark hover:border-[#3e3e42] text-[#252526] font-medium mt-8 py-2 lg:px-10 border-2 border-[#252526] rounded-full shadow-xl lg:mr-4 mr-8"
             onClick={handleRemoveFromWishlist}
           >
             Remove
           </button>
           <button
-            className="flex justify-center bg-bckgrnd hover:bg-bckgrnd-dark hover:border-[#3e3e42] text-[#252526] font-medium mt-8 py-2 px-10 border-2 border-[#252526] rounded-full shadow-xl"
+            className="flex justify-center bg-bckgrnd hover:bg-bckgrnd-dark hover:border-[#3e3e42] text-[#252526] font-medium mt-8 py-2 lg:px-10 border-2 border-[#252526] rounded-full shadow-xl sm:mr-8 md:mr-8"
             onClick={handleAddToCart}
           >
             Add to cart

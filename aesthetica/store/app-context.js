@@ -7,6 +7,7 @@ const AppContext = React.createContext({
   handleRemoveFromCart: (slug, price, quantity) => {},
   handleAddToWishlist: (slug, title, price, quantity, image) => {},
   handleRemoveFromWishlist: (slug, price, quantity) => {},
+  handleQuantityChange: (slug, title, price, quantity, image) => {},
   userState: {
     totalPrice: 0,
     cartItems: [],
