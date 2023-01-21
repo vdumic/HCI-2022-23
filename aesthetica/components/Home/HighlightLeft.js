@@ -14,7 +14,7 @@ const HighlightLeft = () => {
             <p className="text-4xl font-semibold leading-tight mt-5">
               Add lightweight warmth to any bed with our premium linens.
             </p>
-            <MainButton title="Linens" link="/store/linens" />
+            <MainButton title="Linens" link="/store/bedroom" />
           </div>
           <Image
             src={Test}
@@ -35,7 +35,7 @@ const HighlightLeft = () => {
             </p>
             <Image src={Test} width="540" height="400" alt="Main image" />
             <div className="flex justify-center">
-              <MainButton title="Linens" link="/store/linens" />
+              <MainButton title="Linens" link="/store/bedroom" />
             </div>
           </div>
         </div>

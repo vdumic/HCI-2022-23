@@ -13,12 +13,15 @@ const UserInfo = () => {
   );
 
   const ValidationSchema = yup.object().shape({
-    name: yup.string().required('Name is required'),
-    surname: yup.string().required('Surname is required'),
-    phone: yup.number().typeError('Only numbers allowed').required('Phone is required'),
-    street: yup.string().required('Street is required'),
-    city: yup.string().required('City is required'),
-    zipcode: yup.string().required('Zipcode is required'),
+    name: yup.string().required("Name is required"),
+    surname: yup.string().required("Surname is required"),
+    phone: yup
+      .number()
+      .typeError("Only numbers allowed")
+      .required("Phone is required"),
+    street: yup.string().required("Street is required"),
+    city: yup.string().required("City is required"),
+    zipcode: yup.string().required("Zipcode is required"),
   });
 
   return (
@@ -39,7 +42,7 @@ const UserInfo = () => {
       }}
     >
       <Form className="flex flex-col w-full justify-center items-center">
-        <div className="flex md:w-1/4 justify-between sm:w-full sm:px-8">
+        <div className="flex md:w-1/4 justify-between sm:w-full sm:px-8 sm:flex-col ">
           <div className="flex flex-col items-start mb-6">
             <label className="font-medium text-black">Name:</label>
             <Field name="name" className="border-2 py-2" />
@@ -66,14 +69,14 @@ const UserInfo = () => {
         </div>
         <ErrorMessage name="street" render={renderError} />
 
-        <div className="flex md:w-1/4 justify-between sm:w-full sm:px-8">
+        <div className="flex md:w-1/4 justify-between sm:w-full sm:px-8 sm:flex-col">
           <div className="flex flex-col items-start mb-2">
             <label className="font-medium text-black">City:</label>
             <Field name="city" className="border-2 py-2" />
             <ErrorMessage name="city" render={renderError} />
           </div>
 
-          <div className="flex flex-col items-start mb-2">
+          <div className="flex flex-col items-start mb-2 sm:mt-4">
             <label className="font-medium text-black">Zipcode:</label>
             <Field name="zipcode" className="border-2 py-2" />
             <ErrorMessage name="zipcode" render={renderError} />

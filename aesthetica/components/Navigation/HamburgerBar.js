@@ -65,6 +65,18 @@ const HamburgerBar = () => {
                   Login
                 </li>
               </Link>
+              <Link href="/signup" key="Signup" passHref>
+                <li
+                  key="Signup"
+                  className={`font-bold text-lg px-5 py-2 my-1 rounded-md whitespace-nowrap hover:bg-bckgrnd-dark hover:bg-opacity-50 hover:text-black cursor-pointer ${
+                    currentPage === "/signup"
+                      ? " bg-bckgrnd-dark bg-opacity-60"
+                      : ""
+                  }`}
+                >
+                  Signup
+                </li>
+              </Link>
               <Link href="/shopping_cart" key="Shopping cart" passHref>
                 <li
                   key="Cart"
