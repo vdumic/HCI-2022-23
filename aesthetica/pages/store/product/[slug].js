@@ -38,7 +38,6 @@ const ProductPage = ({ product }) => {
           image={product.imagesCollection.items[0].url}
         />
       </div>
-      {/* <div className="flex flex-row justify-between"> */}
       <div className="lg:grid lg:grid-cols-2 lg:justify-start flex flex-row justify-between">
         <div className="flex flex-col lg:mx-24 sm:mx-8 md:mx-10 mb-8">
           <ProductDescription product={product} />

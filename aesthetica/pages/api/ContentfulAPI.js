@@ -315,6 +315,8 @@ export const getAllProductsByRoom = async (room) => {
               price
               categorySlug
               roomSlug
+              color
+              availability
             }
           }
         }`,
@@ -392,6 +394,8 @@ export const getAllProductsByCategory = async (category) => {
               price
               categorySlug
               roomSlug
+              color
+              availability
             }
           }
         }`,
@@ -437,6 +441,8 @@ export const getProductBySlug = async (slug) => {
           price
           categorySlug
           roomSlug
+          color
+          availability
         }
       }
     }`,

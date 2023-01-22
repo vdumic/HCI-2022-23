@@ -79,7 +79,7 @@ const Filter = () => {
             </div>
           </div>
         </div>
-        <div className="w-[200px] h-[280px] bg-white flex justify-start mt-6">
+        <div className="w-[200px] h-[320px] bg-white flex justify-start mt-6">
           <div className="mx-6 mt-4 w-full">
             <p className="text-xl font-semibold mb-2">Color</p>
             <div>
@@ -152,6 +152,21 @@ const Filter = () => {
                   size="small"
                   color="default"
                   label="Blue"
+                />
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      sx={{
+                        color: "#6B7280",
+                        "&.Mui-checked": {
+                          color: "#6B7280",
+                        },
+                      }}
+                    />
+                  }
+                  size="small"
+                  color="default"
+                  label="Brown"
                 />
               </FormGroup>
             </div>

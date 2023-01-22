@@ -9,7 +9,7 @@ import {
 
 import HeaderFooterLayout from "../../../layouts/HeaderFooterLayout";
 import ItemsList from "../../../components/Store/Category/ItemsList";
-import Filter from "../../../components/Filters/Filter";
+import Filter from "../../../components/Filters/FilterRooms";
 
 const CategoryPage = ({ products }) => {
   const [showProducts, setShowProducts] = useState(products);
