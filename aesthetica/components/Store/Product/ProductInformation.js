@@ -24,10 +24,10 @@ const ProductInformation = ({ title, price, slug, image }) => {
 
   return (
     <div className="flex flex-col lg:w-3/4 lg:ml-36 items-start">
-      <div className="text-4xl sm:text-3xl mb-4 sm:mt-5 sm:mb-2 font-semibold">
+      <div className="text-4xl sm:text-2xl md:text-3xl mb-4 sm:mt-5 md:mt-5 sm:mb-2 md:mb-2 font-semibold">
         <p>{title}</p>
       </div>
-      <div className="text-3xl sm:text-3xl text-gray-500 font-semibold lg:mb-20 sm:mb-8">
+      <div className="text-3xl sm:text-2xl md:text-3xl text-gray-500 font-semibold lg:mb-20 sm:mb-8 md:mb-8">
         €{price}
       </div>
       <div className="text-2xl font-medium mb-4">Color:</div>
