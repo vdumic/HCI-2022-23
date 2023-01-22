@@ -7,7 +7,7 @@ const nextConfig = {
     CONTENT_MANAGEMENT_API_KEY: process.env.CONTENT_MANAGEMENT_API_KEY,
   },
   images: {
-    domains: ["images.ctfassets.net"],
+    domains: ["images.ctfassets.net", "assets.ctfassets.net"],
   },
 };
 

@@ -37,7 +37,20 @@ const appReducer = (state, action) => {
     const price = action.value.price * action.value.quantity;
     const totalPrice = state.userState.totalPrice + price;
 
-    if (state.userState.cartItems.length === 0) {
+    if (
+      state.userState.cartItems.find(
+        (product) => product[0] === action.value.slug
+      )
+    ) {
+      return {
+        userState: {
+          itemsNumber: state.userState.itemsNumber,
+          cartItems: state.userState.cartItems,
+          wishlistItems: state.userState.wishlistItems,
+          isLoggedIn: state.userState.wishlistItems,
+        },
+      };
+    } else if (state.userState.cartItems.length === 0) {
       return {
         userState: {
           totalPrice: totalPrice,

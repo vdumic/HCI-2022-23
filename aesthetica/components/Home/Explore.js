@@ -56,7 +56,7 @@ const Explore = ({ exploreRooms, exploreCategories }) => {
         categoriesClicked={categoriesClicked}
         offersClicked={offersClicked}
         exploreRooms={exploreRooms}
-        exploreCategories={exploreCategories}
+        exploreCategories={exploreCategories.slice(4, 9)}
       />
       <div className="flex justify-center mb-10">
         <Link href="/store">

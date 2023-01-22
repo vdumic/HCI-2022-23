@@ -13,7 +13,7 @@ const Filter = () => {
             <p className="text-xl font-semibold">Color</p>
           </div>
         </div>
-        <div className="w-[200px] h-[300px] bg-white flex justify-start mt-6">
+        <div className="w-[200px] h-[300px] bg-white flex justify-start my-6">
           <div className="mx-6 mt-4 w-full">
             <p className="text-xl font-semibold">Availability</p>
           </div>
