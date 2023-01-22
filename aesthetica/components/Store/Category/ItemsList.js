@@ -7,7 +7,8 @@ const ItemsList = ({ products }) => {
         <Item
           name={product.title}
           price={product.price}
-          image={product.imagesCollection.items[0].url}
+          image1={product.imagesCollection.items[0].url}
+          image2={product.imagesCollection.items[4].url}
           path={product.slug}
           key={product.slug}
         />
