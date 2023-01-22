@@ -47,7 +47,7 @@ const appReducer = (state, action) => {
           itemsNumber: state.userState.itemsNumber,
           cartItems: state.userState.cartItems,
           wishlistItems: state.userState.wishlistItems,
-          isLoggedIn: state.userState.wishlistItems,
+          isLoggedIn: state.userState.isLoggedIn,
         },
       };
     } else if (state.userState.cartItems.length === 0) {
@@ -114,7 +114,7 @@ const appReducer = (state, action) => {
           itemsNumber: state.userState.itemsNumber,
           cartItems: state.userState.cartItems,
           wishlistItems: state.userState.wishlistItems,
-          isLoggedIn: state.userState.wishlistItems,
+          isLoggedIn: state.userState.isLoggedIn,
         },
       };
     }

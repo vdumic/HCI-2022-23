@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { BiShoppingBag, BiHeart } from "react-icons/bi";
 
 import AppContext from "../../../store/app-context";
@@ -8,6 +8,8 @@ const ProductInformation = ({ title, price, slug, image }) => {
   const appCtx = useContext(AppContext);
 
   const [number, setNumber] = useState(1);
+  const [cartClicked, setCartClicked] = useState(false);
+  const [wishlistClicked, setWishlistClicked] = useState(false);
 
   const updateQuantity = (value) => {
     setNumber((prevState) => prevState + value);
@@ -15,11 +17,18 @@ const ProductInformation = ({ title, price, slug, image }) => {
 
   const handleAddToCart = () => {
     appCtx.handleAddToCart(slug, title, price, number, image);
+    setCartClicked(true);
+    setTimeout(() => {
+      setCartClicked(false);
+    }, 5000);
   };
 
   const handleAddToWishlist = () => {
     appCtx.handleAddToWishlist(slug, title, price, number, image);
-    console.log(appCtx.userData.wishlistItems);
+    setWishlistClicked(true);
+    setTimeout(() => {
+      setWishlistClicked(false);
+    }, 5000);
   };
 
   return (
@@ -52,20 +61,66 @@ const ProductInformation = ({ title, price, slug, image }) => {
           </button>
         </div>
       </div>
-      <button
-        className="flex justify-center bg-[#252526] hover:bg-[#3e3e42] hover:border-[#3e3e42] text-gray-100 font-medium mt-8 py-2 px-12 border-2 border-[#252526] rounded-full shadow-xl"
-        onClick={handleAddToCart}
-      >
-        <p>Add to cart</p>
-        <BiShoppingBag className="ml-2 h-5 w-5" />
-      </button>
-      <button
-        className="flex justify-center bg-bckgrnd hover:bg-bckgrnd-dark hover:border-[#3e3e42] text-[#252526] font-medium mt-8 py-2 px-10 border-2 border-[#252526] rounded-full shadow-xl"
-        onClick={handleAddToWishlist}
-      >
-        <p>Add to wishlist</p>
-        <BiHeart className="ml-2 h-5 w-5" />
-      </button>
+      <div className="flex flex-row justify-start sm:hidden">
+        <button
+          className="flex justify-center bg-[#252526] hover:bg-[#3e3e42] hover:border-[#3e3e42] text-gray-100 font-medium mt-8 py-2 px-12 border-2 border-[#252526] rounded-full shadow-xl"
+          onClick={handleAddToCart}
+        >
+          <p>Add to cart</p>
+          <BiShoppingBag className="ml-2 h-5 w-5 " />
+        </button>
+        {cartClicked && (
+          <div className="flex justify-center font-semibold mt-8 py-1 px-6 border-4 border-bckgrnd-dark ml-4">
+            <p>{`${title} successfully added to cart!`}</p>
+          </div>
+        )}
+      </div>
+      <div className="flex flex-row justify-start sm:hidden">
+        <button
+          className="flex justify-center bg-bckgrnd hover:bg-bckgrnd-dark hover:border-[#3e3e42] text-[#252526] font-medium mt-8 py-2 px-10 border-2 border-[#252526] rounded-full shadow-xl"
+          onClick={handleAddToWishlist}
+        >
+          <p>Add to wishlist</p>
+          <BiHeart className="ml-2 h-5 w-5" />
+        </button>
+        {wishlistClicked && (
+          <div className="flex justify-center font-semibold mt-8 py-1 px-4 border-4 border-bckgrnd-dark ml-4">
+            <p>{`${title} successfully added to wishlist!`}</p>
+          </div>
+        )}
+      </div>
+      <div className="flex flex-row justify-start lg:hidden md:hidden">
+        {!cartClicked && (
+          <button
+            className="flex justify-center bg-[#252526] hover:bg-[#3e3e42] hover:border-[#3e3e42] text-gray-100 font-medium mt-8 py-2 px-12 border-2 border-[#252526] rounded-full shadow-xl"
+            onClick={handleAddToCart}
+          >
+            <p>Add to cart</p>
+            <BiShoppingBag className="ml-2 h-5 w-5 " />
+          </button>
+        )}
+        {cartClicked && (
+          <div className="flex justify-center font-semibold mt-8 py-1 px-6 border-4 border-bckgrnd-dark ml-4">
+            <p>{`${title} successfully added to cart!`}</p>
+          </div>
+        )}
+      </div>
+      <div className="flex flex-row justify-start lg:hidden md:hidden">
+        {!wishlistClicked && (
+          <button
+            className="flex justify-center bg-bckgrnd hover:bg-bckgrnd-dark hover:border-[#3e3e42] text-[#252526] font-medium mt-8 py-2 px-10 border-2 border-[#252526] rounded-full shadow-xl"
+            onClick={handleAddToWishlist}
+          >
+            <p>Add to wishlist</p>
+            <BiHeart className="ml-2 h-5 w-5" />
+          </button>
+        )}
+        {wishlistClicked && (
+          <div className="flex justify-center font-semibold mt-8 py-1 px-4 border-4 border-bckgrnd-dark ml-4">
+            <p>{`${title} successfully added to wishlist!`}</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

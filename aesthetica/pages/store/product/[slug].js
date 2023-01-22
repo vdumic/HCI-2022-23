@@ -47,7 +47,7 @@ const ProductPage = ({ product }) => {
         <Image
           src={product.model.url}
           alt={product.title}
-          style={{ objectFit: "cover" }}
+          // style={{ objectFit: "cover" }}
           width="500"
           height="500"
           className="m-5 mr-28 sm:hidden md:hidden h-[500px] w-[500px]"
@@ -57,7 +57,7 @@ const ProductPage = ({ product }) => {
         <Image
           src={product.model.url}
           alt={product.title}
-          style={{ objectFit: "cover" }}
+          // style={{ objectFit: "cover" }}
           width="500"
           height="500"
           className="my-5 sm:mx-8 md:h-[500px] md:w-[500px] sm:h-[300px] sm:w-[300px] md:mx-10"
