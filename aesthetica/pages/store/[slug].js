@@ -56,121 +56,233 @@ const RoomPage = ({ products, categories }) => {
   };
 
   const applyFilters = () => {
-    let filtered = [];
+    let filtered;
+
+    if (
+      !filterColors.white &&
+      !filterColors.black &&
+      !filterColors.blue &&
+      !filterColors.gray &&
+      !filterColors.green &&
+      !filterColors.brown &&
+      !filterPrice.first &&
+      !filterPrice.second &&
+      !filterPrice.third &&
+      !filterPrice.fourth &&
+      !filterPrice.fifth &&
+      !filterAvailability.inStock &&
+      !filterAvailability.preorder &&
+      !filterAvailability.bespoke
+    ) {
+      filtered = products;
+    }
 
     if (filterColors.white) {
-      filtered.push(
-        products.filter((product) => {
-          return product.color == "White";
-        })
-      );
+      filtered = products.filter((product) => {
+        return product.color == "White";
+      });
     }
 
     if (filterColors.black) {
-      filtered.push(
-        products.filter((product) => {
+      if (filtered === undefined) {
+        filtered = products.filter((product) => {
           return product.color == "Black";
-        })
-      );
+        });
+      } else {
+        filtered = [
+          ...filtered,
+          products.filter((product) => {
+            return product.color == "Black";
+          }),
+        ];
+      }
     }
 
     if (filterColors.gray) {
-      filtered.push(
-        products.filter((product) => {
+      if (filtered === undefined) {
+        filtered = products.filter((product) => {
           return product.color == "Gray";
-        })
-      );
+        });
+      } else {
+        filtered = [
+          ...filtered,
+          ...products.filter((product) => {
+            return product.color == "Gray";
+          }),
+        ];
+      }
     }
 
     if (filterColors.green) {
-      filtered.push(
-        products.filter((product) => {
+      if (filtered === undefined) {
+        filtered = products.filter((product) => {
           return product.color == "Green";
-        })
-      );
+        });
+      } else {
+        filtered = [
+          ...filtered,
+          ...products.filter((product) => {
+            return product.color == "Green";
+          }),
+        ];
+      }
     }
 
     if (filterColors.blue) {
-      filtered.push(
-        products.filter((product) => {
+      if (filtered === undefined) {
+        filtered = products.filter((product) => {
           return product.color == "Blue";
-        })
-      );
+        });
+      } else {
+        filtered = [
+          ...filtered,
+          ...products.filter((product) => {
+            return product.color == "Blue";
+          }),
+        ];
+      }
     }
 
     if (filterColors.brown) {
-      filtered.push(
-        products.filter((product) => {
+      if (filtered === undefined) {
+        filtered = products.filter((product) => {
           return product.color == "Brown";
-        })
-      );
+        });
+      } else {
+        filtered = [
+          ...filtered,
+          ...products.filter((product) => {
+            return product.color == "Brown";
+          }),
+        ];
+      }
     }
 
     if (filterPrice.first) {
-      filtered.push(
-        products.filter((product) => {
+      if (filtered === undefined) {
+        filtered = products.filter((product) => {
           return product.price <= 100;
-        })
-      );
+        });
+      } else {
+        filtered = [
+          ...filtered,
+          ...products.filter((product) => {
+            return product.price <= 100;
+          }),
+        ];
+      }
     }
 
     if (filterPrice.second) {
-      filtered.push(
-        products.filter((product) => {
+      if (filtered === undefined) {
+        filtered = products.filter((product) => {
           return product.price > 100 && product.price <= 250;
-        })
-      );
+        });
+      } else {
+        filtered = [
+          ...filtered,
+          ...products.filter((product) => {
+            return product.price > 100 && product.price <= 250;
+          }),
+        ];
+      }
     }
 
     if (filterPrice.third) {
-      filtered.push(
-        products.filter((product) => {
-          return product.price > 350 && product.price <= 500;
-        })
-      );
+      if (filtered === undefined) {
+        filtered = products.filter((product) => {
+          return product.price > 250 && product.price <= 500;
+        });
+      } else {
+        filtered = [
+          ...filtered,
+          ...products.filter((product) => {
+            return product.price > 250 && product.price <= 500;
+          }),
+        ];
+      }
     }
 
     if (filterPrice.fourth) {
-      filtered.push(
-        products.filter((product) => {
+      if (filtered === undefined) {
+        filtered = products.filter((product) => {
           return product.price > 500 && product.price <= 1000;
-        })
-      );
+        });
+      } else {
+        filtered = [
+          ...filtered,
+          ...products.filter((product) => {
+            return product.price > 500 && product.price <= 1000;
+          }),
+        ];
+      }
     }
 
     if (filterPrice.fifth) {
-      filtered.push(
-        products.filter((product) => {
+      if (filtered === undefined) {
+        filtered = products.filter((product) => {
           return product.price > 1000;
-        })
-      );
+        });
+      } else {
+        filtered = [
+          ...filtered,
+          ...products.filter((product) => {
+            return product.price > 1000;
+          }),
+        ];
+      }
     }
 
     if (filterAvailability.inStock) {
-      filtered.push(
-        products.filter((product) => {
+      if (filtered === undefined) {
+        filtered = products.filter((product) => {
           return product.availability == "In Stock";
-        })
-      );
+        });
+      } else {
+        filtered = [
+          ...filtered,
+          ...products.filter((product) => {
+            return product.availability == "In Stock";
+          }),
+        ];
+      }
     }
 
     if (filterAvailability.preorder) {
-      filtered.push(
-        products.filter((product) => {
+      if (filtered === undefined) {
+        filtered = products.filter((product) => {
           return product.availability == "Pre-Order";
-        })
-      );
+        });
+      } else {
+        filtered = [
+          ...filtered,
+          ...products.filter((product) => {
+            return product.availability == "Pre-Order";
+          }),
+        ];
+      }
     }
 
     if (filterAvailability.bespoke) {
-      filtered.push(
-        products.filter((product) => {
+      if (filtered === undefined) {
+        filtered = products.filter((product) => {
           return product.availability == "Bespoke";
-        })
-      );
+        });
+      } else {
+        filtered = [
+          ...filtered,
+          ...products.filter((product) => {
+            return product.availability == "Bespoke";
+          }),
+        ];
+      }
     }
 
-    console.log(filtered);
+    filtered = filtered.filter((product, index) => {
+      return filtered.indexOf(product) === index;
+    });
+
+    setShowProducts(filtered);
   };
 
   return (
