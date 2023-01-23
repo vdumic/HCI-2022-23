@@ -43,21 +43,21 @@ const ProductInformation = ({ title, price, slug, image }) => {
       <ColorPicker />
       <div className="text-2xl font-medium mb-4">Quantity:</div>
       <div className="h-[40px] w-[188px]">
-        <div className="flex flex-row h-[40px] w-[188px] rounded-full relative bg-gray-300 py-2">
+        <div className="flex flex-row h-[40px] w-[200px] rounded-full relative bg-gray-300 pb-1">
           <button
             onClick={() => updateQuantity(-1)}
-            className="bg-gray-300 text-gray-600 hover:bg-gray-400 h-full w-full rounded-full cursor-pointer outline-none"
+            className="bg-gray-300 text-gray-600 hover:bg-gray-400 h-[40px] w-full rounded-full cursor-pointer outline-none"
           >
-            <span className="m-auto text-2xl font-thin">−</span>
+            <span className="text-2xl font-thin">−</span>
           </button>
-          <span className="flex items-center outline-none  ml-9 text-center w-full bg-gray-300 font-semibold text-md text-black focus:text-black">
+          <span className="flex items-center outline-none ml-9 pt-1 text-center w-full bg-gray-300 font-semibold text-md text-black focus:text-black">
             {number}
           </span>
           <button
             onClick={() => updateQuantity(+1)}
-            className="bg-gray-300 text-gray-600 hover:bg-gray-400 h-full w-full rounded-full cursor-pointer"
+            className="bg-gray-300 text-gray-600 hover:bg-gray-400 h-[40px] w-full rounded-full cursor-pointer"
           >
-            <span className="flex justify-center text-2xl font-thin">+</span>
+            <span className="text-2xl font-thin">+</span>
           </button>
         </div>
       </div>
@@ -77,11 +77,11 @@ const ProductInformation = ({ title, price, slug, image }) => {
       </div>
       <div className="flex flex-row justify-start sm:hidden">
         <button
-          className="flex justify-center bg-bckgrnd hover:bg-bckgrnd-dark hover:border-[#3e3e42] text-[#252526] font-medium mt-8 py-2 px-10 border-2 border-[#252526] rounded-full shadow-xl"
+          className="flex justify-center bg-bckgrnd hover:bg-bckgrnd-dark hover:border-[#3e3e42] text-[#252526] font-medium mt-8 py-2 px-9 border-2 border-[#252526] rounded-full shadow-xl"
           onClick={handleAddToWishlist}
         >
           <p>Add to wishlist</p>
-          <BiHeart className="ml-2 h-5 w-5" />
+          <BiHeart className="ml-2 lg:mt-[2px] h-5 w-5" />
         </button>
         {wishlistClicked && (
           <div className="flex justify-center font-semibold mt-8 py-1 px-4 border-4 border-bckgrnd-dark ml-4">
@@ -108,7 +108,7 @@ const ProductInformation = ({ title, price, slug, image }) => {
       <div className="flex flex-row justify-start lg:hidden md:hidden">
         {!wishlistClicked && (
           <button
-            className="flex justify-center bg-bckgrnd hover:bg-bckgrnd-dark hover:border-[#3e3e42] text-[#252526] font-medium mt-8 py-2 px-10 border-2 border-[#252526] rounded-full shadow-xl"
+            className="flex justify-center bg-bckgrnd hover:bg-bckgrnd-dark hover:border-[#3e3e42] text-[#252526] font-medium mt-8 py-2 px-9 border-2 border-[#252526] rounded-full shadow-xl"
             onClick={handleAddToWishlist}
           >
             <p>Add to wishlist</p>

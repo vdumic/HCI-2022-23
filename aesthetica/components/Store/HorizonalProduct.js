@@ -9,6 +9,7 @@ const HorizontalProduct = ({ image, link }) => {
         src={image}
         height="700"
         className="w-full h-[700px]"
+        style={{ objectFit: 'cover' }}
       />
     </Link>
   );

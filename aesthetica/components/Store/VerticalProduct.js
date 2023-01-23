@@ -9,6 +9,7 @@ const VerticalProduct = ({ image, link }) => {
         src={image}
         height="340"
         className="w-full h-[340px]"
+        style={{ objectFit: 'cover' }}
       />
     </Link>
   );

@@ -2,9 +2,9 @@ import ExploreSlider from "../Home/ExploreSlider";
 
 const Categories = ({ exploreRooms, exploreCategories }) => {
   return (
-    <div className="max-w-full mx-28 my-10 sm:mx-8">
+    <div className="max-w-full mx-24 my-10 sm:mx-8">
       <p className="font-bold text-3xl sm:text-2xl">Choose room:</p>
-      <div className="flex justify-center mt-10 sm:hidden md:hidden">
+      <div className="flex justify-center sm:hidden md:hidden">
         <ExploreSlider roomsClicked={true} exploreRooms={exploreRooms} />
       </div>
       <div className="flex justify-center mt-10 lg:hidden">
@@ -14,7 +14,7 @@ const Categories = ({ exploreRooms, exploreCategories }) => {
         />
       </div>
       <p className="font-bold text-3xl sm:text-2xl">Choose category:</p>
-      <div className="flex justify-center mt-10 sm:hidden md:hidden">
+      <div className="flex justify-center sm:hidden md:hidden">
         <ExploreSlider
           categoriesClicked={true}
           exploreCategories={exploreCategories.slice(4, 18)}
