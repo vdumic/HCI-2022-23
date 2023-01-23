@@ -62,7 +62,7 @@ const ExploreSlider = ({
               <Slider>
                 <div
                   id="slider"
-                  className="h-full flex md:gap-8 gap-8 items-center justify-start transition ease-out duration-700"
+                  className="h-full flex md:gap-8 gap-8 items-center justify-center transition ease-out duration-700"
                 >
                   {roomsClicked &&
                     exploreRooms.map((room) => (

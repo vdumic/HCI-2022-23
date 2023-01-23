@@ -10,14 +10,26 @@ const RecommendedSegment = () => {
   return (
     <div>
       <div className="flex justify-center">
-        <HorizontalProduct image={Recommended1} />
+        <HorizontalProduct
+          image={Recommended1}
+          link="/store/product/girola-chair"
+        />
         <div className="flex-col justify-center mx-4">
-          <VerticalProduct image={Recommended2} />
+          <VerticalProduct
+            image={Recommended2}
+            link="/store/product/streamline-coffee-table"
+          />
           <div className="mt-4">
-            <VerticalProduct image={Recommended3} />
+            <VerticalProduct
+              image={Recommended3}
+              link="/store/product/andes-sofa-bed"
+            />
           </div>
         </div>
-        <HorizontalProduct image={Recommended4} />
+        <HorizontalProduct
+          image={Recommended4}
+          link="/store/product/seamless-bathroom-cabinet"
+        />
       </div>
     </div>
   );

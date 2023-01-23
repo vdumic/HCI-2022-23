@@ -51,13 +51,24 @@ const Explore = ({ exploreRooms, exploreCategories }) => {
           handleClick={handleOfferssClick}
         />
       </div>
-      <ExploreSlider
-        roomsClicked={roomsClicked}
-        categoriesClicked={categoriesClicked}
-        offersClicked={offersClicked}
-        exploreRooms={exploreRooms}
-        exploreCategories={exploreCategories.slice(4, 11)}
-      />
+      <div className="lg:hidden">
+        <ExploreSlider
+          roomsClicked={roomsClicked}
+          categoriesClicked={categoriesClicked}
+          offersClicked={offersClicked}
+          exploreRooms={exploreRooms.slice(0, 5)}
+          exploreCategories={exploreCategories.slice(0, 5)}
+        />
+      </div>
+      <div className="sm:hidden md:hidden">
+        <ExploreSlider
+          roomsClicked={roomsClicked}
+          categoriesClicked={categoriesClicked}
+          offersClicked={offersClicked}
+          exploreRooms={exploreRooms.slice(0, 6)}
+          exploreCategories={exploreCategories.slice(0, 7)}
+        />
+      </div>
       <div className="flex justify-center mb-10">
         <Link href="/store">
           <button className="flex justify-center text-black text-2xl font-normal py-2 px-8 sm:text-xl">

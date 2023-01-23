@@ -17,6 +17,33 @@ import ItemsList from "../../components/Store/Category/ItemsList";
 const RoomPage = ({ products, categories }) => {
   const [showProducts, setShowProducts] = useState(products);
   const [filterValue, setFilterValue] = useState("");
+  const totalProducts = products.length;
+
+  const [priceClicked, setPriceClicked] = useState(false);
+  const [colorClicked, setColorClicked] = useState(false);
+  const [availabilityClicked, setAvailabilityClicked] = useState(false);
+
+  const [loadClicked, setLoadClicked] = useState(false);
+
+  const handleLoadClick = (e) => {
+    e.preventDefault();
+    setLoadClicked(!loadClicked);
+  };
+
+  const handlePriceClick = (e) => {
+    e.preventDefault();
+    setPriceClicked(!priceClicked);
+  };
+
+  const handleColorClick = (e) => {
+    e.preventDefault();
+    setColorClicked(!colorClicked);
+  };
+
+  const handleAvailabilityClick = (e) => {
+    e.preventDefault();
+    setAvailabilityClicked(!availabilityClicked);
+  };
 
   const [filterPrice, setFilterPrice] = useState({
     first: false,
@@ -308,8 +335,9 @@ const RoomPage = ({ products, categories }) => {
           <AiOutlineSearch className="h-7 w-7 sm:inline cursor-pointer" />
         </button>
       </div>
-      <div className="flex flex-row">
-        <div className="flex justify-start w-1/6">
+      <div className="flex lg:flex-row sm:flex-col md:flex-col">
+        {/* Filter for desktop */}
+        <div className="flex justify-start w-1/6 sm:hidden md:hidden">
           <div className="mx-24">
             <div className="flex justify-between">
               <p className="font-bold text-2xl mb-6">Filters</p>
@@ -672,18 +700,448 @@ const RoomPage = ({ products, categories }) => {
           </div>
         </div>
 
-        <div className="flex justify-evenly sm:mx-8 mx-24 my-10">
-          <ItemsList products={showProducts} />
+        {/* Filter for mobile */}
+        <div className="flex justify-start mt-2 w-1/6 lg:hidden">
+          <div className="mx-24">
+            <div className="flex justify-between">
+              <p className="font-bold text-2xl mb-6">Filters</p>
+              <button
+                onClick={applyFilters}
+                className="font-semibold text-lg mb-6 border-2 px-2 border-black rounded-xl hover:bg-bckgrnd shadow-xl"
+              >
+                Apply
+              </button>
+            </div>
+            {!priceClicked && (
+              <button
+                onClick={handlePriceClick}
+                className="flex justify-between w-[200px] bg-white text-black text-lg font-semibold py-2 px-6 border-2 border-bckgrnd shadow-lg"
+              >
+                <p>Price</p>
+                <p className="text-xl">+</p>
+              </button>
+            )}
+            {priceClicked && (
+              <div className="w-[200px] h-[280px] bg-white flex justify-start">
+                <div>
+                  <button
+                    onClick={handlePriceClick}
+                    className="flex justify-between w-[200px] mt-2 bg-white text-black text-lg font-semibold py-2 px-6"
+                  >
+                    <p>Price</p>
+                    <p className="text-xl">-</p>
+                  </button>
+                  <div className="mx-6 w-full">
+                    <FormGroup>
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            sx={{
+                              color: "#6B7280",
+                              "&.Mui-checked": {
+                                color: "#6B7280",
+                              },
+                            }}
+                            checked={filterPrice.first}
+                            onClick={(e) => {
+                              setFilterPrice({
+                                first: !filterPrice.first,
+                                second: filterPrice.second,
+                                third: filterPrice.third,
+                                fourth: filterPrice.fourth,
+                                fifth: filterPrice.fifth,
+                              });
+                            }}
+                          />
+                        }
+                        label="< €100"
+                      />
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            sx={{
+                              color: "#6B7280",
+                              "&.Mui-checked": {
+                                color: "#6B7280",
+                              },
+                            }}
+                            checked={filterPrice.second}
+                            onClick={(e) => {
+                              setFilterPrice({
+                                first: filterPrice.first,
+                                second: !filterPrice.second,
+                                third: filterPrice.third,
+                                fourth: filterPrice.fourth,
+                                fifth: filterPrice.fifth,
+                              });
+                            }}
+                          />
+                        }
+                        label="€100-€250"
+                      />
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            sx={{
+                              color: "#6B7280",
+                              "&.Mui-checked": {
+                                color: "#6B7280",
+                              },
+                            }}
+                            checked={filterPrice.third}
+                            onClick={(e) => {
+                              setFilterPrice({
+                                first: filterPrice.first,
+                                second: filterPrice.second,
+                                third: !filterPrice.third,
+                                fourth: filterPrice.fourth,
+                                fifth: filterPrice.fifth,
+                              });
+                            }}
+                          />
+                        }
+                        label="€250-€500"
+                      />
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            sx={{
+                              color: "#6B7280",
+                              "&.Mui-checked": {
+                                color: "#6B7280",
+                              },
+                            }}
+                            checked={filterPrice.fourth}
+                            onClick={(e) => {
+                              setFilterPrice({
+                                first: filterPrice.first,
+                                second: filterPrice.second,
+                                third: filterPrice.third,
+                                fourth: !filterPrice.fourth,
+                                fifth: filterPrice.fifth,
+                              });
+                            }}
+                          />
+                        }
+                        label="€500-€1000"
+                      />
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            sx={{
+                              color: "#6B7280",
+                              "&.Mui-checked": {
+                                color: "#6B7280",
+                              },
+                            }}
+                            checked={filterPrice.fifth}
+                            onClick={(e) => {
+                              setFilterPrice({
+                                first: filterPrice.first,
+                                second: filterPrice.second,
+                                third: filterPrice.third,
+                                fourth: filterPrice.fourth,
+                                fifth: !filterPrice.fifth,
+                              });
+                            }}
+                          />
+                        }
+                        label="€1000 >"
+                      />
+                    </FormGroup>
+                  </div>
+                </div>
+              </div>
+            )}
+            {!colorClicked && (
+              <button
+                onClick={handleColorClick}
+                className="flex justify-between w-[200px] mt-4 bg-white text-black text-lg font-semibold py-2 px-6 border-2 border-bckgrnd shadow-lg"
+              >
+                <p>Color</p>
+                <p className="text-xl">+</p>
+              </button>
+            )}
+            {colorClicked && (
+              <div className="w-[200px] h-[320px] bg-white flex justify-start mt-4">
+                <div>
+                  <button
+                    onClick={handleColorClick}
+                    className="flex justify-between w-[200px] my-2 bg-white text-black text-lg font-semibold py-2 px-6"
+                  >
+                    <p>Color</p>
+                    <p className="text-xl">-</p>
+                  </button>
+                  <div className="mx-6 w-full">
+                    <FormGroup>
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            sx={{
+                              color: "#6B7280",
+                              "&.Mui-checked": {
+                                color: "#6B7280",
+                              },
+                            }}
+                            checked={filterColors.white}
+                            onClick={(e) => {
+                              setFilterColors({
+                                white: !filterColors.white,
+                                black: filterColors.black,
+                                gray: filterColors.gray,
+                                green: filterColors.green,
+                                blue: filterColors.blue,
+                                brown: filterColors.brown,
+                              });
+                            }}
+                          />
+                        }
+                        label="White"
+                      />
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            sx={{
+                              color: "#6B7280",
+                              "&.Mui-checked": {
+                                color: "#6B7280",
+                              },
+                            }}
+                            checked={filterColors.black}
+                            onClick={(e) => {
+                              setFilterColors({
+                                white: filterColors.white,
+                                black: !filterColors.black,
+                                gray: filterColors.gray,
+                                green: filterColors.green,
+                                blue: filterColors.blue,
+                                brown: filterColors.brown,
+                              });
+                            }}
+                          />
+                        }
+                        label="Black"
+                      />
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            sx={{
+                              color: "#6B7280",
+                              "&.Mui-checked": {
+                                color: "#6B7280",
+                              },
+                            }}
+                            checked={filterColors.gray}
+                            onClick={(e) => {
+                              setFilterColors({
+                                white: filterColors.white,
+                                black: filterColors.black,
+                                gray: !filterColors.gray,
+                                green: filterColors.green,
+                                blue: filterColors.blue,
+                                brown: filterColors.brown,
+                              });
+                            }}
+                          />
+                        }
+                        label="Gray"
+                      />
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            sx={{
+                              color: "#6B7280",
+                              "&.Mui-checked": {
+                                color: "#6B7280",
+                              },
+                            }}
+                            checked={filterColors.green}
+                            onClick={(e) => {
+                              setFilterColors({
+                                white: filterColors.white,
+                                black: filterColors.black,
+                                gray: filterColors.gray,
+                                green: !filterColors.green,
+                                blue: filterColors.blue,
+                                brown: filterColors.brown,
+                              });
+                            }}
+                          />
+                        }
+                        label="Green"
+                      />
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            sx={{
+                              color: "#6B7280",
+                              "&.Mui-checked": {
+                                color: "#6B7280",
+                              },
+                            }}
+                            checked={filterColors.blue}
+                            onClick={(e) => {
+                              setFilterColors({
+                                white: filterColors.white,
+                                black: filterColors.black,
+                                gray: filterColors.gray,
+                                green: filterColors.green,
+                                blue: !filterColors.blue,
+                                brown: filterColors.brown,
+                              });
+                            }}
+                          />
+                        }
+                        label="Blue"
+                      />
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            sx={{
+                              color: "#6B7280",
+                              "&.Mui-checked": {
+                                color: "#6B7280",
+                              },
+                            }}
+                            checked={filterColors.brown}
+                            onClick={(e) => {
+                              setFilterColors({
+                                white: filterColors.white,
+                                black: filterColors.black,
+                                gray: filterColors.gray,
+                                green: filterColors.green,
+                                blue: filterColors.blue,
+                                brown: !filterColors.brown,
+                              });
+                            }}
+                          />
+                        }
+                        label="Brown"
+                      />
+                    </FormGroup>
+                  </div>
+                </div>
+              </div>
+            )}
+            {!availabilityClicked && (
+              <button
+                onClick={handleAvailabilityClick}
+                className="flex justify-between w-[200px] mt-4 bg-white text-black text-lg font-semibold py-2 px-6 border-2 border-bckgrnd shadow-lg"
+              >
+                <p>Availability</p>
+                <p className="text-xl">+</p>
+              </button>
+            )}
+            {availabilityClicked && (
+              <div className="w-[200px] h-[200px] bg-white flex justify-start my-4">
+                <div>
+                  <button
+                    onClick={handleAvailabilityClick}
+                    className="flex justify-between w-[200px] my-2 bg-white text-black text-lg font-semibold py-2 px-6"
+                  >
+                    <p>Availability</p>
+                    <p className="text-xl">-</p>
+                  </button>
+                  <div className="mx-6 w-full">
+                    <FormGroup>
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            sx={{
+                              color: "#6B7280",
+                              "&.Mui-checked": {
+                                color: "#6B7280",
+                              },
+                            }}
+                            checked={filterAvailability.inStock}
+                            onClick={(e) => {
+                              setFilterAvailability({
+                                inStock: !filterAvailability.inStock,
+                                preorder: filterAvailability.preorder,
+                                bespoke: filterAvailability.bespoke,
+                              });
+                            }}
+                          />
+                        }
+                        label="In Stock"
+                      />
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            sx={{
+                              color: "#6B7280",
+                              "&.Mui-checked": {
+                                color: "#6B7280",
+                              },
+                            }}
+                            checked={filterAvailability.preorder}
+                            onClick={(e) => {
+                              setFilterAvailability({
+                                inStock: filterAvailability.inStock,
+                                preorder: !filterAvailability.preorder,
+                                bespoke: filterAvailability.bespoke,
+                              });
+                            }}
+                          />
+                        }
+                        label="Pre-Order"
+                      />
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            sx={{
+                              color: "#6B7280",
+                              "&.Mui-checked": {
+                                color: "#6B7280",
+                              },
+                            }}
+                            checked={filterAvailability.bespoke}
+                            onClick={(e) => {
+                              setFilterAvailability({
+                                inStock: filterAvailability.inStock,
+                                preorder: filterAvailability.preorder,
+                                bespoke: !filterAvailability.bespoke,
+                              });
+                            }}
+                          />
+                        }
+                        label="Bespoke"
+                      />
+                    </FormGroup>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+
+        <div className="flex justify-evenly sm:mx-8 mx-24 my-10 sm:my-2 md:my-2">
+          {!loadClicked && <ItemsList products={showProducts.slice(0, 6)} />}
+          {loadClicked && <ItemsList products={showProducts} />}
         </div>
       </div>
-      <div className="flex justify-center my-10">
-        <Link href={`/store/${products[0].roomSlug}`}>
-          <button className="flex justify-center bg-bckgrnd-light hover:bg-bckgrnd text-black text-lg font-medium py-2 px-6 border-2 border-black rounded-full shadow-xl">
-            <p>Load more</p>
-            <SlArrowRight className="h-6 w-6 sm:inline cursor-pointer pt-1" />
-          </button>
-        </Link>
-      </div>
+      {totalProducts > 6 && (
+        <div className="flex justify-center my-10">
+          {!loadClicked && (
+            <button
+              onClick={handleLoadClick}
+              className="flex justify-center bg-bckgrnd-light hover:bg-bckgrnd text-black text-lg font-medium py-2 px-6 border-2 border-black rounded-full shadow-xl"
+            >
+              <p>Load more</p>
+              <SlArrowRight className="h-6 w-6 sm:inline cursor-pointer pt-1" />
+            </button>
+          )}
+          {loadClicked && (
+            <button
+              onClick={handleLoadClick}
+              className="flex justify-center bg-bckgrnd-light hover:bg-bckgrnd text-black text-lg font-medium py-2 px-6 border-2 border-black rounded-full shadow-xl"
+            >
+              <p>Show less</p>
+              <SlArrowRight className="h-6 w-6 sm:inline cursor-pointer pt-1" />
+            </button>
+          )}
+        </div>
+      )}
     </HeaderFooterLayout>
   );
 };

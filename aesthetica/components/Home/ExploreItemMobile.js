@@ -6,7 +6,7 @@ const ExploreItemMobile = ({ label, image, path, room, category }) => {
   return (
     <Slide key={label}>
       {room && (
-        <div className="flex flex-col flex-shrink-0 w-full relative mx-4">
+        <div className="flex flex-col flex-shrink-0 w-full relative">
           <Link href={`/store/${path}`}>
             <Image
               src={image.url}
