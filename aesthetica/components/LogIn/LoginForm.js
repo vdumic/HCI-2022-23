@@ -1,12 +1,15 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import { SlArrowRight } from "react-icons/sl";
 import * as yup from "yup";
 
 const LoginForm = (props) => {
+  const router = useRouter();
   const handleLoginClick = (e) => {
     e.preventDefault();
     props.handleLogin();
+    router.push('/');
   };
 
   const renderError = (message) => (
