@@ -173,8 +173,14 @@ const appReducer = (state, action) => {
       (product) => product[0] !== action.value.slug
     );
 
-    const price = products.map((product) => product[2] * product[3]);
-    const totalPrice = price + action.value.price;
+    let price = 0;
+
+    for (let i = 0; i < products.length; i++) {
+      price = products[i][2] * products[i][3] + price;
+    }
+
+    const current = action.value.price * action.value.quantity;
+    const totalPrice = current + price;
 
     return {
       userState: {

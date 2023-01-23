@@ -14,7 +14,7 @@ const CartItem = ({ product }) => {
       product[0],
       product[1],
       product[2],
-      number,
+      number + 1,
       product[4]
     );
   };
