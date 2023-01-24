@@ -17,7 +17,7 @@ const Categories = ({ exploreRooms, exploreCategories }) => {
       <div className="flex justify-center sm:hidden md:hidden">
         <ExploreSlider
           categoriesClicked={true}
-          exploreCategories={exploreCategories.slice(4, 18)}
+          exploreCategories={exploreCategories.slice(0, 11)}
         />
       </div>
       <div className="flex justify-center mt-10 lg:hidden">
